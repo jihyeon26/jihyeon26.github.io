@@ -1,2 +1,2 @@
 # jihyeon26.github.io
-Personal profile webpage
+Personal profile webpage for Jihyeon Choung
