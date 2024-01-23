@@ -7,14 +7,43 @@
     margin: 0;
   }
   
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #e1c987;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #e2b230;
+  color: white;
+}
+
   .header {
-    background-image: url("./assets/person.png");
-    background-position: right;
-    background-repeat: no-repeat;
-    background-size: 400px;
     color: #ffffff;
   }
   
+  .head-img{
+    float: right;
+    
+  }
+
   .header-title {
     font-family: Poppins;
     font-size: 20px;
@@ -62,7 +91,7 @@
   }
   
   .section.dark {
-    background-color: #e8f0ff;
+    background-color: #fff6e8;
   }
   
   .container {
@@ -88,6 +117,14 @@
     margin: 32px 0;
   }
   
+  .description_r {
+    color: #4c497b;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 27px;
+    margin: 20px 0;
+  }
+
   .cover {
     border-radius: 24px;
     width: 100%;
@@ -147,4 +184,19 @@
   
   a.button.round {
     border-radius: 9999px;
+  }
+
+  .artworks {
+    margin: 0 -5px;
+    overflow: scroll;
+    white-space:nowrap;
+  }
+
+  .artwork {
+    height: 194px;
+    margin-right: 8px;
+  }
+
+  a.button:hover{
+    background: #524cad ;
   }
