@@ -64,14 +64,14 @@
   }
   
   .header-tagline {
-    font-family: Poppins;
-    font-size: 56px;
+    font-family: Manrope;
+    font-size: 40px;
     font-weight: 700;
     line-height: 74px;
     margin: 0;
     background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
     background-size: 50%;
-    background-position: left;
+    background-position: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -90,6 +90,7 @@
     margin: 0 auto;
     padding: 80px 0 280px;
     width: 720px;
+    text-align: center;
   }
   
   .section {
