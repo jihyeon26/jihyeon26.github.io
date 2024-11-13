@@ -79,12 +79,12 @@
   
   .header-tagline {
     font-family: Manrope;
-    font-size: 40px;
+    font-size: 56px;
     font-weight: 700;
     line-height: 74px;
     margin: 0;
     background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
-    background-size: 50%;
+    background-size: 70%;
     background-position: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,15 +94,15 @@
   
   .header-description {
     color: #8287a4;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 27px;
-    margin: 14px 0;
+    margin: 30px 0;
   }
   
   .header-content {
     margin: 0 auto;
-    padding: 80px 0 280px;
+    padding: 80px 0 80px;
     width: 720px;
     text-align: center;
   }
@@ -123,7 +123,8 @@
   .title {
     color: #161346;
     font-family: Poppins;
-    font-size: 36px;
+    font-size: 20px;
+    text-align: center;
     font-weight: 700;
     line-height: 54px;
     margin-bottom: 42px;
