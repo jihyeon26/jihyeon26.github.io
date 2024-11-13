@@ -9,10 +9,12 @@
   
 
   .topnav {
+    font-family: Manrope;
+    font-size: 15px;
     background-color: #ffffff;
     overflow: hidden;
     margin: 30px auto; /* 위쪽 간격과 가로 중앙 정렬 */
-    padding: 4px 20px;
+    padding: 1px 20px;
     border: 2px solid #e0e0e0;
     border-radius: 30px;
     width: fit-content; /* 내용에 맞춘 너비 설정 */
@@ -22,11 +24,10 @@
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #4b4141;
+  color: #1f1c1c;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
   transition: transform 0.3s ease; 
 }
 
@@ -34,20 +35,8 @@
 .topnav a:hover {
   transform: rotate(5deg);
   font-weight: bold;
-  color: #4b4141;
+  color: #1f1c1c;
 }
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  float: left;
-  color: #4b4141;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 12px;
-  transition: transform 0.3s ease; 
-}
-
 
   .header {
     color: #ffffff;
@@ -59,7 +48,7 @@
   }
 
   .header-title {
-    font-family: Poppins;
+    font-family: Manrope;
     font-size: 20px;
     line-height: 30px;
     padding: 12px 40px;
@@ -80,7 +69,7 @@
   .header-tagline {
     font-family: Manrope;
     font-size: 56px;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 74px;
     margin: 0;
     background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
@@ -95,9 +84,12 @@
   .header-description {
     color: #8287a4;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 27px;
     margin: 30px 0;
+    font-family: Manrope;
+    letter-spacing: 0.5px; /* 자간 설정*/
+    line-height: 1.5;
   }
   
   .header-content {
