@@ -139,10 +139,40 @@
     margin: 20px 0;
   }
 
-  .cover {
-    border-radius: 24px;
-    width: 100%;
+  .image-container {
+    position: relative;
+    width: 350px; /* 이미지 및 원형의 컨테이너 크기 설정 */
+    height: 350px;
+    margin:auto;
+}
+
+  .gradient-circle {
+    background-color: rgb(220, 189, 158); /* 진한 보라색 배경 */
+    filter: blur(88px); /* 흐림 효과 */
+    border-radius: 50%; /* 원형 모양 */
+    transform: none;
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%; /* 수직 중앙 정렬 */
+    left: 50%; /* 수평 중앙 정렬 */
+    transform: translate(-50%, -50%); 
+    z-index: 0; /* 원형을 뒤로 배치 */
   }
+
+.cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1; /* 이미지를 위로 배치 */
+}
+.cover:hover {
+  transform: rotate(-10deg); /* 마우스 호버 시 10도 기울어짐 */
+}
+
   
   #career.section {
     background-color: #161346;
