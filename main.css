@@ -81,10 +81,10 @@
 }
   
 .header-description {
-  color: #8287a4;
-  font-size: 18px;
+  color: #414141;
+  font-size: 32px;
   font-weight: 500;
-  line-height: 27px;
+  line-height: 150%;
   margin: 30px 0;
   font-family: Manrope;
   letter-spacing: 0.5px; /* 자간 설정*/
@@ -94,7 +94,7 @@
 .header-content {
   margin: 0 auto;
   padding: 80px 0 80px;
-  width: 720px;
+  width: 960px;
   text-align: center;
 }
 
