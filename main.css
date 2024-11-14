@@ -102,11 +102,7 @@
   .section {
     padding: 32px 0;
   }
-  
-  .section.dark {
-    background-color: #ffffff;
-  }
-  
+    
   .container {
     margin: 0 auto;
     width: 80%;
