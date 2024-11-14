@@ -217,11 +217,12 @@
   }
   
   #footer.section {
-    background-color: #120f3f;
-    color: #d9d9d9;
+    color: #929292;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
+    text-align: center;
+    margin-top: 150px;
   }
   
   #career .title {
