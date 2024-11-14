@@ -5,20 +5,21 @@
   body {
     font-family: "Noto Sans KR", sans-serif;
     margin: 0;
+    
   }
-  
 
-  .topnav {
-    font-family: Manrope;
-    font-size: 15px;
-    background-color: #ffffff;
-    overflow: hidden;
-    margin: 30px auto; /* 위쪽 간격과 가로 중앙 정렬 */
-    padding: 1px 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 30px;
-    width: fit-content; /* 내용에 맞춘 너비 설정 */
-  }
+
+.topnav {
+  font-family: Manrope;
+  font-size: 15px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 30px auto; /* 위쪽 간격과 가로 중앙 정렬 */
+  padding: 1px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  width: fit-content; /* 내용에 맞춘 너비 설정 */
+}
   
 
 /* Style the links inside the navigation bar */
@@ -38,76 +39,125 @@
   color: #1f1c1c;
 }
 
-  .header {
-    color: #ffffff;
-  }
-  
-  .head-img{
-    float: right;
-    
-  }
+.header {
+  color: #ffffff;
+}
 
-  .header-title {
-    font-family: Manrope;
-    font-size: 20px;
-    line-height: 30px;
-    padding: 12px 40px;
-  }
+.head-img{
+  float: right;
   
-  .header-title-accent {
-    font-weight: 700;
-  }
+}
+
+.header-title {
+  font-family: Manrope;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 12px 40px;
+}
+
+.header-title-accent {
+  font-weight: 700;
+}
+
+.header-tagline-small {
+  color: #8287a4;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
+  margin: 12px 0;
+}
   
-  .header-tagline-small {
-    color: #8287a4;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 29px;
-    margin: 12px 0;
-  }
+.header-tagline {
+  font-family: Manrope;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 74px;
+  margin: 0;
+  background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
+  background-size: 70%;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
   
-  .header-tagline {
-    font-family: Manrope;
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 74px;
-    margin: 0;
-    background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
-    background-size: 70%;
-    background-position: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.header-description {
+  color: #8287a4;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin: 30px 0;
+  font-family: Manrope;
+  letter-spacing: 0.5px; /* 자간 설정*/
+  line-height: 1.5;
+}
+  
+.header-content {
+  margin: 0 auto;
+  padding: 80px 0 80px;
+  width: 720px;
+  text-align: center;
 }
 
 
-  
-  .header-description {
-    color: #8287a4;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 27px;
-    margin: 30px 0;
-    font-family: Manrope;
-    letter-spacing: 0.5px; /* 자간 설정*/
-    line-height: 1.5;
-  }
-  
-  .header-content {
-    margin: 0 auto;
-    padding: 80px 0 80px;
-    width: 720px;
-    text-align: center;
-  }
-  
-  .section {
-    padding: 32px 0;
-  }
+.section {
+  padding: 32px 0;
+}
     
+.content-container {
+  display: flex;
+  align-items: center;
+  gap: 50px; /*그림과 글 사이 간격*/
+  text-align: left;
+}
+.image-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  
+}
   .container {
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
   }
-  
+  .cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1; 
+}
+.content-container:hover{
+  cursor: pointer;
+}
+
+.content-container:hover .cover {
+  transform: rotate(-10deg); 
+}
+
+.content-container:hover .arrow {
+  transform: translateX(20px); 
+}
+.arrow {
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+
+.text-content h3 {
+  color: #6b47e3; /* 보라색 */
+  margin: 0;
+}
+.text-content p {
+  margin: 5px 0;
+  color: #333;
+  font-family: Manrope;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
   .title {
     color: #161346;
     font-family: Poppins;
@@ -137,39 +187,27 @@
 
   .image-container {
     position: relative;
-    width: 350px; /* 이미지 및 원형의 컨테이너 크기 설정 */
+    width: 350px; 
     height: 350px;
     margin:auto;
 }
 
   .gradient-circle {
-    background-color: rgb(220, 189, 158); /* 진한 보라색 배경 */
-    filter: blur(88px); /* 흐림 효과 */
-    border-radius: 50%; /* 원형 모양 */
+    background-color: rgb(220, 189, 158); 
+    filter: blur(88px);
+    border-radius: 50%; 
     transform: none;
     transform-origin: 50% 50%;
     position: absolute;
     width: 250px;
     height: 250px;
-    top: 50%; /* 수직 중앙 정렬 */
-    left: 50%; /* 수평 중앙 정렬 */
+    top: 50%; 
+    left: 50%; 
     transform: translate(-50%, -50%); 
-    z-index: 0; /* 원형을 뒤로 배치 */
+    z-index: 0; 
   }
 
-.cover {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    z-index: 1; /* 이미지를 위로 배치 */
-}
-.cover:hover {
-  transform: rotate(-10deg); /* 마우스 호버 시 10도 기울어짐 */
-}
 
-  
   #career.section {
     background-color: #161346;
     color: #ffffff;
