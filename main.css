@@ -19,6 +19,9 @@
   border: 2px solid #e0e0e0;
   border-radius: 30px;
   width: fit-content; /* 내용에 맞춘 너비 설정 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
   
 
@@ -36,6 +39,12 @@
 .topnav a:hover {
   transform: rotate(5deg);
   font-weight: bold;
+  color: #1f1c1c;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
   color: #1f1c1c;
 }
 
@@ -292,6 +301,39 @@
     }
   }
   @media screen and (max-width: 767px) {
+    .topnav {
+      flex-direction: column; /* 모바일에서는 세로 정렬 */
+      padding: 10px;
+      width: 100%;
+      border:none;
+      margin:5px auto;
+    }
+    
+  
+    .hamburger {
+      display: block; /* 햄버거 메뉴 활성화 */
+      align-self: flex-end; /* 오른쪽 상단에 위치 */
+    }
+  
+    .topnav a {
+      display: none; /* 기본적으로 숨김 */
+      width: 100%; /* 링크를 가로 전체 차지 */
+      text-align: left;
+    }
+  
+    .topnav.show a {
+      display: block; /* 햄버거 메뉴 클릭 시 보임 */
+      padding: 10px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .topnav a:hover {
+      transform: none; /* 모바일에서는 회전 효과 비활성화 */
+    }
+    .header-content {
+      padding: 40px 0;
+    }
+    
     .header-tagline {
       background-size: 100%;
 
@@ -302,6 +344,7 @@
     .content-container {
       flex-direction: column; /* 세로 배치 */
       text-align: center; /* 텍스트 중앙 정렬 */
+      gap:20px;
   }
 
   .text-content {
@@ -334,5 +377,8 @@
   .text-content .project-description {
     font-size: 15px;
     font-weight: 500;
+}
+.section {
+  margin:90px 70px;
 }
   }
