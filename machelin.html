@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jihyeon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="machelin.css">
+    
+</head>
+<body>
+  <header>
+      <div class="container">
+          <p class="project-tag">Machelin</p>
+          <h1>Machine learning-based beer recommendation system.</h1>
+      </div>
+  </header>
+
+  <section class="product-image">
+      <div class="container">
+          <img src='./assets/machelin/machelin1.png' alt="Machelin beer recommendation">
+      </div>
+  </section>
+
+  <nav class="project-navigation">
+      <div class="container">
+          <a href="#">The Problem</a>
+          <a href="#">Highlights</a>
+          <a href="#">Research</a>
+          <a href="#">Design</a>
+          <a href="#">Outcome</a>
+      </div>
+  </nav>
+
+  <section class="overview">
+      <div class="container">
+          <h2>Overview</h2>
+          <p>Machelin is a machine learning-based beer recommendation system that uses clustering algorithms to suggest similar beers based on taste profiles, user preferences, and other attributes. It aims to enhance user experience by providing tailored beer recommendations and promoting the exploration of new beer flavors.</p>
+          <p><strong>Impact:</strong> Improved user engagement by offering personalized recommendations, leading to higher customer satisfaction and repeat visits.</p>
+      </div>
+  </section>
+
+  <section class="role">
+      <div class="container">
+          <h2>My role</h2>
+          <p>I led the development of the recommendation algorithm, including data analysis, clustering implementation, and user testing, collaborating closely with other team members:</p>
+          <ul>
+            <li>Me - <strong>Lead Data Scientist</strong></li>
+            <li>Hye-won Hong - <strong>Product Manager</strong></li>
+            <li>Jin-hyung Lee - <strong>Architecture Design</strong></li>
+            <li>Jong-eun Won - <strong>Gradio Web App Implementation</strong></li>
+            <li>Su-min Kim - <strong>Marketing, Presentation Materials</strong></li>
+            <li>Soon-min Kwon - <strong>Demo Video Production, Ethics Review</strong></li>
+          </ul>
+      </div>
+  </section>
+
+  <section class="details">
+      <div class="container-target">
+          <div class="detail-item">
+              <h3>Target users</h3>
+              <ul>
+                  
+                  <li>Casual drinkers looking for new recommendations</li>
+              </ul>
+          </div>
+          <div class="detail-item">
+              <h3>Interface</h3>
+              <p>Mobile App, Web App</p>
+          </div>
+          <div class="detail-item">
+              <h3>Timeline</h3>
+              <p>1.5 weeks</p>
+          </div>
+      </div>
+  </section>
+
+  <section class="business-opportunity">
+      <div class="container">
+          <h2>What is the business opportunity?</h2>
+          <ul>
+              <li>Increase user engagement and retention by providing a unique, personalized beer recommendation experience.</li>
+              <li>Attract a wider audience, including those who want to explore different beer flavors and brands.</li>
+              <li>Potential to expand into partnerships with breweries and local beer vendors for targeted recommendations and promotions.</li>
+          </ul>
+      </div>
+  </section>
+
+  <section class="problems-section">
+      <div class="container">
+          <h2>The Problems with Existing Beer Recommendation Systems</h2>
+
+          <div class="problem">
+              <h3>Problem 1</h3>
+              <p>Current recommendation systems often lack personalized clustering, which means users receive generic suggestions that don’t match their taste preferences.</p>
+              <p><span class="hypothesis">💡 Hypothesis:</span> If we implement a clustering-based recommendation system, users will receive more accurate suggestions, improving user satisfaction and engagement.</p>
+          </div>
+
+          <div class="problem">
+              <h3>Problem 2</h3>
+              <p>Users cannot easily explore similar beers based on flavor profiles, making it difficult for them to find new beers they might enjoy.</p>
+              <p><span class="hypothesis">💡 Hypothesis:</span> By clustering beers based on flavor and user preference data, we can create a more intuitive browsing experience that encourages users to try new beers.</p>
+          </div>
+
+          <div class="problem">
+              <h3>Problem 3</h3>
+              <p>The system needs to handle a wide variety of beer types and attributes to ensure it can recommend beers across different categories effectively.</p>
+              <p><span class="hypothesis">💡 Hypothesis:</span> By designing our system to support multiple beer attributes, we can accommodate a larger variety of beer types, leading to a more versatile and comprehensive recommendation engine.</p>
+          </div>
+      </div>
+  </section>
+  <section class="data-process">
+    <div class="container">
+        <h2>Data Collection & Preprocessing</h2>
+        <h3>Data Collection</h3>
+        <p>
+            We collected data from two large beer community websites, including information such as beer style, brewery, country, ABV (Alcohol By Volume), and user reviews. The data was scraped and stored in a structured format for analysis.
+        </p>
+
+        <h3>Data Cleaning</h3>
+        <p>
+            The raw data was cleaned by converting ABV values to numerical format, removing missing values, and parsing reviews into separate features like aroma, appearance, flavor, mouthfeel, overall rating, and user rating.
+        </p>
+
+        <h3>Feature Engineering</h3>
+        <p>
+            To prepare the data for machine learning, categorical features such as beer style and country were encoded, and numerical features were standardized. This helped improve the accuracy of clustering and recommendations.
+        </p>
+    </div>
+</section>
+
+</body>
+
+</html>
