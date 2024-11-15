@@ -12,6 +12,54 @@ body {
     line-height: 1.6;
 }
 
+.topnav {
+    font-family: Manrope;
+    font-size: 15px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 30px auto;
+    padding: 1px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Make it fixed to enable scroll effects */
+    top: 30px; /* Initial position (aligns with margin) */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000;
+    transition: top 0.3s ease; /* Smooth transition */
+}
+
+.topnav.hidden {
+    top: -100px; /* Adjust this value to completely hide the navigation bar */
+}
+
+.topnav a {
+    float: left;
+    color: #1f1c1c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.topnav a:hover {
+    transform: rotate(5deg);
+    font-weight: bold;
+    color: #1f1c1c;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1f1c1c;
+}
+
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -20,7 +68,7 @@ body {
 
 /* Header */
 header {
-    padding: 20px 0;
+    padding: 170px 0 20px 0;
     text-align: left;
 }
 
@@ -178,3 +226,35 @@ ul li {
 .problem:last-child {
     margin-bottom: 0;
 }
+
+
+@media screen and (max-width: 767px) {
+    .topnav {
+      flex-direction: column; /* 모바일에서는 세로 정렬 */
+      padding: 10px;
+      width: 100%;
+      border:none;
+      margin:5px auto;
+    }
+    
+  
+    .hamburger {
+      display: block; /* 햄버거 메뉴 활성화 */
+      align-self: flex-end; /* 오른쪽 상단에 위치 */
+    }
+  
+    .topnav a {
+      display: none; /* 기본적으로 숨김 */
+      width: 100%; /* 링크를 가로 전체 차지 */
+      text-align: left;
+    }
+  
+    .topnav.show a {
+      display: block; /* 햄버거 메뉴 클릭 시 보임 */
+      padding: 10px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .topnav a:hover {
+      transform: none; /* 모바일에서는 회전 효과 비활성화 */
+    }

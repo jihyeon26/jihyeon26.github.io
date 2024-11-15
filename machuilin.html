@@ -7,20 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="machelin.css">
+    <link rel="stylesheet" href="machuilin.css">
     
 </head>
 <body>
+  <div class="topnav">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html">Home</a>
+    <a href="index.html#works">Works</a>
+    <a href="https://github.com/jihyeon26">Github</a>
+    <a href="">About</a>
+    <a href="artworks.html">Artworks</a>
+  </div>
   <header>
       <div class="container">
-          <p class="project-tag">Machelin</p>
+          <p class="project-tag">Machuilin</p>
           <h1>Machine learning-based beer recommendation system.</h1>
       </div>
   </header>
 
   <section class="product-image">
       <div class="container">
-          <img src='./assets/machelin/machelin1.png' alt="Machelin beer recommendation">
+          <img src='./assets/machuilin/machuilin1.png' alt="machuilin beer recommendation">
       </div>
   </section>
 
@@ -36,9 +44,11 @@
 
   <section class="overview">
       <div class="container">
-          <h2>Overview</h2>
-          <p>Machelin is a machine learning-based beer recommendation system that uses clustering algorithms to suggest similar beers based on taste profiles, user preferences, and other attributes. It aims to enhance user experience by providing tailored beer recommendations and promoting the exploration of new beer flavors.</p>
-          <p><strong>Impact:</strong> Improved user engagement by offering personalized recommendations, leading to higher customer satisfaction and repeat visits.</p>
+        <h2>Overview</h2>
+        <p>
+            Machuilin is a machine learning-based beer recommendation system that helps users discover and learn about various beers. The system analyzes user-uploaded photos to detect beer labels, using Microsoft Azure’s Custom Vision to identify the beer and provide relevant details. Additionally, Machuilin uses clustering algorithms to group similar beers, enabling users to explore different types with shared characteristics.
+        </p>
+        <p><strong>Impact:</strong> By offering accurate beer identification, detailed information, and clustering-based recommendations, Machuilin encourages users to broaden their knowledge of beer varieties and enhances their overall experience.</p>
       </div>
   </section>
 
@@ -90,25 +100,26 @@
 
   <section class="problems-section">
       <div class="container">
-          <h2>The Problems with Existing Beer Recommendation Systems</h2>
+        <h2>The Problems with Existing Beer Recommendation Systems</h2>
 
-          <div class="problem">
-              <h3>Problem 1</h3>
-              <p>Current recommendation systems often lack personalized clustering, which means users receive generic suggestions that don’t match their taste preferences.</p>
-              <p><span class="hypothesis">💡 Hypothesis:</span> If we implement a clustering-based recommendation system, users will receive more accurate suggestions, improving user satisfaction and engagement.</p>
-          </div>
-
-          <div class="problem">
-              <h3>Problem 2</h3>
-              <p>Users cannot easily explore similar beers based on flavor profiles, making it difficult for them to find new beers they might enjoy.</p>
-              <p><span class="hypothesis">💡 Hypothesis:</span> By clustering beers based on flavor and user preference data, we can create a more intuitive browsing experience that encourages users to try new beers.</p>
-          </div>
-
-          <div class="problem">
-              <h3>Problem 3</h3>
-              <p>The system needs to handle a wide variety of beer types and attributes to ensure it can recommend beers across different categories effectively.</p>
-              <p><span class="hypothesis">💡 Hypothesis:</span> By designing our system to support multiple beer attributes, we can accommodate a larger variety of beer types, leading to a more versatile and comprehensive recommendation engine.</p>
-          </div>
+        <div class="problem">
+            <h3>Problem 1</h3>
+            <p>Current systems lack personalized, image-based recommendations, making it difficult for users to quickly identify and receive information on specific beers.</p>
+            <p><span class="hypothesis">💡 Hypothesis:</span> Implementing an image-based recommendation system can provide users with quick, accurate beer information and tailored suggestions, improving convenience and user experience.</p>
+        </div>
+        
+        <div class="problem">
+            <h3>Problem 2</h3>
+            <p>Existing platforms miss opportunities to leverage user data for targeted marketing, limiting the ability to tailor promotions based on consumer preferences and trends.</p>
+            <p><span class="hypothesis">💡 Hypothesis:</span> By analyzing user preferences, our system can enable data-driven marketing strategies, helping breweries and retailers reach a more relevant audience effectively.</p>
+        </div>
+        
+        <div class="problem">
+            <h3>Problem 3</h3>
+            <p>There are limited revenue generation models that utilize image search and recommendation systems, especially for both online and offline platforms.</p>
+            <p><span class="hypothesis">💡 Hypothesis:</span> By incorporating an image-based search and recommendation system, we can maximize revenue in online platforms and create diverse revenue models for offline locations, such as kiosks in retail stores.</p>
+        </div>
+        
       </div>
   </section>
   <section class="data-process">
@@ -130,7 +141,7 @@
         </p>
     </div>
 </section>
-
+<script src="machuilin.js"></script>
 </body>
 
 </html>
