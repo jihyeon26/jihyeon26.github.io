@@ -120,6 +120,7 @@
   justify-content: center;
   margin: 20px auto;
   gap: 50px; /*그림과 글 사이 간격*/
+  text-decoration: none;
 }
 .image-link {
   position: relative;
