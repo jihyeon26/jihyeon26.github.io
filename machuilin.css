@@ -96,7 +96,9 @@ p  {
     height: 100%;
     object-fit: cover;
     z-index: 1; 
+
 }
+
 .container {
     max-width: 960px;
     width : 70%;
@@ -217,8 +219,8 @@ ul li {
 .problems-section {
     background-color: #f9fafb;
     border-radius: 10px;
-    padding: 30px;
-    margin: 20px 20px;
+    padding: 20px 10px;
+    margin: 20px 90px;
 }
 
 .problems-section h2 {
@@ -255,6 +257,14 @@ ul li {
     align-items: center; /* 수직 정렬 */
     gap: 20px; /* 요소 간격 */
   }
+  .image-container3 {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 20px; /* 요소 간격 */
+    width: 40%;
+
+  }
 
   .image-container2 img {
     max-width: 50%; /* 이미지 크기 조정 */
@@ -265,6 +275,13 @@ ul li {
     font-size: 24px; /* 화살표 크기 */
     color: #333; /* 화살표 색상 */
   }
+  .responsive-image {
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    display: block; /* 필요 시 이미지가 블록 요소로 작동 */
+}
+
 
 @media screen and (max-width: 767px) {
     .topnav {
