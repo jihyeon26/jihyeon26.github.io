@@ -40,7 +40,7 @@
             Machuilin is a machine learning-based beer recommendation system that helps users discover and learn about various beers. The system analyzes user-uploaded photos to detect beer labels, using Microsoft Azure’s Custom Vision to identify the beer and provide relevant details. Additionally, Machuilin uses clustering algorithms to group similar beers, enabling users to explore different types with shared characteristics.
         </p>
         <p><strong>Impact:</strong> By offering accurate beer identification, detailed information, and clustering-based recommendations, Machuilin encourages users to broaden their knowledge of beer varieties and enhances their overall experience.</p>
-        <img src="./assets/machuilin/machuilin_db.png" style="width: 80%;">
+        <img src="./assets/machuilin/machuilin1.png" style="width: 70%; margin:0 auto; margin-top: 40px;display: block;">
     </div>
   </section>
 
@@ -90,39 +90,34 @@
 
   <section class="problems-section">
       <div class="container">
-        <h2>The Problems with Existing Beer Recommendation Systems</h2>
+        <h2>Problems Solving</h2> 
 
         <div class="problem">
             <h3>Problem 1</h3>
-            <p>Current systems lack personalized, image-based recommendations, making it difficult for users to quickly identify and receive information on specific beers.</p>
-            <p><span class="hypothesis">💡 Hypothesis:</span> Implementing an image-based recommendation system can provide users with quick, accurate beer information and tailored suggestions, improving convenience and user experience.</p>
+            <p>Searching for beers with long or unfamiliar names is inconvenient, especially for users who are not beer enthusiasts.</p>
+            <p><span class="solution">💡 Solution:</span> To enhance the convenience of beer searches, we developed an image-based search system using Azure Custom Vision. Users can take a photo to identify beers instantly. To improve accuracy, the training data includes images taken from various angles, lighting conditions, and perspectives.</p>
         </div>
-        
+
         <div class="problem">
             <h3>Problem 2</h3>
-            <p>Existing platforms miss opportunities to leverage user data for targeted marketing, limiting the ability to tailor promotions based on consumer preferences and trends.</p>
-            <p><span class="hypothesis">💡 Hypothesis:</span> By analyzing user preferences, our system can enable data-driven marketing strategies, helping breweries and retailers reach a more relevant audience effectively.</p>
+            <p>Basic clustering methods can group dissimilar beers, like pilsners and strongly peach-flavored beers, into the same cluster, resulting in poor recommendations.</p>
+            <p><span class="solution">💡 Solution:</span> We improved clustering results by analyzing beer review data to identify key attributes that users consider important. These attributes were given higher weights during clustering. This approach ensures that beers are grouped more accurately based on user preferences.</p>
         </div>
-        
+
         <div class="problem">
             <h3>Problem 3</h3>
-            <p>There are limited revenue generation models that utilize image search and recommendation systems, especially for both online and offline platforms.</p>
-            <p><span class="hypothesis">💡 Hypothesis:</span> By incorporating an image-based search and recommendation system, we can maximize revenue in online platforms and create diverse revenue models for offline locations, such as kiosks in retail stores.</p>
-        </div>
-        
+            <p>Ensuring the reliability of data and selecting reasonable columns for analysis were significant challenges.</p>
+            <p><span class="solution">💡 Solution:</span> To improve data reliability, we aggregated information from two globally renowned beer community platforms. We utilized review data from users whose nationality was disclosed and who had written at least 10 reviews. This approach ensured high-quality and trustworthy data for the system.</p>
+        </div>        
       </div>
   </section>
   <section class="data-process">
     <div class="container">
-        <h2>Data Collection & Preprocessing</h2>
+        <h2>Architecture & Data Collection</h2>
+        <img src="./assets/machuilin/machuilin_db.png" style="width: 80%;">
         <h3>Data Collection</h3>
         <p>
-            We collected data from two large beer community websites, including information such as beer style, brewery, country, ABV (Alcohol By Volume), and user reviews. The data was scraped and stored in a structured format for analysis.
-        </p>
-
-        <h3>Data Cleaning</h3>
-        <p>
-            The raw data was cleaned by converting ABV values to numerical format, removing missing values, and parsing reviews into separate features like aroma, appearance, flavor, mouthfeel, overall rating, and user rating.
+            We gathered data from two major beer community websites, including details such as beer style, brewery, country, ABV (Alcohol By Volume), and user reviews. The collected data was cleaned and structured for analysis by converting ABV values to numerical format, removing missing values, and parsing reviews into distinct features like aroma, appearance, flavor, mouthfeel, overall rating, and user rating.
         </p>
 
         <h3>Feature Engineering</h3>

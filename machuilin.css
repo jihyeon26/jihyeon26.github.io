@@ -101,6 +101,8 @@ p  {
     max-width: 960px;
     width : 70%;
     margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
     padding: 20px;
 }
 
@@ -234,7 +236,7 @@ ul li {
     margin-bottom: 5px;
 }
 
-.hypothesis {
+.solution {
     font-weight: bold;
     color: #6a1b9a; /* Accent color for hypothesis */
 }
