@@ -357,7 +357,22 @@ ul li {
     z-index: 1001;
   }
 
-
+  .image-container4 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .image-container4 img {
+    width: 100%;
+    max-width: 30%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
 
 @media screen and (max-width: 767px) {
     .topnav {
