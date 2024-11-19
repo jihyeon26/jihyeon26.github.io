@@ -194,8 +194,7 @@ ul li {
     justify-content: center;
     padding: 20px 0;
     margin: 0 auto;
-    gap: 20px; /* Adds space between items */
-
+    max-width: 1260px;
 }
 
 .detail-item {
