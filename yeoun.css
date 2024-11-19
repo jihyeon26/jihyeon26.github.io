@@ -282,6 +282,70 @@ ul li {
     display: block; /* 필요 시 이미지가 블록 요소로 작동 */
 }
 
+/*모달 열기*/
+
+  .feature-item {
+    display: inline-block;
+    margin: 20px;
+  }
+  .feature-item img {
+    width: 80%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  .feature-item img:hover {
+    transform: scale(1.05);
+  }
+
+  .feature-item p {
+    font-size: 0.8rem; 
+    color: gray; 
+    margin-top: 10px;
+    width: 80%;
+    margin-left: 25px;
+  }
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.967);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    padding: 100px;
+    border-radius: 10px;
+    max-width: 80%;
+    width: 960px;
+  }
+  
+  .modal-content img {
+  border-radius: 20px;
+}
+
+  
+  .modal-content .text {
+    flex: 1;
+    text-align:justify;
+    color:#cfcfcf;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+
 
 @media screen and (max-width: 767px) {
     .topnav {

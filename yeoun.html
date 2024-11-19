@@ -139,43 +139,61 @@
     </div>
   </section>
 
+  <div class="container">
+    <h2>Product Features</h2>
+    <div style="display: flex; justify-content: space-around; gap: 20px; ">
+    
+      <div class="feature-item" style="text-align: center;">
+        <h3>Stand-Type Yeo-un</h3>
+        <img src="./assets/yeoun/stand.png" alt="Stand-Type Yeo-un" onclick="openStandModal()">
+        <p>
+          <strong>Materials:</strong> Device - Polyethylene (132x96x88 mm), Charger - MDF (175x25 mm)
+        </p>
+      </div>
+    
+      <div class="feature-item" style="text-align: center;">
+        <h3>Cushion-Type Yeo-un</h3>
+        <img src="./assets/yeoun/cushion.png" alt="Cushion-Type Yeo-un" onclick="openCushionModal()">
+        <p>
+          <strong>Materials:</strong> Device - Cotton (390x440 mm), Bean Bag - Cotton (1000x1600x800 mm)
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div id="stand-modal" class="modal">
+    <span class="close-btn" onclick="closeStandModal()">&times;</span>
+    <div class="modal-content">
+      <img src="./assets/yeoun/stand.png" alt="Stand-Type Yeo-un">
+      <div class="text">
+        <h3>Stand-Type</h3>
+        <p>
+          The stand-type Yeo-un is ideal for users who prioritize visual effects and prefer a sleek, casual experience. 
+          Users can switch between recording and playback modes using the icon slider at the top of the device. When a hand is waved over the device, it activates sound, light, and warmth playback (recorded mode). 
+          The device stops working when the hand is removed. Charging is wireless and starts by placing the device on the included charging pad.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Cushion-Type Yeo-un -->
+  <div id="cushion-modal" class="modal">
+    <span class="close-btn" onclick="closeCushionModal()">&times;</span>
+    <div class="modal-content">
+      <img src="./assets/yeoun/cushion.png" alt="Cushion-Type Yeo-un">
+      <div class="text">
+        <h3>Cushion-Type</h3>
+        <p>
+          The cushion-type Yeo-un is designed for users who prefer tactile comfort. A switch on the side of the cushion allows users to toggle between recording and playback modes. 
+          Simply holding the device activates sound, light, and warmth playback (recorded mode). If there is no contact for 5 minutes, the device automatically stops. 
+          The cushion is crafted to provide a cozy, embracing sensation for single-person households, making users feel at ease while using it.
+        </p>
+      </div>
+    </div>
+  </div>
+  
 
-  <section class="product-features">
-    <div class="container">
-      <h2>Product Features</h2>
-      <h3>Stand-Type Yeo-un</h3>
-      <div class="feature-item" style="display: flex; align-items: flex-start; gap: 20px;">
-        <img src="./assets/yeoun/yeoun_door.jpg" style="width: 40%; border-radius: 10px;">
-        <div>
-          
-          <p>
-            The stand-type Yeo-un is ideal for users who prioritize visual effects and prefer a sleek, casual experience. 
-            Users can switch between recording and playback modes using the icon slider at the top of the device. When a hand is waved over the device, it activates sound, light, and warmth playback (recorded mode). 
-            The device stops working when the hand is removed. Charging is wireless and starts by placing the device on the included charging pad.
-          </p>
-          <p style="font-size: 0.9rem; color: gray; margin-top: 10px;">
-            <strong>Materials:</strong> Device - Polyethylene (132x96x88 mm), Charger - MDF (175x25 mm)
-          </p>
-        </div>
-      </div>
-      
-      <h3>Cushion-Type Yeo-un</h3>
-      <div class="feature-item" style="display: flex; align-items: flex-start; gap: 20px;">
-        <img src="./assets/yeoun/cushion.png" style="width: 40%; border-radius: 10px;">
-        <div>
-          
-          <p>
-            The cushion-type Yeo-un is designed for users who prefer tactile comfort. A switch on the side of the cushion allows users to toggle between recording and playback modes. 
-            Simply holding the device activates sound, light, and warmth playback (recorded mode). If there is no contact for 5 minutes, the device automatically stops. 
-            The cushion is crafted to provide a cozy, embracing sensation for single-person households, making users feel at ease while using it.
-          </p>
-          <p style="font-size: 0.9rem; color: gray; margin-top: 10px;">
-            <strong>Materials:</strong> Device - Cotton (390x440 mm), Bean Bag - Cotton (1000x1600x800 mm)
-          </p>
-        </div>
-      </div>
-      
-  </section>
   
   <section class="data-process">
     <div class="container">
@@ -194,7 +212,7 @@
   </section>
   
   
-<script src="machuilin.js"></script>
+<script src="yeoun.js"></script>
 </body>
 
 </html>
