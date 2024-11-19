@@ -261,7 +261,7 @@ ul li {
     display: flex; /* Flexbox 사용 */
     justify-content: center; /* 중앙 정렬 */
     align-items: center; /* 수직 정렬 */
-    gap: 20px; /* 요소 간격 */
+    gap: 40px; /* 요소 간격 */
     width: 40%;
 
   }
