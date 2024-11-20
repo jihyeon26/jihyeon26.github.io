@@ -44,10 +44,25 @@
     <p>
     <strong>Impact:</strong> By combining interactive design with emotional engagement, Yeo-un helps reduce feelings of isolation, supports mental health, and creates an inviting atmosphere that fosters a sense of connection and warmth.
     </p>
-
-      <img src="./assets/yeoun/yeoun_index.jpg" style="width: 70%; border-radius: 20px; margin: 0 auto; margin-top: 40px; display: block;">
+      <img src="./assets/yeoun/yeoun_index.jpg" style="width: 80%; border-radius: 20px; margin: 0 auto; margin-top: 40px; display: block;">
+      <div style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+        <img src="./assets/yeoun/yeoun_index.jpg" alt="Image 1" onclick="openModal(0)" style="width: 20%; cursor: pointer; border-radius: 10px;">
+        <img src="./assets/yeoun/yeoun_index2.jpg" alt="Image 2" onclick="openModal(1)" style="width: 20%; cursor: pointer; border-radius: 10px;">
+        <img src="./assets/yeoun/yeoun_index3.jpg" alt="Image 3" onclick="openModal(2)" style="width: 20%; cursor: pointer; border-radius: 10px;">
+        <img src="./assets/yeoun/yeoun_index4.jpg" alt="Image 4" onclick="openModal(3)" style="width: 20%; cursor: pointer; border-radius: 10px;">
+      </div>
     </div>
   </section>
+
+  <!-- Modal -->
+<div id="modal1" class="modal1" style="display: none;">
+  <div class="modal-content">
+    <span class="close-btn1" onclick="closeModal()">&times;</span>
+    <img id="modal-image" src="" alt="Modal Image" style="max-width: 90%; max-height: 80%; border-radius: 10px;">
+    <button class="prev-btn" onclick="prevImage()">&#x276E</button>
+    <button class="next-btn" onclick="nextImage()">&#x276F</button>
+  </div>
+</div>
   
   <section class="role">
     <div class="container">

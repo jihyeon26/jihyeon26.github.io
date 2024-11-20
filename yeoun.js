@@ -45,3 +45,31 @@ window.addEventListener('scroll', toggleNavOnScroll);
     }
   };
 
+  //first modal
+  const images = [
+    "./assets/yeoun/yeoun_index.jpg",
+    "./assets/yeoun/yeoun_index2.jpg",
+    "./assets/yeoun/yeoun_index3.jpg",
+    "./assets/yeoun/yeoun_index4.jpg"
+  ];
+  let currentIndex = 0;
+
+  function openModal(index) {
+    currentIndex = index;
+    document.getElementById("modal1").style.display = "flex";
+    document.getElementById("modal-image").src = images[currentIndex];
+  }
+
+  function closeModal() {
+    document.getElementById("modal1").style.display = "none";
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("modal-image").src = images[currentIndex];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("modal-image").src = images[currentIndex];
+  }
