@@ -97,7 +97,7 @@
 }
 
 .modal-content {
-    margin: auto;
+    margin: 40px auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
@@ -117,4 +117,27 @@
     color: white;
     text-align: center;
     margin: 15px 0;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 15px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: #ddd;
 }
