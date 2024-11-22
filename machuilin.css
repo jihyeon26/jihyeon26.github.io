@@ -263,6 +263,7 @@ ul li {
     margin-bottom: 0;
 }
 
+
 .image-container2 {
     display: flex; /* Flexbox 사용 */
     justify-content: center; /* 중앙 정렬 */
