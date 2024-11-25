@@ -47,10 +47,10 @@ window.addEventListener('scroll', toggleNavOnScroll);
 
   //first modal
   const images = [
-    "./assets/yeoun/yeoun_index.jpg",
-    "./assets/yeoun/yeoun_index2.jpg",
-    "./assets/yeoun/yeoun_index3.jpg",
-    "./assets/yeoun/yeoun_index4.jpg"
+    "./assets/yeoun/cloth.png",
+    "./assets/yeoun/stat.png",
+    "./assets/yeoun/yeoun3.jpg",
+    "./assets/yeoun/yeoun_use.png"
   ];
   let currentIndex = 0;
 
