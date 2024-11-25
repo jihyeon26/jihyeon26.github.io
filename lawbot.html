@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jihyeon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/lawbot.css">
+    
+</head>
+<body>
+  <div class="topnav">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html">Home</a>
+    <a href="index.html#works">Works</a>
+    <a href="https://github.com/jihyeon26">Github</a>
+    <a href="">About</a>
+    <a href="artworks.html">Artworks</a>
+  </div>
+  <header>
+    <div class="container">
+        <p class="project-tag">Labor LawBot</p>
+        <h1>AI-Powered Labor Law Precedent Assistant</h1>
+    </div>
+    
+  </header>
+
+  <div class="image-link">
+    <div class="image-container">
+      <div class="gradient-circle" style="background-color: rgb(205, 150, 95);"></div>
+      <img class="cover" src="./assets/lawbot/1.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Machuilin Project">                  
+    </div>
+  </div>
+
+  <section class="overview">
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            Labor LawBot is an AI-powered chatbot designed to provide workers and practitioners with precise and reliable information based on labor law precedents. Using a dataset of 1,089 labor law cases spanning from 2010 to 2023, the system offers case-specific insights to streamline workplace conflict resolution and reduce emotional distress.
+        </p>
+        <p>
+            <strong>Impact:</strong> Labor LawBot ensures accessibility to legal knowledge for individuals with little or no legal background while aiding professionals by simplifying complex case searches and interpretations.
+        </p>
+        <img src="./assets/laborlawbot/overview.png" style="width: 70%; margin: 0 auto; margin-top: 40px; display: block;">
+    </div>
+</section>
+
+<section class="role">
+    <div class="container">
+        <h2>My role</h2>
+        <p>I led the design and development of the chatbot’s legal knowledge base and user experience, including:</p>
+        <ul>
+            <li>Data Collection and Analysis</li>
+            <li>Azure AI Search Indexing and Semantic Layer Configuration</li>
+            <li>Integration with OpenAI GPT and System Parameter Optimization</li>
+            <li>Gradio Web App Design and Implementation</li>
+        </ul>
+    </div>
+</section>
+
+<section class="details">
+    <div class="container-target">
+        <div class="detail-item">
+            <h3>Target users</h3>
+            <p>Workers seeking accessible legal information, HR professionals, and labor law practitioners.</p>
+        </div>
+        <div class="detail-item">
+            <h3>Interface</h3>
+            <p>Web App</p>
+        </div>
+        <div class="detail-item">
+            <h3>Timeline</h3>
+            <p>3 weeks</p>
+        </div>
+    </div>
+</section>
+
+<section class="business-opportunity">
+    <div class="container">
+        <h2>What is the business opportunity?</h2>
+        <ul>
+            <li>Provide a unique and efficient solution for accessing labor law information based on precedent.</li>
+            <li>Enhance workplace efficiency by offering predictable insights into labor-related disputes.</li>
+            <li>Potential for partnerships with law firms and governmental organizations for broader impact.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="problems-section">
+    <div class="container2">
+        <h2>Problems Solving</h2> 
+
+        <div class="problem">
+            <h3>Problem 1</h3>
+            <p>Labor law information is often inaccessible or difficult to interpret for non-experts.</p>
+            <p><span class="solution">💡 Solution:</span> Labor LawBot utilizes a conversational AI model enhanced with indexed labor law precedents, providing simplified and case-specific insights to users.</p>
+        </div>
+
+        <div class="problem">
+            <h3>Problem 2</h3>
+            <p>Generative AI models occasionally produce hallucinated information, which can be problematic in a precedent-based service.</p>
+            <p><span class="solution">💡 Solution:</span> To mitigate hallucinations, the model’s response content was strictly limited to the indexed dataset by maximizing data resource strictness and setting a low temperature to reduce creative responses. Additionally, cited data references were included in answers, enabling users to directly verify the source of information.
+        </div>
+
+        <div class="problem">
+            <h3>Problem 3</h3>
+            <p>Providing up-to-date, accurate, and trustworthy legal information is a challenge.</p>
+            <p><span class="solution">💡 Solution:</span> A curated dataset of 1,089 labor law precedents ensures reliable insights. The system directs users to trusted legal databases like LawInfo for further detailed searches.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="process">
+    <div class="container">
+        <h2>Process</h2>
+        <p>Labor LawBot was developed through a structured process to ensure accuracy and usability, leveraging state-of-the-art AI and data management tools.</p>
+
+        <div class="process-step">
+            <h3>1. Data Collection</h3>
+            <p>
+                Gathered 1,089 labor law cases from 2010 to 2023, focusing on diverse workplace challenges. The data was cleaned, formatted, and verified for reliability. Metadata such as case numbers, rulings, and summaries were added for structured indexing.
+            </p>
+            <div class="translation-container">
+                <!-- 이미지 박스 -->
+                <div class="image-box">
+                    <img src="./assets/lawbot/data.png" alt="Korean Image">
+                </div>
+                <!-- 텍스트 박스 -->
+                <div class="text-box">
+                    <h3>Translated Text</h3>
+                    <p><strong>info_id:</strong> 42009659</p>
+                    <p><strong>info_dataType:</strong> Judgment Document</p>
+                    <p><strong>info_caseNm:</strong> Annual Leave Payment</p>
+                    <p><strong>info_caseTitle:</strong> Supreme Court 2022. 9. 7. Judgment 2022Da245419</p>
+                    <p><strong>info_courtType:</strong> Judgment (Supreme Court)</p>
+                    <p><strong>info_courtNm:</strong> Supreme Court</p>
+                    <p><strong>info_judmAdjDe:</strong> 2022-09-07</p>
+                    <p><strong>info_caseNoID:</strong> 2022Da245419</p>
+                    <p><strong>info_caseNo:</strong> 2022Da245419</p>
+                    <p><strong>jdgmn:</strong> The maximum number of annual leave days that can be granted to an employee who has worked for more than 1 year but less than 2 years is 26 days.</p>
+                    <p><strong>jdgmInfo_0_question:</strong> What is the maximum number of annual leave days that can be granted to an employee who has worked for more than 1 year but less than 2 years?</p>
+                    <p><strong>jdgmInfo_0_answer:</strong> 26 days</p>
+                    <p><strong>Summary_0_summ_contxt:</strong> Article 60, Paragraph 1 of the Labor Standards Act stipulates that an employee who has attended work for at least 80% of the days in the first year and continues to work for the following year shall be granted a maximum of 15 days and 11 days of annual leave, respectively.</p>
+                    <p><strong>Summary_0_summ_pass:</strong> For employees who have worked for more than 1 year but less than 2 years, a maximum of 26 days of annual leave is granted.</p>
+                    <p><strong>keyword_tagg_0_keyword:</strong> Labor Standards Act</p>
+                    <p><strong>keyword_tagg_1_keyword:</strong> Annual Leave</p>
+                    <p><strong>Reference_info_reference_rules:</strong> Labor Standards Act Article 60, Paragraphs 1 and 2</p>
+                    <p><strong>Reference_info_reference_court_case:</strong> Supreme Court 2018. 6. 28. Judgment 2016Da48297 (Published in 2018Ha, 1712)</p>
+                    <p><strong>Class_info_class_name:</strong> Employee</p>
+                    <p><strong>Class_info_instance_name:</strong> Labor Standards Act</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <h3>2. Indexing & Semantic Search</h3>
+            <p>
+                Utilized Azure AI Search to index labor law cases. A semantic layer was added to improve natural language query handling, allowing users to search using everyday language while retrieving precise case references.
+            </p>
+            <div class="image-row">
+                <img src="./assets/lawbot/index.png" alt="Index">
+                <img src="./assets/lawbot/semantic.png" alt="Semantic">
+            </div>
+            <img src="./assets/lawbot/indexer.png" alt="indexer" style="width:100%; border: 1px solid #ebebeb; border-radius: 5px; margin-top:20px;">
+        </div>
+
+        <div class="process-step">
+            <h3>3. GPT Model Integration</h3>
+            <p>
+                Integrated OpenAI GPT to generate detailed and context-aware responses. Adjusted system parameters to ensure the chatbot aligns its answers with indexed cases, maintaining accuracy and trustworthiness.
+            </p>
+            <div class="image-row">
+                <img src="./assets/lawbot/add_data.png" alt="add_data">
+                <img src="./assets/lawbot/parameters.png" alt="parameters">
+            </div>
+        </div>
+
+        <div class="process-step">
+            <h3>4. Web Application Development</h3>
+            <p>
+                Developed a user-friendly web application using Gradio, allowing users to interact with the chatbot seamlessly. The interface includes simple input fields for queries and options for detailed follow-up searches.
+            </p>
+        </div>
+
+        <div class="process-step">
+            <h3>5. Testing & Optimization</h3>
+            <p>
+                Conducted iterative testing with real-world queries from workers and HR practitioners. Refined the model to handle edge cases and adjusted the data indexing pipeline for consistent results.
+            </p>
+        </div>
+
+        <div class="process-step">
+            <h3>6. Deployment</h3>
+            <p>
+                Deployed the chatbot and search features on a scalable Azure environment. Ensured seamless integration with cloud services for efficient data retrieval and future scalability.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script src="./javascript/machuilin.js"></script>
+</body>
+
+</html>
