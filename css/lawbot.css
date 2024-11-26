@@ -255,11 +255,16 @@ ul li {
 }
 
 
-.image-container2 {
-    display: flex; /* Flexbox 사용 */
-    justify-content: center; /* 중앙 정렬 */
-    align-items: center; /* 수직 정렬 */
-    gap: 20px; /* 요소 간격 */
+.container2 {
+    max-width: 960px;
+    width : 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+  .container2 h2 {
+    font-size: 36px;
   }
   .image-container3 {
     display: flex; /* Flexbox 사용 */
