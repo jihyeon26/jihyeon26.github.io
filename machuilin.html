@@ -155,22 +155,34 @@
 
 <section>
     <div class="container">
-        <h2>Clustering Process and Results</h2><br>
+        <h2>Clustering Process and Web app deployment</h2><br>
         <h3>Clustering Process</h3>
         <p>
             To provide accurate beer recommendations, we utilized K-means clustering. The data was preprocessed by selecting important features, such as bitterness, sweetness, and ABV (Alcohol By Volume). PCA (Principal Component Analysis) was applied to reduce dimensions, ensuring faster and more efficient clustering. Weighting was added to attributes identified as significant from user reviews to improve cluster accuracy.
         </p>
 
-        <h3>Results</h3>
+        <h3>Web app deployment</h3>
+        <p>
+            Using the clustering results, a web application was developed to recommend beers. When a user selects a beer, the app calculates the distances between the selected beer and others within the same cluster. The three closest beers are then recommended based on their similarity in flavor profile and characteristics.
+        </p>        
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <h2>Results</h2><br>
         <p>
             Our system recommends the three most similar beers within the same cluster for any given input. Additionally, the recommendations include not only the beer types but also detailed information such as the country of origin and taste-related attributes.
         </p>
         <div class="image-container3">     
             <img src="./assets/machuilin/ui_d.png" alt="ui 1" class="responsive-image">
             <img src="./assets/machuilin/ui2.png" alt="ui 2" class="responsive-image">
-        </div>
+        </div>     
     </div>
 </section>
+
+
+        
 <script src="./javascript/machuilin.js"></script>
 </body>
 
