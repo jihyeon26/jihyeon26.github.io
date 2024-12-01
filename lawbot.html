@@ -41,7 +41,7 @@
             Labor LawBot is an AI-powered chatbot designed to provide accurate and reliable information to workers and practitioners based on labor law case law. It uses a dataset of 1,089 labor law cases from 2010 to 2023 to provide case-specific insights to streamline conflict resolution in the workplace.
         </p>
         <p>
-            <strong>Impact:</strong> The Labor Law Bot helps make legal knowledge accessible to individuals with little or no legal background, while simplifying complex case searching and interpretation.
+            <strong>Impact:</strong> Labor LawBot enables foreigners working in Korea to ask questions in English, translating them into Korean to query the database effectively and ensure accurate interpretation. This approach enhances access to reliable legal insights for diverse users.
         </p>
         <img src="./assets/lawbot/app_ui2.png" alt="ui" style="width:100%; border: 1px solid #ccc; border-radius: 5px; margin-top:20px;">
         <video controls style="width:80%; display: inline-block; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
@@ -58,8 +58,8 @@
         <ul>
             <li>Data Collection and Analysis</li>
             <li>Azure AI Search Indexing and Semantic Layer Configuration</li>
-            <li>Integration with OpenAI GPT and System Parameter Optimization</li>
-            <li>Gradio Web App Design and Implementation</li>
+            <li>Implementation of real-time speech-to-text conversion and translation features</li>
+            <li>Gradio Web App Design, Demonstration Video Production, and Editing</li>
         </ul>
     </div>
 </section>
@@ -69,7 +69,7 @@
     <div class="container-target">
         <div class="detail-item">
             <h3>Target Users</h3>
-            <p>Employees looking for easy access to legal information, HR professionals managing workplace compliance.</p>
+            <p>Employees looking for easy access to legal information, Foreign workers</p>
 
         </div>
         <div class="detail-item">
@@ -78,7 +78,7 @@
         </div>
         <div class="detail-item">
             <h3>Timeline</h3>
-            <p>1.5 weeks</p>
+            <p>2 weeks</p>
         </div>
     </div>
 </section>
@@ -96,14 +96,19 @@
         <div class="problem">
             <h3>Problem 2</h3>
             <p>Generative AI models occasionally produce hallucinated information, which can be problematic in a case-based service.</p>
-            <p><span class="solution">💡 Solution:</span> To mitigate hallucinations, the model’s response content was strictly limited to the indexed dataset by maximizing data resource strictness and setting a low temperature to reduce creative responses. Additionally, cited data references were included in answers, enabling users to directly verify the source of information.
+            <p><span class="solution">💡 Solution:</span> The system enhances transparency and reliability by displaying 
+                references used for AI-generated responses on the right-hand side. Users can also explore these reference 
+                keywords further on other platforms, improving both trust and usability. To mitigate hallucinations, 
+                the model’s response content was strictly limited to the indexed dataset by maximizing data resource 
+                strictness and setting a low temperature to reduce creative responses.
         </div>
 
         <div class="problem">
             <h3>Problem 3</h3>
-            <p>Building trust and ensuring usability of legal information remains a critical challenge.</p>
-            <p><span class="solution">💡 Solution:</span> The system enhances transparency and reliability by displaying references used for AI-generated responses on the right-hand side. Users can also explore these reference keywords further on other platforms, improving both trust and usability.</p>
+            <p>As a foreigner working in Korea, it is often difficult to search for labor law-related information due to limited proficiency in Korean.</p>
+            <p><span class="solution">💡 Solution:</span> The system integrates real-time speech-to-text and translation features, allowing users to ask questions in English. These are translated into Korean to ensure accurate database queries, enhancing accessibility for diverse users while maintaining response accuracy.</p>
         </div>
+        
         
         
     </div>
