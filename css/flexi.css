@@ -11,11 +11,10 @@ body {
   color: #333;
   line-height: 1.6;
 }
-p {
+p  {
+  line-height: 1.6;
   margin-bottom: 40px;
 }
-
-/* Navigation Bar */
 .topnav {
   font-family: Manrope;
   font-size: 15px;
@@ -29,16 +28,16 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 30px;
+  position: fixed; /* Make it fixed to enable scroll effects */
+  top: 30px; /* Initial position (aligns with margin) */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Center horizontally */
   z-index: 1000;
-  transition: top 0.3s ease;
+  transition: top 0.3s ease; /* Smooth transition */
 }
 
 .topnav.hidden {
-  top: -100px;
+  top: -100px; /* Adjust this value to completely hide the navigation bar */
 }
 
 .topnav a {
@@ -53,6 +52,7 @@ p {
 .topnav a:hover {
   transform: rotate(5deg);
   font-weight: bold;
+  color: #1f1c1c;
 }
 
 .hamburger {
@@ -62,6 +62,66 @@ p {
   color: #1f1c1c;
 }
 
+.image-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  margin: 50px;
+  
+}
+.image-container {
+  position: relative;
+  width: 350px; 
+  height: 350px;
+  margin:auto;
+}
+.gradient-circle {
+  background-color: rgb(107, 102, 249); 
+  filter: blur(88px);
+  border-radius: 50%; 
+  transform: none;
+  transform-origin: 50% 50%;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 0; 
+}
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; 
+
+}
+
+.container {
+  max-width: 960px;
+  width : 70%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 20px;
+}
+.container h2 {
+font-size: 28px;
+margin-bottom: 30px;
+}
+.container2 {
+max-width: 960px;
+width : 90%;
+margin: 0 auto;
+margin-bottom: 50px;
+margin-top: 50px;
+padding: 20px;
+}
+.container2 h2 {
+font-size: 36px;
+}
 /* Header */
 header {
   padding: 170px 0 20px 0;
@@ -69,7 +129,7 @@ header {
 }
 
 .project-tag {
-  color: rgb(154, 86, 221);
+  color: rgb(249, 114, 114); 
   font-weight: bold;
   font-size: 20px;
 }
@@ -80,53 +140,84 @@ h1 {
   margin: 10px 0;
 }
 
-/* Image Link Section */
-.image-link {
-  display: flex;
-  align-items: center;
-  margin: 50px;
+.live-link {
+  color: #6a1b9a;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.image-container {
-  position: relative;
-  width: 350px;
-  height: 350px;
-  margin: auto;
+.live-link:hover {
+  text-decoration: underline;
 }
 
-.gradient-circle {
-  background-color: rgb(107, 102, 249);
-  filter: blur(88px);
-  border-radius: 50%;
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+/* first modal*/
+.modal1 {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.8);
+justify-content: center;
+align-items: center;
+z-index: 1000;
 }
 
-.cover {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
+.modal1-content {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 90%;
+height: 90%;
 }
 
-/* Container */
-.container {
-  max-width: 960px;
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  padding: 20px;
+.close-btn1 {
+position: absolute;
+top: 10px;
+right: 20px;
+font-size: 2rem;
+color: white;
+cursor: pointer;
 }
-.container h2 {
-  font-size: 28px;
-  margin-bottom: 30px;
+
+.prev-btn,
+.next-btn {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: none;
+border: none;
+color: white;
+font-size: 2rem;
+font-weight: lighter;
+cursor: pointer;
+padding: 0;
+line-height: 1;
+font-weight: bold;
+}
+.prev-btn {
+left: 20px;
+}
+
+.next-btn {
+right: 20px;
+}
+.prev-btn:hover,
+.next-btn:hover {
+color: #ccc; /* Lighter shade on hover */
+}
+
+/* Product Image Section */
+.product-image {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 /* Overview Section */
@@ -135,7 +226,7 @@ h1 {
 }
 
 .overview h2 {
-  font-size: 28px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
@@ -148,13 +239,24 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* List Styling */
+ul {
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 1px;
+}
+
 /* Details Section */
 .details {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  margin: 0 auto;
-  max-width: 1260px;
+display: flex;
+justify-content: center;
+padding: 20px 0;
+margin: 0 auto;
+max-width: 1260px;
 }
 
 .detail-item {
@@ -166,7 +268,9 @@ h1 {
   display: flex;
   width: 70%;
   justify-content: center;
+  align-content: center;
 }
+
 
 .detail-item h3,
 .detail-item p {
@@ -209,14 +313,72 @@ h1 {
 
 .solution {
   font-weight: bold;
-  color: #6a1b9a;
+  color: #6a1b9a; /* Accent color for hypothesis */
 }
 
 .problem p {
   margin: 5px 0;
 }
 
-/* Modal */
+.problem:last-child {
+  margin-bottom: 0;
+}
+
+.image-container2 {
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
+  gap: 20px; /* 요소 간격 */
+}
+.image-container3 {
+  display: flex; /* Flexbox 사용 */
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center; /* 수직 정렬 */
+  gap: 40px; /* 요소 간격 */
+  width: 40%;
+
+}
+
+.image-container2 img {
+  max-width: 50%; /* 이미지 크기 조정 */
+  height: auto; /* 비율 유지 */
+}
+
+.arrow {
+  font-size: 24px; /* 화살표 크기 */
+  color: #333; /* 화살표 색상 */
+}
+.responsive-image {
+  width: 40%;
+  max-width: 100%;
+  height: auto;
+  display: block; /* 필요 시 이미지가 블록 요소로 작동 */
+}
+
+/*모달 열기*/
+
+.feature-item {
+  display: inline-block;
+  margin: 20px;
+}
+.feature-item img {
+  width: 80%;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+.feature-item img:hover {
+  transform: scale(1.05);
+}
+
+.feature-item p {
+  font-size: 0.8rem; 
+  color: gray; 
+  margin-top: 10px;
+  width: 80%;
+  margin-left: 25px;
+}
+/* Modal styles */
 .modal {
   display: none;
   position: fixed;
@@ -229,7 +391,6 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-
 .modal-content {
   padding: 100px;
   border-radius: 10px;
@@ -238,14 +399,15 @@ h1 {
 }
 
 .modal-content img {
-  border-radius: 10px;
+border-radius: 10px;
 }
+
 
 .modal-content .text {
-  text-align: justify;
-  color: #cfcfcf;
+  flex: 1;
+  text-align:justify;
+  color:#cfcfcf;
 }
-
 .close-btn {
   position: absolute;
   top: 10%;
@@ -253,31 +415,53 @@ h1 {
   font-size: 2rem;
   color: #fff;
   cursor: pointer;
+  z-index: 1001;
 }
 
-/* Responsive Design */
+.image-container4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.image-container4 img {
+  width: 100%;
+  max-width: 30%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
 @media screen and (max-width: 767px) {
   .topnav {
-      flex-direction: column;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      margin: 5px auto;
+    flex-direction: column; /* 모바일에서는 세로 정렬 */
+    padding: 10px;
+    width: 100%;
+    border:none;
+    margin:5px auto;
   }
   
+
   .hamburger {
-      display: block;
+    display: block; /* 햄버거 메뉴 활성화 */
+    align-self: flex-end; /* 오른쪽 상단에 위치 */
   }
 
   .topnav a {
-      display: none;
-      width: 100%;
-      text-align: left;
+    display: none; /* 기본적으로 숨김 */
+    width: 100%; /* 링크를 가로 전체 차지 */
+    text-align: left;
   }
 
   .topnav.show a {
-      display: block;
-      padding: 10px 20px;
-      border-bottom: 1px solid #e0e0e0;
+    display: block; /* 햄버거 메뉴 클릭 시 보임 */
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
   }
-}
+
+  .topnav a:hover {
+    transform: none; /* 모바일에서는 회전 효과 비활성화 */
+  }
