@@ -1,178 +1,283 @@
+/* Global Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General Styling */
 body {
-    margin: 0;
-    font-family: "Noto Sans KR", sans-serif;
+  font-family: Manrope;
+  color: #333;
+  line-height: 1.6;
+}
+p {
+  margin-bottom: 40px;
+}
+
+/* Navigation Bar */
+.topnav {
+  font-family: Manrope;
+  font-size: 15px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 30px auto;
+  padding: 1px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.topnav.hidden {
+  top: -100px;
+}
+
+.topnav a {
+  float: left;
+  color: #1f1c1c;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.topnav a:hover {
+  transform: rotate(5deg);
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #1f1c1c;
+}
+
+/* Header */
+header {
+  padding: 170px 0 20px 0;
+  text-align: left;
+}
+
+.project-tag {
+  color: rgb(154, 86, 221);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin: 10px 0;
+}
+
+/* Image Link Section */
+.image-link {
+  display: flex;
+  align-items: center;
+  margin: 50px;
+}
+
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: auto;
+}
+
+.gradient-circle {
+  background-color: rgb(107, 102, 249);
+  filter: blur(88px);
+  border-radius: 50%;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Container */
+.container {
+  max-width: 960px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 20px;
+}
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Overview Section */
+.overview {
+  padding: 20px 0;
+}
+
+.overview h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.overview p {
+  margin-bottom: 15px;
+}
+
+/* Role Section */
+.role p {
+  margin-bottom: 10px;
+}
+
+/* Details Section */
+.details {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  margin: 0 auto;
+  max-width: 1260px;
+}
+
+.detail-item {
+  flex: 1;
+  text-align: center;
+}
+
+.container-target {
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+
+.detail-item h3,
+.detail-item p {
+  margin: 0;
+}
+
+/* Business Opportunity Section */
+.business-opportunity ul {
+  margin-top: 10px;
+}
+
+.business-opportunity ul li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+/* Problems Section */
+.problems-section {
+  width: 70%;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 20px 30px;
+  margin: 20px auto;
+}
+
+.problems-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.problem {
+  margin-bottom: 20px;
+}
+
+.problem h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.solution {
+  font-weight: bold;
+  color: #6a1b9a;
+}
+
+.problem p {
+  margin: 5px 0;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.967);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  padding: 100px;
+  border-radius: 10px;
+  max-width: 80%;
+  width: 960px;
+}
+
+.modal-content img {
+  border-radius: 10px;
+}
+
+.modal-content .text {
+  text-align: justify;
+  color: #cfcfcf;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 767px) {
+  .topnav {
+      flex-direction: column;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      margin: 5px auto;
   }
   
-  .navbar {
-    width: 100%;
-    height: 60px;
-    background-color: #353535;
-    padding-left: 30px;
-    padding-right: 30px;
-    line-height: 60px;
+  .hamburger {
+      display: block;
   }
-  
-  .navbar .logo {
-    font-size: 20px;
-    color: white;
-    cursor : pointer;
+
+  .topnav a {
+      display: none;
+      width: 100%;
+      text-align: left;
   }
-  
-  .banner {
-    width: 100%;
-    height: 350px;
-    background-image: url('./assets/BookShelf/shelf_door.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+
+  .topnav.show a {
+      display: block;
+      padding: 10px 20px;
+      border-bottom: 1px solid #e0e0e0;
   }
-  
-  .info {
-    width: 100%;
-    height: 320px;
-    background-color: white;
-  
-  }
-  
-  .info .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  
-  .info .info-container {
-    display: inline-block;
-    padding-left: 30px;
-    padding-right: 30px;
-    vertical-align: middle;
-  }
-  
-  .info .label {
-    font-size: 16px;
-    color: #4a4a4a;
-  }
-  
-  
-  .info h2 {
-    font-size: 30px;
-    color: #1b1b1b;
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-  
-  .ino .helper {
-    display: inline-block;
-    height: 100%;
-  }
-  
-  
-  .info p {
-    font-size: 16px;
-    color: #7a7a7a;
-    margin: 0;
-  }
-  
-  .img-div1 {
-    width: 100%;
-    height: 385px;
-    background-image: url('./assets/BookShelf/shelf6.jpg');
-    background-size: cover;
-    background-position: center top;
-  }
-  
-  .img-div2 {
-    width: 100%;
-    height: 200px;
-    background-image: url('./assets/BookShelf/shelf4.jpg');
-    background-size: cover;
-    background-position: center top;
-    text-align: center;
-  }
-  
-  .img-div2 a {
-    color: white;
-    font-weight: bold;
-    border: 4px solid white;
-    padding: 9px 40px;
-    text-decoration: none;
-  }
-  
-  .img-div2 .helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-  
-  .img-div3 {
-    width: 100%;
-    height: 200px;
-    background-image: url('./assets/BookShelf/shelf2.jpg');
-    background-size: cover;
-    background-position: center top;
-  }
-  
-  
-  
-  @media (min-width: 768px) {
-    .col {
-      float: left;
-    }
-  
-    .banner {
-      height: 562px;
-    }
-  
-    .info {
-      height: 282px;
-    }
-  
-    .info .info-container {
-      padding-left: 65px;
-      padding-right: 65px;
-    }
-  
-    .img-div1 {
-      width: 50%;
-      height: 360px;
-    }
-  
-    .img-div2 {
-      width: 50%;
-      height: 180px;
-    }
-  
-    .img-div3 {
-      width: 50%;
-      height: 180px;
-    }
-  }
-  
-  /* desktop */
-  
-  @media (min-width: 992px) {
-    .banner {
-      width: 50%;
-      height: 700px;
-    }
-  
-    .info {
-      width: 50%;
-      height: 350px;
-    }
-  
-    .img-div1 {
-      width: 25%;
-      height: 350px;
-    }
-  
-    .img-div2 {
-      width: 25%;
-      height: 175px;
-    }
-  
-    .img-div3 {
-      width: 25%;
-      height: 175px;
-    }
-  }
-  
+}
