@@ -434,6 +434,46 @@ border-radius: 10px;
   border-radius: 5px;
 }
 
+.user-needs-analysis .interview-container {
+  display: flex;
+  justify-content: space-between; /* 좌우로 배치 */
+  gap: 20px; /* 각 항목 사이 여백 */
+}
+
+.user-needs-analysis .interview {
+  flex: 1; /* 각 칸의 크기를 동일하게 설정 */
+  padding: 10px; /* 내부 여백 추가 */
+  margin-bottom: 20px;
+  display: flex; /* 플렉스 박스 활성화 */
+  align-items: center; /* 가로 중앙 정렬 */
+  gap: 25px;
+}
+
+.interview img {
+  display: block; /* 이미지를 블록 요소로 변경 */
+  margin: 0 auto; /* 가로 중앙 정렬 */
+  width: 20%; /* 크기 조정 */
+}
+
+.interview ul {
+  list-style-type: none; /* 글머리 기호 제거 */
+}
+
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 0px;
+}
+.image-row img {
+  width: 100%;
+  max-width: 49%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+}
 
 @media screen and (max-width: 767px) {
   .topnav {
