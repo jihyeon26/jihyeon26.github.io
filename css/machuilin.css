@@ -294,7 +294,15 @@ ul li {
     height: auto;
     display: block; /* 필요 시 이미지가 블록 요소로 작동 */
 }
-
+#footer.section {
+    color: #929292;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
 
 @media screen and (max-width: 767px) {
     .topnav {

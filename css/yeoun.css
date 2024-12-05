@@ -129,7 +129,7 @@ header {
 }
 
 .project-tag {
-    color: rgb(249, 114, 114); /* Purple color for project tag */
+    color: rgb(249, 114, 114); 
     font-weight: bold;
     font-size: 20px;
 }
@@ -433,7 +433,15 @@ ul li {
     object-fit: cover;
     border-radius: 5px;
   }
-  
+  #footer.section {
+    color: #929292;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
 
 @media screen and (max-width: 767px) {
     .topnav {
