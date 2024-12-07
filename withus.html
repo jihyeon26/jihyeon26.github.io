@@ -1,35 +1,237 @@
-<!doctype html>
-<html>
-<head>
-  <title>Jihyeon-Be with us</title>
-  <meta charset="utf-8">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="./assets/jh_logo.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/withus.css">
-</head>
-<body>
-  <div class="navbar col">
-    <span OnClick="location.href='index.html'" class="logo">Home</span>
-  </div>
-  <div class="banner col"></div>
-  <div class="info col">
-    <div class="helper"></div><div class="info-container">
-      <div class="label">Let Kids Play Freely!</div>
-      <h2>Be with Us</h2>
-      <p>This project tackles the pressing issue of excessive floor noise in Korea, 
-        creating green spaces throughout apartment complexes to provide children with opportunities for free play, 
-        interaction, and social development, amidst the societal challenge of restricted play in such structures.
-      </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be with Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/withus.css">
+  </head>
+  <body>
+    <div class="topnav">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <a href="index.html">Home</a>
+      <a href="index.html#works">Works</a>
+      <a href="https://github.com/jihyeon26">Github</a>
+      <a href="">About</a>
+      <a href="artworks.html">Artworks</a>
     </div>
-  </div>
-  <div class="img-div1 col"></div>
-  <div class="img-div2 col">
-    <!-- <div class="helper"></div><a href="#">VIEW MORE</a> -->
-  </div>
-  <div class="img-div3 col"></div>
+
+    <header>
+      <div class="container">
+        <p class="project-tag">Be with Us</p>
+        <h1>Let kids run free, let communities thrive.</h1>
+      </div>
+    </header>
+
+    <div class="image-link">
+      <div class="image-container">
+        <img class="cover" src="./assets/BeWithUs/green_space.png" alt="Be with Us Project">
+      </div>
+    </div>
+
+    <section class="overview">
+      <div class="container">
+        <h2>Overview</h2>
+        <p>
+          This project addresses the pressing issue of excessive floor noise in Korea by creating green spaces throughout apartment complexes. These spaces aim to provide children with opportunities for free play, interaction, and social development amidst societal challenges of restricted play areas in high-density living structures.
+        </p>
+        <p>
+          The design fosters community engagement while ensuring a harmonious living environment for residents, balancing recreational needs with noise mitigation strategies.
+        </p>
+        <p>
+          <strong>Impact:</strong> By reimagining shared spaces, the project enhances quality of life and community bonding within urban apartment complexes.
+        </p>
+        <img src="./assets/yeoun/yeoun_index.jpg" style="width: 80%; border-radius: 20px; margin: 0 auto; margin-top: 40px; display: block;">
+        <div style="display: flex; justify-content: center; gap: 1.4%; margin-top: 20px;">
+          <img src="./assets/yeoun/cloth.png" alt="Image 1" onclick="openModal(0)" style="width: 19%; cursor: pointer; border-radius: 10px; object-fit: cover;">
+          <img src="./assets/yeoun/stat.png" alt="Image 2" onclick="openModal(1)" style="width: 19%; cursor: pointer; border-radius: 10px; object-fit: cover;">
+          <img src="./assets/yeoun/yeoun3.jpg" alt="Image 3" onclick="openModal(2)" style="width: 19%; cursor: pointer; border-radius: 10px; object-fit: cover;">
+          <img src="./assets/yeoun/yeoun_use.png" alt="Image 4" onclick="openModal(3)" style="width: 19%; cursor: pointer; border-radius: 10px; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+  <div id="modal1" class="modal1" style="display: none;">
+    <div class="modal-content">
+      <span class="close-btn1" onclick="closeModal()">&times;</span>
+      <img id="modal-image" src="" alt="Modal Image" style="max-width: 90%; max-height: 80%; border-radius: 10px;">
+      <button class="prev-btn" onclick="prevImage()">&#x276E</button>
+      <button class="next-btn" onclick="nextImage()">&#x276F</button>
+    </div>
+</div>
+
+      </div>
+    </section>
+
+    <section class="role">
+      <div class="container">
+        <h2>My Role</h2>
+        <p>
+          This was an individual project where I managed every aspect of the design process, from concept development to creating final deliverables. My responsibilities included:
+        </p>
+        <ul>
+          <li>Concept Development - Establishing the project's goals and vision</li>
+          <li>Zoning - Planning and organizing the layout of shared spaces</li>
+          <li>Drawing Production - Creating detailed architectural plans and drawings</li>
+          <li>3D Renderings - Producing realistic 3D visualizations of the design</li>
+          <li>Model Making - Constructing a physical model to showcase the project</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <section class="details">
+      <div class="container-target">
+        <div class="detail-item">
+          <h3>Target users</h3>
+          <p>Residents of apartment complexes, especially families with children</p>
+        </div>
+        <div class="detail-item">
+          <h3>Timeline</h3>
+          <p>6 months</p>
+        </div>
+        <div class="detail-item">
+          <h3>Design Approach</h3>
+          <p>Green spaces with noise-reducing features and community-centric layouts</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-opportunity">
+      <div class="container">
+        <h2>What is the social impact?</h2>
+        <ul>
+          <li>Reduces noise complaints and improves relationships among neighbors.</li>
+          <li>Provides safe play areas for children, enhancing their physical and social development.</li>
+          <li>Encourages community interaction and a sense of belonging within the complex.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="problems-section">
+      <div class="container2">
+        <h2>User Needs Analysis</h2>
+
+        <div class="problem">
+          <h3>Need 1: Noise Reduction</h3>
+          <p>
+            Residents often struggle with excessive floor noise, leading to frequent conflicts among neighbors.
+          </p>
+          <p>
+            <span class="solution">💡 Solution:</span> The design incorporates soft landscaping and sound-absorbing materials to minimize noise.
+          </p>
+        </div>
+
+        <div class="problem">
+          <h3>Need 2: Safe Play Areas</h3>
+          <p>
+            Children lack safe spaces for outdoor activities in apartment complexes, impacting their development.
+          </p>
+          <p>
+            <span class="solution">💡 Solution:</span> Green spaces with age-appropriate play zones and safety features encourage free play.
+          </p>
+        </div>
+
+        <div class="problem">
+          <h3>Need 3: Community Bonding</h3>
+          <p>
+            Residents expressed a desire for shared spaces that promote interaction and build stronger relationships.
+          </p>
+          <p>
+            <span class="solution">💡 Solution:</span> Shared areas like playgrounds, gardens, and seating zones encourage communication and collaboration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <h2>Product Features</h2>
+      <div style="display: flex; justify-content: space-around; gap: 20px; ">
+      
+        <div class="feature-item" style="text-align: center;">
+          <h3>Stand-Type</h3>
+          <img src="./assets/yeoun/stand.png" alt="Stand-Type Yeo-un" onclick="openStandModal()">
+          <p>
+            <strong>Materials:</strong> Device - Polyethylene (132x96x88 mm), Charger - MDF (175x25 mm)
+          </p>
+        </div>
+      
+        <div class="feature-item" style="text-align: center;">
+          <h3>Cushion-Type</h3>
+          <img src="./assets/yeoun/cushion.png" alt="Cushion-Type Yeo-un" onclick="openCushionModal()">
+          <p>
+            <strong>Materials:</strong> Device - Cotton (390x440 mm), Bean Bag - Cotton (1000x1600x800 mm)
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="stand-modal" class="modal">
+      <span class="close-btn" onclick="closeStandModal()">&times;</span>
+      <div class="modal-content">
+        <img src="./assets/yeoun/stand.png" alt="Stand-Type Yeo-un">
+        <div class="text">
+          <h3>Stand-Type Yeo-un</h3>
+          <p>
+            The stand-type Yeo-un is ideal for users who prioritize visual effects and prefer a sleek, casual experience. 
+            Users can switch between recording and playback modes using the icon slider at the top of the device. When a hand is waved over the device, it activates sound, light, and warmth playback (recorded mode). 
+            The device stops working when the hand is removed. Charging is wireless and starts by placing the device on the included charging pad.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal for Cushion-Type Yeo-un -->
+    <div id="cushion-modal" class="modal">
+      <span class="close-btn" onclick="closeCushionModal()">&times;</span>
+      <div class="modal-content">
+        <img src="./assets/yeoun/cushion.png" alt="Cushion-Type Yeo-un">
+        <div class="text">
+          <h3>Cushion-Type Yeo-un</h3>
+          <p>
+            The cushion-type Yeo-un is designed for users who prefer tactile comfort. A switch on the side of the cushion allows users to toggle between recording and playback modes. 
+            Simply holding the device activates sound, light, and warmth playback (recorded mode). If there is no contact for 5 minutes, the device automatically stops. 
+            The cushion is crafted to provide a cozy, embracing sensation for single-person households, making users feel at ease while using it.
+          </p>
+        </div>
+      </div>
+    </div>
+    
   
-</body>
+    
+    <section class="data-process">
+      <div class="container">
+        <h2>Design process</h2>
+        
+        <h3>User Research</h3>
+        <p>
+          We conducted surveys with 100 single-person households in their 20s experiencing loneliness, along with interviews involving five university students in their 20s, five parents, and related professors to gather insights.
+        </p>
+    
+        <h3>Prototyping</h3>
+        <p>
+          Using Rhino for 3D modeling, I created multiple prototypes with a 3D printer. The prototypes were iteratively improved based on user feedback to refine the product’s functionality and aesthetics.
+        </p>
+        <div class="image-container4">        
+          <img src="./assets/yeoun/proto1.jpg" alt="Prototype 1">
+          <img src="./assets/yeoun/proto2.jpg" alt="Prototype 2">
+          <img src="./assets/yeoun/proto3.jpg" alt="Prototype 3">
+        </div>
+      </div>
+    </section>
+    
+    <div id="footer" class="section">
+      <div class="container">
+        <p>          
+          Copyright 2024. Jihyeon Choung All rights reserved.
+        </p>
+      </div>
+  </div>
+    <script src="./javascript/withus.js"></script>
+  </body>
 </html>
