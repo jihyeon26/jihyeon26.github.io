@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    
+  }
+
+.topnav {
+    font-family: Manrope;
+    font-size: 15px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 30px auto;
+    padding: 1px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Make it fixed to enable scroll effects */
+    top: 30px; /* Initial position (aligns with margin) */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000;
+    transition: top 0.3s ease; /* Smooth transition */
+}
+
+.topnav.hidden {
+    top: -100px; /* Adjust this value to completely hide the navigation bar */
+}
+
+.topnav a {
+    float: left;
+    color: #1f1c1c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.topnav a:hover {
+    transform: rotate(5deg);
+    font-weight: bold;
+    color: #1f1c1c;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1f1c1c;
+}
+.header {
+    color: #ffffff;
+    margin: 100px;
+  }
+.header-title {
+    font-family: Manrope;
+    font-size: 20px;
+    line-height: 30px;
+    padding: 12px 40px;
+  }
+  
+  .header-title-accent {
+    font-weight: 700;
+  }
+  
+  .header-tagline-small {
+    color: #8287a4;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 29px;
+    margin: 12px 0;
+  }
+.header-tagline {
+    font-family: Manrope;
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 74px;
+    margin: 0;
+    background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
+    background-size: 70%;
+    background-position: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+    
+  .header-description {
+    color: #414141;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 150%;
+    margin-top: 80px;
+    font-family: Manrope;
+    letter-spacing: 0.5px; /* 자간 설정*/
+    line-height: 1.5;
+  }
+    
+  .header-content {
+    margin: 0 auto;
+    padding: 80px 0 0px;
+    max-width: 960px;
+    width: 70%;
+    text-align: center;
+  }
+
+.container {
+    max-width: 960px;
+    width : 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+
+}
+
+#career {
+    text-align: center;
+  }
+.section {
+    text-align: center;
+    margin: 20px;
+}
+.artworks img {
+    max-width: 100%; /* 이미지가 부모 컨테이너를 넘지 않도록 */
+    height: auto;    /* 비율 유지 */
+  }
+
+#footer.section {
+    color: #929292;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
