@@ -82,7 +82,7 @@
     line-height: 74px;
     margin: 0;
     background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
-    background-size: 70%;
+    background-size: 100%;
     background-position: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
