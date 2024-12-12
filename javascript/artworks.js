@@ -2,6 +2,7 @@ const modal = document.getElementById('modal');
 const modalImg = document.getElementById('modalImage');
 const caption = document.getElementById('caption');
 const artworks = document.querySelectorAll('.artwork');
+const artworks_h = document.querySelectorAll('.artwork_h');
 const closeModal = document.querySelector('.close');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
@@ -10,6 +11,14 @@ let currentIndex = 0;
 
 // Show modal with the selected image
 artworks.forEach((artwork, index) => {
+    artwork.addEventListener('click', function () {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        caption.textContent = this.alt;
+        currentIndex = index;
+    });
+});
+artworks_h.forEach((artwork, index) => {
     artwork.addEventListener('click', function () {
         modal.style.display = 'block';
         modalImg.src = this.src;
@@ -36,11 +45,13 @@ prevBtn.addEventListener('click', () => {
     updateModalImage();
 });
 
+
 // Navigate to the next image
 nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % artworks.length; // Loop to the first image
     updateModalImage();
 });
+
 
 // Update modal content
 function updateModalImage() {
