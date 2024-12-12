@@ -48,13 +48,13 @@
   <section class="role">
       <div class="container">
           <h2>My role</h2>
-          <p>I led the development of the recommendation algorithm, including data analysis, clustering implementation, and design app ui, collaborating closely with other team members:</p>
+          <p>I led the development of the recommendation algorithm, including data analysis, clustering implementation, and app UI design, while collaborating closely with other team members on data collection and other tasks:</p>
           <ul>
             <li>Me - Lead Data Scientist, App UI design</li>
             <li>Hye-won Hong - Product Manager</li>
-            <li>Jin-hyung Lee - Architecture Design</li>
-            <li>Jong-eun Won - Gradio Web App Implementation</li>
-            <li>Su-min Kim - Marketing, Presentation Materials</li>
+            <li>Jin-hyung Lee - Architecture Design, Database</li>
+            <li>Jong-eun Won - Gradio Web App, Revenue models</li>
+            <li>Su-min Kim - Marketing, Gradio Web App</li>
             <li>Soon-min Kwon - Demo Video Production, Ethics Review</li>
 
           </ul>
@@ -69,11 +69,11 @@
           </div>
           <div class="detail-item">
               <h3>Interface</h3>
-              <p>Mobile App, Web App</p>
+              <p>Web App(+Mobile App UI)</p>
           </div>
           <div class="detail-item">
               <h3>Timeline</h3>
-              <p>1.5 weeks</p>
+              <p>2 weeks</p>
           </div>
       </div>
   </section>
@@ -108,7 +108,7 @@
         <div class="problem">
             <h3>Problem 3</h3>
             <p>Ensuring the reliability of data and selecting reasonable columns for analysis were significant challenges.</p>
-            <p><span class="solution">💡 Solution:</span> To improve data reliability, we aggregated information from two globally renowned beer community platforms. We utilized review data from users whose nationality was disclosed and who had written at least 10 reviews. This approach ensured high-quality and trustworthy data for the system.</p>
+            <p><span class="solution">💡 Solution:</span> To improve data reliability, we aggregated information from two globally renowned beer community platforms. We utilized review data from users whose nationality was disclosed and who had written at least 10 reviews.</p>
         </div>        
       </div>
   </section>
@@ -146,7 +146,7 @@
             <img src="./assets/machuilin/custom2.png" alt="Image 2">
           </div>
         <p>
-            Using Azure Custom Vision, I developed a system to train beer images, enabling users to easily recognize and search for beers, even if they are unfamiliar with their long or complex names. This approach simplifies the process of identifying beers and accessing relevant information, making it more user-friendly for a broader audience.
+            Using Azure Custom Vision, we developed a system to train beer images, enabling users to easily recognize and search for beers, even if they are unfamiliar with their long or complex names. This approach simplifies the process of identifying beers and accessing relevant information, making it more user-friendly for a broader audience.
             (solves for problem 1)
         </p>
     </div>
@@ -158,12 +158,16 @@
         <h2>Clustering Process and Web app deployment</h2><br>
         <h3>Clustering Process</h3>
         <p>
-            To provide accurate beer recommendations, we utilized K-means clustering. The data was preprocessed by selecting important features, such as bitterness, sweetness, and ABV (Alcohol By Volume). PCA (Principal Component Analysis) was applied to reduce dimensions, ensuring faster and more efficient clustering. Weighting was added to attributes identified as significant from user reviews to improve cluster accuracy.
+            To provide accurate beer recommendations, I utilized K-means clustering. The data was preprocessed by selecting important features, such as bitterness, sweetness, and ABV (Alcohol By Volume). PCA (Principal Component Analysis) was applied to reduce dimensions, ensuring faster and more efficient clustering. Weighting was added to attributes identified as significant from user reviews to improve cluster accuracy.
         </p>
+        <div class="image-container2" style="margin-bottom: 50px;">     
+            <img src="./assets/machuilin/code.png" class="responsive-image">
+            <img src="./assets/machuilin/output.png" class="responsive-image">
+        </div>  
 
         <h3>Web app deployment</h3>
         <p>
-            Using the clustering results, a web application was developed to recommend beers. When a user selects a beer, the app calculates the distances between the selected beer and others within the same cluster. The three closest beers are then recommended based on their similarity in flavor profile and characteristics.
+            A web application was developed to enhance the beer recommendation experience. When a user takes a photo of a beer, the app uses Custom Vision to identify the beer and display detailed information about it. Based on the identified beer, the app calculates the distances to other beers within the same cluster and recommends three similar beers.
         </p>        
     </div>
 </section>
