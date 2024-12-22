@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/ims.css">
+    
+</head>
+<body>
+  <div class="topnav">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <a href="index.html">Home</a>
+    <a href="index.html#works">Works</a>
+    <a href="https://github.com/jihyeon26">Github</a>
+    <a href="about.html">About</a>
+    <a href="artworks.html">Artworks</a>
+  </div>
+  <header>
+      <div class="container">
+          <p class="project-tag">IMS</p>
+          <h1>Weaving Your Travel Moments into Timeless Stories</h1>
+      </div>
+  </header>
+
+  <div class="image-link">
+    <div class="image-container">
+      <div class="gradient-circle" style="background-color: rgb(231, 191, 139);"></div>
+      <img class="cover" src="./assets/ims/ims_door.png" style="width: 80%; height: auto;display: block; margin:0 auto;" alt="IMS Project">                  
+    </div>
+  </div>
+
+  <section class="overview">
+      <div class="container">
+        <h2>Overview</h2>
+        <p>
+          IMS (Image to Story) is an AI-powered platform designed to turn your travel photos into compelling narratives. By analyzing metadata like location, time, and additional user-provided inputs, IMS generates personalized and emotional travel stories, providing a unique way to preserve and share your memories.
+        </p>
+        
+        <img src="./assets/ims/story.png" style="width: 70%; border: 1px solid #d4d4d4; border-radius: 15px; margin:0 auto; margin-top: 40px;display: block;">
+    </div>
+  </section>
+
+  <section class="role">
+      <div class="container">
+          <h2>My role</h2>
+          <p>I led the development of the core OpenAI integration, designed the overall program structure, and created prototypes to refine and concretize the service. I also defined user input parameters and conducted extensive testing and optimization to improve the system's generation performance.</p>
+          <ul>
+            <li><strong>Me: </strong>Machine Learning Lead, UI/UX Designer</li>
+            <li><strong>Geonjin Jung:</strong> Team Leader</li>
+            <li><strong>Daegeon Lim:</strong> Project Manager</li>
+            <li><strong>Jaei Lee:</strong> Project Management Office</li>
+            <li><strong>Hoyoung Kim:</strong> Frontend Lead.</li>
+            <li><strong>Euijin Ahn:</strong> Technical/Backend Lead.</li>
+            <li><strong>Hyunyoung Lee:</strong> Data Engineer.</li>
+            <li><strong>Sumin Kim:</strong> Machine Learning Engineer.</li>
+            <li><strong>Hyundong Lee:</strong> Service Planner/QA.</li>
+          </ul>
+      </div>
+  </section>
+
+  <section class="details">
+      <div class="container-target">
+          <div class="detail-item">
+              <h3>Target users</h3>                              
+                  <p>Travelers looking for an effortless way to document and share their journeys.</p>              
+          </div>
+          <div class="detail-item">
+              <h3>Interface</h3>
+              <p>Website</p>
+          </div>
+          <div class="detail-item">
+              <h3>Timeline</h3>
+              <p>2 weeks</p>
+          </div>
+      </div>
+  </section>
+
+  <section class="business-opportunity">
+    <div class="container">
+      <h2>Key Features</h2>
+      <ul>
+        <li><strong>Automatic Story Generation:</strong> Upload photos, and our AI crafts a travel narrative.</li>
+        <li><strong>Emotionally Rich Narratives:</strong> Stories capture the essence of your experiences.</li>
+        <li><strong>Easy Sharing:</strong> Save your stories in blog format and share them with friends and family.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="problems-section">
+      <div class="container2">
+        <h2>Problems Solving</h2> 
+
+        <div class="problem">
+          <h3>Problem 1</h3>
+          <p>When users upload only images, the system sometimes generates stories with incorrect or irrelevant locations, creating a disconnect between the user’s actual experience and the narrative.</p>
+          <p><span class="solution">💡 Solution:</span> To ensure accuracy, we extract EXIF metadata from photos to retrieve precise location data. Additionally, we utilize image recognition to identify landmarks, allowing the system to construct a story grounded in the user's real journey.</p>
+        </div>
+
+        <div class="problem">
+          <h3>Problem 2</h3>
+          <p>Without additional context, the system occasionally describes individuals in photos using generic terms, such as "a woman," leading to impersonal and awkward storytelling.</p>
+          <p><span class="solution">💡 Solution:</span> By enabling users to input details such as gender and information about their companions, we enrich the narrative with meaningful context, transforming descriptions into more personalized and relatable stories.</p>
+        </div>
+
+        <div class="problem">
+          <h3>Problem 3</h3>
+          <p>Many users find it burdensome to sort through their travel photos and write detailed accounts of their experiences, leading to missed opportunities to preserve their memories.</p>
+          <p><span class="solution">💡 Solution:</span> Our platform minimizes user effort by automating the story creation process. With minimal input, the system crafts a cohesive and emotional travel narrative, allowing users to focus on reliving their memories rather than organizing them.</p>
+        </div>          
+      </div>
+  </section>
+
+  
+
+<div id="footer" class="section">
+    <div class="container">
+      <p>          
+        Copyright 2024. Jihyeon Choung All rights reserved.
+      </p>
+    </div>
+</div>
+        
+<script src="./javascript/machuilin.js"></script>
+</body>
+
+</html>
