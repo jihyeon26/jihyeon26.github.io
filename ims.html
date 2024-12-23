@@ -116,10 +116,10 @@
 
   <section class="data-process">
     <div class="container">
-        <h2>Process</h2>
-        <img src="./assets/ims/structure.png" style="width: 80%;">
+        
         <h2>Prototype</h2>
         <img src="./assets/ims/prototype.png" style="width: 100%; margin: 40px 0px;">
+        <img src="./assets/ims/prototype_code.png" style="width: 100%; margin: 20px 0px 60px;">
         
 
 
@@ -127,8 +127,11 @@
         <img src="./assets/ims/model.png" style="width: 100%; margin: 40px 0px;">
 
         <h3>1. Extract location (Azure Map API, Azure Computer Vision, Google Cloud Vision)</h3>
-        <p>
-            The Azure Map API translates GPS coordinates into human-readable addresses, while Azure Computer Vision and Google Cloud Vision perform landmark recognition. This process enhances the contextual accuracy of travel narratives.
+        <p>Step 1 - Azure Maps: Extract GPS metadata from the image's EXIF data to identify landmarks, cities, and countries.
+        </p>
+        <p>Step 2 - Azure Computer Vision: Perform landmark detection. If successful, the process ends here. While highly accurate for detected landmarks, the scope of recognizable landmarks is limited. If detection fails, proceed to Step 3.
+        </p>
+        <p>Step 3 - Google Cloud Vision: Attempt landmark detection. This tool recognizes a wide range of landmarks but sometimes provides overly detailed or inaccurate results.
         </p>
         <h3>2. Generate Caption (Azure Computer Vision)</h3>
         <p>
