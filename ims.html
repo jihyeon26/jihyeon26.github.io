@@ -135,6 +135,8 @@
         </p>
         <p>Step 3 - Google Cloud Vision: Attempt landmark detection. This tool recognizes a wide range of landmarks but sometimes provides overly detailed or inaccurate results.
         </p>
+        <img src="./assets/ims/maps.png" style="width: 100%; margin-bottom:60px">
+
 
         <h3>2. Generate Caption (Azure Computer Vision)</h3>
         <p>Images are uploaded and analyzed using the Azure Computer Vision API via Azure Portal. The API generates dense captions along with confidence scores for each caption.
@@ -143,6 +145,8 @@
         <p>Initially, only captions with confidence scores above 0.5 were displayed. However, if all confidence scores fell below 0.5, no captions were outputted. This issue was resolved by displaying only the caption with the highest confidence score.
         During visualization, it was observed that the caption with the highest confidence score did not always accurately describe the image. To address this, multiple captions are now displayed to provide a comprehensive result.
         </p>
+        <img src="./assets/ims/caption.png" style="width: 100%; margin-bottom:60px">
+
         <h3>3. Generate Story (Azure OpenAI)</h3>
         <p>
             Captions and location data are processed by Azure OpenAI, which synthesizes the content into coherent travel stories. The integration ensures personalized and contextually relevant narratives.
