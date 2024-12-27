@@ -38,6 +38,7 @@
         <h2>Overview</h2>
         <p>
           IMS (Image to Story) is an AI-powered platform designed to turn your travel photos into compelling narratives. By analyzing metadata like location, time, and additional user-provided inputs, IMS generates personalized and emotional travel stories, providing a unique way to preserve and share your memories.
+          <br>This project was awarded 1st place among the 10 teams in the second project phase of Microsoft AI School.
         </p>
         <img src="./assets/ims/ims_site.png" style="width: 70%; border: 1px solid #d4d4d4; border-radius: 10px; margin:0 auto; margin-top: 40px;display: block;">
         <img src="./assets/ims/ims_site2.png" style="width: 70%; border: 1px solid #d4d4d4; border-radius: 10px; margin:0 auto; margin-top: 40px;display: block;">
@@ -84,7 +85,7 @@
       <h2>Key Features</h2>
       <ul>
         <li><strong>Automatic Story Generation:</strong> Upload photos, and our AI crafts a travel narrative.</li>
-        <li><strong>Emotionally Rich Narratives:</strong> Stories capture the essence of your experiences.</li>
+        <li><strong>Location-Aware Narratives:</strong> Stories leverage photo metadata and image recognition to identify locations and landmarks.
         <li><strong>Easy Sharing:</strong> Save your stories in blog format and share them with friends and family.</li>
       </ul>
     </div>
@@ -152,10 +153,12 @@
         <p>Images are uploaded and analyzed using the Azure Computer Vision API via Azure Portal. The API generates dense captions along with confidence scores for each caption.
         Images are resized to a maximum of 1290x1080 for efficient processing, and dense captions with confidence scores above 0.5 are filtered. The processing time is calculated, and data is organized.
         </p>
-        <p>Initially, only captions with confidence scores above 0.5 were displayed. However, if all confidence scores fell below 0.5, no captions were outputted. This issue was resolved by displaying only the caption with the highest confidence score.
-        During visualization, it was observed that the caption with the highest confidence score did not always accurately describe the image. To address this, multiple captions are now displayed to provide a comprehensive result.
+        <img src="./assets/ims/caption.png" style="width: 100%; margin-bottom:30px">
+        <p>
+          We explored various methods to detect landmarks in photos using computer vision. As a result, we discovered that extracting a combination of Description, Categories, and Tags enables the recognition of iconic landmarks like the Eiffel Tower, unlike when extracting only the Description.
         </p>
-        <img src="./assets/ims/caption.png" style="width: 100%; margin-bottom:60px">
+        
+        <img src="./assets/ims/vision.png" style="width: 50%; margin-bottom:60px">
 
         <h3>3. Generate Story (Azure OpenAI)</h3>
         <p>
@@ -181,6 +184,11 @@
 <section class="UI design">
   <div class="container">
       <h2>UI Design</h2><br>
+      <p>
+        The Service UI is designed with a focus on making it easy for users to use. 
+        During the development process, the pages and interaction flow were structured with consideration for the backend functionality. Some design elements were adjusted during the frontend implementation. 
+      </p>
+      <img src="./assets/ims/ims_ui.png" style="width: 100%; border-radius: 5px; margin:0 auto; margin-top: 40px;display: block;">
       <video controls style="width:60%; display: inline-block; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
         <source src="./assets/ims/ui_fin.mp4" type="video/mp4">
         Your browser does not support the video tag.
