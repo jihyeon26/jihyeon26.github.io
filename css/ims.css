@@ -331,7 +331,10 @@ ul li {
       border:none;
       margin:5px auto;
     }
-    
+    .topnav.show {
+        display: flex;
+        flex-direction: column;
+      }
   
     .hamburger {
       display: block; /* 햄버거 메뉴 활성화 */
@@ -353,3 +356,4 @@ ul li {
     .topnav a:hover {
       transform: none; /* 모바일에서는 회전 효과 비활성화 */
     }
+}
