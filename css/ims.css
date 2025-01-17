@@ -356,4 +356,26 @@ ul li {
     .topnav a:hover {
       transform: none; /* 모바일에서는 회전 효과 비활성화 */
     }
+    
+    h1 {
+        font-size: 25px;
+        font-weight: 800;
+        margin: 10px 0;
+    }
+    .header-content {
+        padding: 20px 0;
+      }
+
+    .gradient-circle {
+    width: 150px;
+    height: 150px;
+    }
+    .image-container {
+        width: 200px; 
+        height: 200px;
+
+    }
+    .image-link {
+        margin: 0px;
+    } 
 }
