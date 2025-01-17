@@ -472,3 +472,18 @@ ul li {
     .topnav a:hover {
       transform: none; /* 모바일에서는 회전 효과 비활성화 */
     }
+
+    h1 {
+      font-size: 25px;
+    }
+    
+    .gradient-circle {
+      width: 150px;
+      height: 150px;
+    }
+
+    .image-container {
+    width: 200px; 
+    height: 200px;    
+    }
+  }
