@@ -465,7 +465,9 @@ ul li {
         height: 200px;
     
     }
-    
+    h1 {
+        font-size: 25px;
+    }
       .gradient-circle {
         width: 150px;
         height: 150px;
