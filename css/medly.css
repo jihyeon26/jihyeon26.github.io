@@ -1,0 +1,367 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Styling */
+body {
+    font-family: Manrope;
+    color: #333;
+    line-height: 1.6;
+}
+p  {
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+.topnav {
+    font-family: Manrope;
+    font-size: 15px;
+    background-color: #ffffff;
+    overflow: hidden;
+    margin: 30px auto;
+    padding: 1px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed; /* Make it fixed to enable scroll effects */
+    top: 30px; /* Initial position (aligns with margin) */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000;
+    transition: top 0.3s ease; /* Smooth transition */
+}
+
+.topnav.hidden {
+    top: -100px; /* Adjust this value to completely hide the navigation bar */
+}
+
+.topnav a {
+    float: left;
+    color: #1f1c1c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.topnav a:hover {
+    transform: rotate(5deg);
+    font-weight: bold;
+    color: #1f1c1c;
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1f1c1c;
+}
+
+.image-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 50px;
+    
+  }
+  .image-container {
+    position: relative;
+    width: 350px; 
+    height: 350px;
+    margin:auto;
+}
+.gradient-circle {
+    background-color: rgb(220, 189, 158); 
+    filter: blur(88px);
+    border-radius: 50%; 
+    transform: none;
+    transform-origin: 50% 50%;
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 0; 
+  }
+  .cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; 
+
+}
+.github-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    color: #0366d6; /* GitHub blue */
+}
+
+.github-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+.container {
+    max-width: 960px;
+    width : 70%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+}
+.container2 {
+    max-width: 960px;
+    width : 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    padding: 20px;
+  }
+  .container2 h2 {
+    font-size: 36px;
+  }
+
+/* Header */
+header {
+    padding: 170px 0 20px 0;
+    text-align: left;
+}
+
+.project-tag {
+    color: rgb(170, 170, 254); /* Purple color for project tag */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.live-link {
+    color: #6a1b9a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.live-link:hover {
+    text-decoration: underline;
+}
+
+/* Product Image Section */
+.product-image {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Overview Section */
+.overview {
+    padding: 20px 0;
+}
+
+.overview h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.overview p {
+    margin-bottom: 15px;
+}
+
+/* Role Section */
+.role p {
+    margin-bottom: 10px;
+}
+
+/* List Styling */
+ul {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 1px;
+}
+
+/* Details Section */
+.details {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+.detail-item {
+    flex: 1;
+    text-align: center;
+}
+
+.container-target {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.detail-item h3,
+.detail-item p {
+    margin: 0;
+}
+
+/* Business Opportunity Section */
+.business-opportunity ul {
+    margin-top: 10px;
+}
+
+.business-opportunity ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Problems Section */
+.problems-section {
+    width: 70%;
+    background-color: #f9fafb;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin: 20px auto;
+}
+
+
+.problems-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.problem {
+    margin-bottom: 20px;
+}
+
+.problem h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.solution {
+    font-weight: bold;
+    color: #6a1b9a; /* Accent color for hypothesis */
+}
+
+.problem p {
+    margin: 5px 0;
+}
+
+.problem:last-child {
+    margin-bottom: 0;
+}
+
+
+.image-container2 {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 20px; /* 요소 간격 */
+  }
+  .image-container3 {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center; /* 수직 정렬 */
+    gap: 40px; /* 요소 간격 */
+    width: 40%;
+
+  }
+
+  .image-container2 img {
+    max-width: 50%; /* 이미지 크기 조정 */
+    height: auto; /* 비율 유지 */
+  }
+
+  .arrow {
+    font-size: 24px; /* 화살표 크기 */
+    color: #333; /* 화살표 색상 */
+  }
+  .responsive-image {
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    display: block; /* 필요 시 이미지가 블록 요소로 작동 */
+}
+#footer.section {
+    color: #929292;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
+
+@media screen and (max-width: 767px) {
+    .topnav {
+      flex-direction: column; /* 모바일에서는 세로 정렬 */
+      padding: 10px;
+      width: 100%;
+      border:none;
+      margin:5px auto;
+    }
+    
+  
+    .hamburger {
+      display: block; /* 햄버거 메뉴 활성화 */
+      align-self: flex-end; /* 오른쪽 상단에 위치 */
+    }
+  
+    .topnav a {
+      display: none; /* 기본적으로 숨김 */
+      width: 100%; /* 링크를 가로 전체 차지 */
+      text-align: left;
+    }
+  
+    .topnav.show a {
+      display: block; /* 햄버거 메뉴 클릭 시 보임 */
+      padding: 10px 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  
+    .topnav a:hover {
+      transform: none; /* 모바일에서는 회전 효과 비활성화 */
+    }
+    h1 {
+        font-size: 25px;
+    }
+
+    .gradient-circle {
+        width: 150px;
+        height: 150px;
+      }
+
+    .image-container {
+    width: 200px; 
+    height: 200px;    
+    }
+}
