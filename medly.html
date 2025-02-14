@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/medly.css">
+</head>
+<body>
+    <div class="topnav">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <a href="index.html">Home</a>
+        <a href="index.html#works">Works</a>
+        <a href="https://github.com/jihyeon26">Github</a>
+        <a href="about.html">About</a>
+        <a href="artworks.html">Artworks</a>
+        </div>
+  <header>
+    <div class="container">
+        <p class="project-tag">Medly</p>
+        <h1>Comprehensive Pre-Surgery Support Platform</h1>
+    </div>
+  </header>
+
+  <div class="image-link">
+    <div class="image-container">
+      <div class="gradient-circle" style="background-color: rgb(186, 186, 247);"></div>
+      <img class="cover" src="./assets/medly/medly_ui.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Medly">                  
+    </div>
+  </div>
+
+  <section class="overview">
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            Medly is an platform designed to support both physicians and patients throughout the pre-surgery process. It provides structured assistance by recording and summarizing consent forms for patients while helping them understand medical terminology. For physicians, it offers a chatbot that enables efficient searching of essential pre-surgery information, including medical research papers and various surgical guidelines.
+        </p>
+        <p>
+            <strong>Core Features:</strong>
+        </p>
+        <ul>
+            <li>Consent form explanation with STT and summarization</li>
+            <li>Medical research paper search chatbot</li>
+            <li>Surgical guideline search chatbot</li>
+            <li>Medical knowledge chatbot for physicians</li>
+            <li>General medical knowledge chatbot for patient inquiries</li>
+        </ul>
+        <a class="github-link" href="https://github.com/jihyeon26/Labor-LawBot" target="_blank">
+            <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+            GitHub
+        </a>
+        <br>
+        <img src="./assets/medly/ui.png" alt="ui" style="width:100%; margin-top:20px;">
+    </div>
+</section>
+
+<section class="role">
+    <div class="container">
+        <h2>My role</h2>
+        <p>I led the development of the surgical guideline chatbot for physicians, focusing on machine learning implementation and UI design, while collaborating closely with other team members on various aspects of the project:</p>
+        <ul>
+          <li>Me - Machine Learning Engineer (Surgical Guideline Chatbot), UI Design</li>
+          <li>Seon-woo Jinseong - Frontend Developer</li>
+          <li>An Eui-jin - Backend Developer</li>
+          <li>Lee Jin-hyung - Backend Developer</li>
+          <li>Lee Hyun-young - Machine Learning Engineer (STT, Summarization Model Design)</li>
+          <li>Kim Sun-ok - Machine Learning Engineer (Medical Knowledge Chatbot)</li>
+          <li>Kim Jae-bin - Machine Learning Engineer (Research Paper Search Chatbot)</li>
+          <li>Kim Soo-min - Machine Learning Engineer (Patient Information Chatbot)</li>
+        </ul>
+    </div>
+</section>
+
+<section class="details">
+    <div class="container-target">
+        <div class="detail-item">
+            <h3>Target users</h3>                              
+            <p>Physicians and patients preparing for surgery</p>              
+        </div>
+        <div class="detail-item">
+            <h3>Interface</h3>
+            <p>Mobile App</p>
+        </div>
+        <div class="detail-item">
+            <h3>Timeline</h3>
+            <p>5 weeks</p>
+        </div>
+    </div>
+</section>
+
+<section class="business-opportunity">
+    <div class="container">
+        <h2>What is the social impact?</h2>
+        <ul>
+          <li>Physicians can quickly access surgical guidelines and essential medical literature at critical moments.</li>
+          <li>Patients can look up and understand complex medical terms they may have struggled with when signing urgent surgical consent forms.</li>
+          <li>Improves communication between doctors and patients by providing AI-powered summarization and explanation of surgical consent forms.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="problems-section">
+    <div class="container2">
+      <h2>Problems Solving</h2> 
+
+      <div class="problem">
+          <h3>Problem 1</h3>
+          <p>Ensuring the reliability of medical chatbot responses and preventing hallucinations is crucial.</p>
+          <p><span class="solution">💡 Solution:</span> The system displays reference areas with original data sources, allowing physicians to verify AI-generated responses. The RAG model is configured with higher strictness and a lower temperature setting to ensure that it does not generate information beyond the dataset, minimizing hallucinations.</p>
+      </div>
+
+      <div class="problem">
+          <h3>Problem 2</h3>
+          <p>Overly long reference sections make it difficult for busy physicians to read relevant data quickly.</p>
+          <p><span class="solution">💡 Solution:</span> Chunking methods are applied to reduce the text length of displayed reference data, easing readability. Additionally, unnecessary repeating headers and irrelevant extracted characters are removed using preprocessing pipelines.</p>
+      </div>
+
+      <div class="problem">
+          <h3>Problem 3</h3>
+          <p>Searching across multiple diseases sometimes retrieves reference data from unrelated medical documents.</p>
+          <p><span class="solution">💡 Solution:</span> Each extracted medical document is tagged with its source and associated disease name, stored as a structured JSON file. The system ensures that GPT responses only retrieve information matching the specific disease name.</p>
+      </div>
+    </div>
+  </section>
+
+<section class="tools">
+    <div class="container">
+        <h2>Tools Used</h2>
+
+        <h3>Collaboration & Planning</h3>
+
+        <h3>ML and AI </h3>
+        
+        <h3>Frontend</h3>
+        
+        <h3>backend</h3>
+
+        
+    </div>
+</section>
+
+<div id="footer" class="section">
+    <div class="container">
+      <p>          
+        Copyright 2024. Jihyeon Choung All rights reserved.
+      </p>
+    </div>
+</div>
+
+<script src="./javascript/medly.js"></script>
+</body>
+</html>
