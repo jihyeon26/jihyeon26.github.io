@@ -158,8 +158,20 @@ p {
     margin-bottom: 30px;
 }
 
+.process-step {
+    margin-bottom: 50px;
+
+}
+
 .process-step h3{
     margin-top: 30px;
+}
+
+.process-step .annotation {
+    color: grey; 
+    font-size:12px; 
+    text-align:right; 
+    margin-bottom:30px;
 }
 .live-link {
     color: #6a1b9a;

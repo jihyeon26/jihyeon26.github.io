@@ -167,7 +167,7 @@
                 <img src="./assets/medly/data1.png">
                 <img src="./assets/medly/data2.png">
             </div>
-            <div style="color: grey; font-size:12px; text-align:right">[Data storage and the form of data cources]</div>
+            <div class="annotation">[Data storage and the form of data cources]</div>
         </div>
 
         <div class="process-step">
@@ -186,14 +186,26 @@
                 <img src="./assets/medly/index.png">
                 <img src="./assets/medly/semantic.png">
             </div>
-            <div style="color: grey; font-size:12px; text-align:right">[Configuring indexes and semantic search]</div>
+            <div class="annotation">[Configuring indexes and semantic search]</div>
         </div>
 
-        <div class="process-step"></div>
-            <h3>3. GPT Model Integration</h3>
+        <div class="process-step">
+            <h3>3. Chatbot Configuration & Improvements</h3>
+            <p>                  
+                <strong>Reference Area Display:</strong> Implemented to enhance response credibility by showing relevant source information. Only 'chunk', 'disease', and 'source fields' are extracted for improved data reliability and faster verification. <br>  
+                <strong>Parameter Settings:</strong> Configured with strict=5 and temperature=0.1 to ensure accurate and reliable responses. <br>
+                <strong>Context Retention:</strong> Stores up to five previous responses to allow for follow-up questions and context-aware interactions. <br>  
+                <strong>Multilingual Support:</strong> Translates user queries into English before sending a request to the GPT model, improving search performance. Detects the language of the original question and returns the response in the same language for seamless multilingual support.
+
+            </p>
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/citation_code.png">
+                <img src="./assets/medly/language_code.png">
+            </div>
+            <div class="annotation">[Citation output settings and language detection functions]</div>
             
         </div>
-
+  </section>
 <section class="tools">
     <div class="container">
         <h2>Tools Used</h2>
