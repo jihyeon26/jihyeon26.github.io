@@ -107,16 +107,17 @@
       <h2>Problems Solving</h2> 
 
       <div class="problem">
-          <h3>Problem 1</h3>
-          <p>Ensuring the reliability of medical chatbot responses and preventing hallucinations is crucial.</p>
-          <p><span class="solution">💡 Solution:</span> The system displays reference areas with original data sources, allowing physicians to verify AI-generated responses. The RAG model is configured with higher strictness and a lower temperature setting to ensure that it does not generate information beyond the dataset, minimizing hallucinations.</p>
-      </div>
+        <h3>Problem 1</h3>
+        <p>Processing data from multiple sources with different PDF formats (ranging from 50 to 280 pages) and refining it for chatbot integration. Understanding and organizing all the content manually is impractical, necessitating a structured format that computers can interpret.</p>
+        <p><span class="solution">💡 Solution:</span> Text was extracted from PDFs and vectorized through embedding, enabling the system to process language autonomously. Additionally, chunk sizes were optimized (1000 characters with 100-character overlap) to maintain context while ensuring the summarization was not overly condensed, improving chatbot performance.</p>
+    </div>
 
-      <div class="problem">
-          <h3>Problem 2</h3>
-          <p>Overly long reference sections make it difficult for busy physicians to read relevant data quickly.</p>
-          <p><span class="solution">💡 Solution:</span> Chunking methods are applied to reduce the text length of displayed reference data, easing readability. Additionally, unnecessary repeating headers and irrelevant extracted characters are removed using preprocessing pipelines.</p>
-      </div>
+    <div class="problem">
+        <h3>Problem 2</h3>
+        <p>Ensuring the reliability of medical chatbot responses while preventing hallucinations, and optimizing reference section readability for busy physicians.</p>
+        <p><span class="solution">💡 Solution:</span> The system displays reference areas with original data sources, allowing physicians to verify AI-generated responses. The RAG model is configured with higher strictness and a lower temperature setting to ensure that it does not generate information beyond the dataset, minimizing hallucinations. Additionally, chunking methods were implemented to shorten displayed reference text, and preprocessing pipelines were set up to remove unnecessary repeating headers and irrelevant extracted characters, ensuring cleaner reference data.</p>
+    </div>
+
 
       <div class="problem">
           <h3>Problem 3</h3>
