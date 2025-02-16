@@ -53,6 +53,7 @@
         </a>
         <br>
         <img src="./assets/medly/ui.png" alt="ui" style="width:100%; margin-top:20px;">
+        <div style="color: grey; font-size:12px; text-align:center">[Medly App UI]</div>
     </div>
 </section>
 
@@ -132,15 +133,66 @@
         <div class="container">
             <h2>Features</h2>
             <br>
-            <img src="./assets/medly/chat_ui.png" alt="ui" style="width:80%; margin-top:20px; display: block; margin:0 auto;">
+            <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;">
+            <div style="color: grey; font-size:12px; text-align:right">[Examples of questions and generated answers ]</div>
+            
             <br>
             <p>
                 The chatbot is designed to help physicians easily inquire about surgical guidelines. It stores up to five previous conversation records, allowing for context-aware interactions. By tapping on a generated response, users can view the original text used to generate the answer, enhancing the reliability of the response.
             </p>
             <img src="./assets/medly/chat_citation.png" alt="ui" style="width:100%;">
+            <div style="color: grey; font-size:12px; text-align:right">[Chatbot Interface and Activated Reference Area]</div>
+            
         </div>
     </section>
 
+  <section class="process">
+    
+    <div class="container">
+        <h2>Process</h2>
+
+        <div class="process-step">
+            <h3>1. Data Collection & Preprocessing</h3>
+            <p>
+                <strong>Reliable Data Sources:</strong> Surgical guideline PDFs were collected from authoritative sources such as NCCN, NCI, and PubMed Central (PMC), covering a total of 64 diseases.    
+                <br>       
+                <strong>Data Preprocessing:</strong> Only text within the main content area was extracted, excluding headers and footers. Unnecessary text and repeated characters were removed, and any remaining noise was eliminated using regular expressions.
+                <br>
+                <strong>Chunk Generation:</strong> To enhance search performance and maintain context, text was divided into chunks of 1,000 characters with a 100-character overlap.
+                <br>
+                <strong>JSON File Storage:</strong> Data was stored in JSON format, including disease names, chunk IDs, and data sources to ensure reliability.
+            </p>
+            
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/data1.png">
+                <img src="./assets/medly/data2.png">
+            </div>
+            <div style="color: grey; font-size:12px; text-align:right">[Data storage and the form of data cources]</div>
+        </div>
+
+        <div class="process-step">
+            <h3>2. Vectorization & Indexing</h3>
+            <p>
+                <strong>Data vectorizing:</strong>
+                Data is vectorized using text-embedding-ada-002 model, followed by the creation of indexes and indexers.
+                <br>
+                <strong>Disease-Based Search:</strong>
+                A disease field was added to the index to enable disease-specific searches.
+                <br>
+                <strong>Enhanced Search Performance:</strong>
+                Semantic search was integrated to improve retrieval accuracy and relevance.
+            </p>
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/index.png">
+                <img src="./assets/medly/semantic.png">
+            </div>
+            <div style="color: grey; font-size:12px; text-align:right">[Configuring indexes and semantic search]</div>
+        </div>
+
+        <div class="process-step"></div>
+            <h3>3. GPT Model Integration</h3>
+            
+        </div>
 
 <section class="tools">
     <div class="container">
