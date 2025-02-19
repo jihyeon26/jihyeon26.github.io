@@ -180,14 +180,14 @@
                 <p>
                     <strong>Base Model vs. RAG Model Comparison:</strong>
                     <br>
-                    - The RAG model significantly outperformed the base model in answer accuracy and faithfulness.
-                    <br>
-                    - The best performance was achieved with 1000-character chunks and text-embedding-ada-002.
-                    <br>
-                    - Longer chunk sizes led to decreased retrieval performance due to information dilution.
-                    <br>
-                    - The text-embedding-ada-002 model provided more precise vectorization, improving semantic search accuracy.
-                </p>
+                - The RAG model demonstrated significantly superior performance over the base model in terms of answer accuracy and faithfulness.
+                <br>
+                - The best overall performance was observed when using 1000-character chunks with text-embedding-ada-002.
+                <br>
+                - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
+                <br>
+                - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to assess the generation of high-quality answers.
+            </p>
                 
                 <div class="image-row" style="width:100%;">
                     <img src="./assets/medly/eval_accuracy.png">
@@ -296,8 +296,11 @@
                 <strong>Set up GitHub Actions CI/CD</strong> for automatic deployment on main branch updates, handling Python setup, dependencies, build, and deployment via .yml file.<br>
                 <strong>Tested API endpoints</strong> using Postman to validate requests and responses.
             </p>
-            <img src="./assets/medly/0.png" alt="ui" style="width:100%;">
-            <div class="annotation">[Using gradio to validate citation area during development]</div>            
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/webapp.png">
+                <img src="./assets/medly/git_action.png">
+            </div>
+            <div class="annotation">[App deployment and GitHub actions integration]</div>            
         </div>
 
   </section>
