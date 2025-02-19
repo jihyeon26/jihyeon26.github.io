@@ -146,6 +146,79 @@
         </div>
     </section>
 
+    <section class="performance-evaluation">
+        <div class="container">
+            <h2>Performance Evaluation & Optimization</h2>
+    
+            <!-- Evaluation Procedure -->
+            <div class="evaluation-step">
+                <h3>1. Evaluation Procedure</h3>
+                <p>
+                    <strong>Process Overview:</strong>
+                <br>                
+                <img src="./assets/medly/eval.png" alt="ui" style="width:100%;">
+                                
+            </div>
+    
+            <!-- Evaluation Metrics -->
+            <div class="evaluation-step">
+                <h3>2. Evaluation Metrics</h3>
+                <p>
+                    <strong>Key Metrics:</strong>
+                    <br>
+                    - <strong>Answer Accuracy</strong>: Measures correctness of generated responses.
+                    <br>
+                    - <strong>Faithfulness</strong>:  Measures how factually consistent a response is with the retrieved context based on the RAGAS metric.
+                    <br>
+                    - <strong>Recall@5</strong>: Determines if the correct context is among the top 5 retrieved documents.           
+                </p>
+            </div>
+    
+            <!-- Evaluation Results -->
+            <div class="evaluation-step">
+                <h3>3. Evaluation Results</h3>
+                <p>
+                    <strong>Base Model vs. RAG Model Comparison:</strong>
+                    <br>
+                    - The RAG model significantly outperformed the base model in answer accuracy and faithfulness.
+                    <br>
+                    - The best performance was achieved with 1000-character chunks and text-embedding-ada-002.
+                    <br>
+                    - Longer chunk sizes led to decreased retrieval performance due to information dilution.
+                    <br>
+                    - The text-embedding-ada-002 model provided more precise vectorization, improving semantic search accuracy.
+                </p>
+                
+                <div class="image-row" style="width:100%;">
+                    <img src="./assets/medly/eval_accuracy.png">
+                    <img src="./assets/medly/eval_ratings.png">
+                </div>
+                <img src="./assets/medly/label.png" alt="ui" style="width:70%; display: block; margin-left: auto;"><br>
+
+                <div style="display: flex; align-items: flex-start; gap: 20px;">
+                    <div style="flex: 1;">
+                        <p>
+                            <strong>Evaluation of Retrieval:</strong>
+                            <br>
+                            - The performance of different embedding models and chunk sizes was assessed based on retrieval accuracy.
+                            <br>
+                            - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
+                            <br>
+                            - The combination of 1000-character chunks and text embedding-ADA-002 had the highest faithfulness and also scored well on Recall@5. 
+                            
+                            <p><strong>Final Decision:</strong> Based on the evaluation, the combination of 1000-character chunks and text-embedding-ada-002 was selected for optimal performance.</p>
+
+                        </p>
+                    </div>
+                    <div style="flex: 1; text-align: right;">
+                        <img src="./assets/medly/eval_faith.png" alt="ui" style="width:90%; border-radius: 5px; border: 1px solid #ebebeb">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
   <section class="process">
     
     <div class="container">
@@ -202,9 +275,31 @@
                 <img src="./assets/medly/citation_code.png">
                 <img src="./assets/medly/language_code.png">
             </div>
-            <div class="annotation">[Citation output settings and language detection functions]</div>
-            
+            <div class="annotation">[Citation output settings and language detection functions]</div>            
         </div>
+
+        <div class="process-step">
+            <h3>4. Response Performance & Reference Area Matching Test</h3>
+            <p>                  
+                - Responses are reviewed by practicing physicians and validated through Human Evaluation. <br>
+                - Received direct feedback from physicians expressing interest in using the chatbot in real-world medical settings. <br>
+                - Conducted over 100 tests to verify the alignment between generated responses and reference areas, ensuring accurate outputs.
+            </p>
+            <img src="./assets/medly/box.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <div class="annotation">[Using gradio to validate citation area during development]</div>            
+        </div>
+
+        <div class="process-step">
+            <h3>5. Flask Server Deployment & CI/CD Configuration</h3>
+            <p>
+                <strong>Deployed Flask app to Azure App Service</strong> and configured environment variables.<br>
+                <strong>Set up GitHub Actions CI/CD</strong> for automatic deployment on main branch updates, handling Python setup, dependencies, build, and deployment via .yml file.<br>
+                <strong>Tested API endpoints</strong> using Postman to validate requests and responses.
+            </p>
+            <img src="./assets/medly/0.png" alt="ui" style="width:100%;">
+            <div class="annotation">[Using gradio to validate citation area during development]</div>            
+        </div>
+
   </section>
 <section class="tools">
     <div class="container">

@@ -313,7 +313,6 @@ ul li {
     object-position: top left;
 }
 
-
 .image-container2 {
     display: flex; /* Flexbox 사용 */
     justify-content: center; /* 중앙 정렬 */
