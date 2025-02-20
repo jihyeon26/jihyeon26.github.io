@@ -62,7 +62,7 @@
         <h2>My role</h2>
         <p>I led the development of the surgical guideline chatbot for physicians, focusing on machine learning implementation and UX design, while collaborating closely with other team members on various aspects of the project:</p>
         <ul>
-          <li>Me : ML Engineer-MedSurgGPT(Surgical Guideline Chatbot), UX Design</li>
+          <li><strong>Me</strong> : ML Engineer-<strong>MedSurgGPT</strong>(Surgical Guideline Chatbot), <strong>UX Design</strong></li>
           <li>Seon-woo Jinseong : Frontend Developer</li>
           <li>An Eui-jin : Backend Developer</li>
           <li>Lee Jin-hyung : Backend Developer</li>
@@ -105,7 +105,7 @@
 <section class="process">          
     <div class="container">
         <h1>MedSurgGPT </h1>
-        <h3>: surgical guideline chatbot</h3>
+        <h3>: surgical guideline RAG chatbot</h3>
         <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;">
         <div style="color: grey; font-size:12px; text-align:right">[Examples of questions and generated answers ]</div>
         
@@ -156,7 +156,14 @@
                     <strong>Process Overview:</strong>
                     <br>               
                 <img src="./assets/medly/eval.png" alt="ui" style="width:100%;">
-                <span> * All model configurations for evaluation were implemented manually to align with the specific requirements of my model.</span>
+                
+
+                <p>
+                    <strong>Reason for Not Using Existing Benchmark Datasets and Traditional Metrics (BLEU, ROUGE, etc.)</strong><br>
+                    - <strong>Benchmark datasets like PubMed QA and MedQA</strong> are based on general knowledge, while RAG models rely on retrieving specific external data. Evaluating with such datasets is ineffective since RAG should be assessed on how well it retrieves and utilizes provided information.<br>
+                    - <strong>Traditional metrics like BLEU and ROUGE</strong> focus on text similarity, which does not fully capture the accuracy of RAG-generated responses. Instead, evaluation should measure context retrieval quality, response faithfulness, and alignment with the intended answer.<br>
+                    * All model configurations for evaluation were implemented manually to align with the specific requirements of my model.
+                </p><br>
                                 
             </div>
     
@@ -171,49 +178,38 @@
                     - <strong>Faithfulness</strong>:  Measures how factually consistent a response is with the retrieved context based on the RAGAS metric.
                     <br>
                     - <strong>Recall@5</strong>: Determines if the correct context is among the top 5 retrieved documents.           
-                </p>
+                </p><br>
             </div>
     
             <!-- Evaluation Results -->
             <div class="evaluation-step">
-                <h3>3. Evaluation Results</h3>
+                <h3>3. Evaluation Results</h3>  
+                <br>           
+                <img src="./assets/medly/eval_a.png" alt="ui" style="width:100%;">
+                <img src="./assets/medly/eval_t.png" alt="ui" style="width:100%;">
+
                 <p>
-                    <strong>Evaluation of Accuracy:</strong>
+                    <strong>Evaluation of Accuracy:</strong><br>                                
+                    - The RAG model demonstrated significantly superior performance over the base model in terms of answer accuracy.
                     <br>
-                - The RAG model demonstrated significantly superior performance over the base model in terms of answer accuracy.
-                <br>
-                - The best overall performance was observed when using 1000-character chunks with text-embedding-ada-002.
-                <br>
-                - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
-                <br>
-                - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to assess the generation of high-quality answers.
-            </p>
+                    - The best overall performance was observed when using 1000-character chunks with text-embedding-ada-002.
+                    <br>
+                    - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
+                    <br>
+                    - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to assess the generation of high-quality answers.
+                </p>
+                <p>
+                    <strong>Evaluation of Retrieval:</strong><br>
+                    - The performance of different embedding models and chunk sizes was assessed based on retrieval accuracy.
+                    <br>
+                    - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
+                    <br>
+                    - The combination of 1000-character chunks and text embedding-ADA-002 had the highest faithfulness and also scored well on Recall@5. 
+                </p>
                 
-                <div class="image-row" style="width:100%;">
-                    <img src="./assets/medly/eval_accuracy.png">
-                    <img src="./assets/medly/eval_ratings.png">
-                </div>
-                <img src="./assets/medly/label.png" alt="ui" style="width:70%; display: block; margin-left: auto;"><br>
-
-                <div style="display: flex; align-items: flex-start; gap: 20px;">
-                    <div style="flex: 1;">
-                        <p>
-                            <strong>Evaluation of Retrieval:</strong>
-                            <br>
-                            - The performance of different embedding models and chunk sizes was assessed based on retrieval accuracy.
-                            <br>
-                            - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
-                            <br>
-                            - The combination of 1000-character chunks and text embedding-ADA-002 had the highest faithfulness and also scored well on Recall@5. 
-                            
-                            <p><strong>Final Decision:</strong> Based on the evaluation, the combination of 1000-character chunks and text-embedding-ada-002 was selected for optimal performance.</p>
-
-                        </p>
-                    </div>
-                    <div style="flex: 1; text-align: right;">
-                        <img src="./assets/medly/eval_faith.png" alt="ui" style="width:90%; border-radius: 5px; border: 1px solid #ebebeb">
-                    </div>
-                </div>
+                
+                <p><strong>Final Decision:</strong> Based on the evaluation, the combination of 1000-character chunks and text-embedding-ada-002 was selected for optimal performance.</p>
+                    
             </div>
         </div>
     </section>

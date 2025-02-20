@@ -312,6 +312,20 @@ ul li {
     border: 1px solid #ebebeb;    
     object-position: top left;
 }
+.image-row2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.image-row2 img {
+    width: 100%;
+    max-width: 49%;
+    object-fit: contain;
+    border-radius: 5px;
+    border: 1px solid #ebebeb;    
+    object-position: top left;
+}
 
 .image-container2 {
     display: flex; /* Flexbox 사용 */
