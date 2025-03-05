@@ -170,7 +170,7 @@
 
                 <p>
                     <strong>Reason for Not Using Existing Benchmark Datasets and Traditional Metrics (BLEU, ROUGE, etc.)</strong><br>
-                    - <strong>Benchmark datasets like PubMed QA and MedQA</strong> are based on general knowledge, while RAG models rely on retrieving specific external data. Evaluating with such datasets is ineffective since RAG should be assessed on how well it retrieves and utilizes provided information.<br>
+                    - <strong>Benchmark datasets like PubMed QA and MedQA</strong> are based on general knowledge, while RAG models rely on retrieving specific external data. Evaluating with such datasets is ineffective since RAG should be evaluated on how well it retrieves and utilizes provided information.<br>
                     - <strong>Traditional metrics like BLEU and ROUGE</strong> focus on text similarity, which does not fully capture the accuracy of RAG-generated responses. Instead, evaluation should measure context retrieval quality, response faithfulness, and alignment with the intended answer.<br>
                     * All model configurations for evaluation were implemented manually to align with the specific requirements of my model.
                 </p><br>
@@ -206,11 +206,11 @@
                     <br>
                     - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
                     <br>
-                    - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to assess the generation of high-quality answers.
+                    - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to evaluate the generation of high-quality answers.
                 </p>
                 <p>
                     <strong>Evaluation of Retrieval:</strong><br>
-                    - The performance of different embedding models and chunk sizes was assessed based on retrieval accuracy.
+                    - The performance of different embedding models and chunk sizes was evaluated based on retrieval accuracy.
                     <br>
                     - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
                     <br>
