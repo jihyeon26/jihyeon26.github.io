@@ -69,12 +69,9 @@
     <div class="container-target">
         <div class="detail-item">
             <h3>Target users</h3>                              
-            <p>Physicians and patients preparing for surgery</p>              
+            <p>Product and marketing teams of the digital banking app</p>              
         </div>
-        <div class="detail-item">
-            <h3>Interface</h3>
-            <p>Mobile App</p>
-        </div>
+
         <div class="detail-item">
             <h3>Timeline</h3>
             <p>5 weeks</p>
@@ -84,39 +81,15 @@
 
 <section class="business-opportunity">
     <div class="container">
-        <h2>What is the social impact?</h2>
+        <h2>What is the business impact?</h2>
         <ul>
-          <li>Physicians can quickly access surgical guidelines and essential medical literature at critical moments.</li>
-          <li>Patients can look up and understand complex medical terms they may have struggled with when signing urgent surgical consent forms.</li>
-          <li>Improves communication between doctors and patients by providing AI-powered summarization and explanation of surgical consent forms.</li>
+          <li>Enabled data-driven customer segmentation for personalized engagement strategies</li>
+          <li>Identified dormant, high-value, and loyal users, supporting retention and reactivation initiatives</li>
+          <li>Provided actionable insights for cross-selling and partnership opportunities</li>
         </ul>
     </div>
 </section>
 
-<section class="process">          
-    <div class="container">
-        <h1>MedSurgGPT </h1>
-        <h3>: surgical guideline RAG chatbot</h3>
-        <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;">
-        <div style="color: grey; font-size:12px; text-align:right">[Examples of questions and generated answers ]</div>
-        
-        <br>
-        <p>
-            The chatbot is designed to help physicians easily inquire about surgical guidelines. It stores up to five previous conversation records, allowing for context-aware interactions. By tapping on a generated response, users can view the original text used to generate the answer, enhancing the reliability of the response.
-        </p>
-        <img src="./assets/medly/chat_citation.png" alt="ui" style="width:100%;">
-        <div style="color: grey; font-size:12px; text-align:right">[Chatbot Interface and Activated Reference Area]</div>
-        
-        <div style="margin-top:30px;">
-            <video controls style="width: 100%; max-width:360px; display: inline-block; border: 1px solid #ccc; border-radius: 5px; box-shadow: none; display: block; margin: auto;">
-                <source src="./assets/medly/medly.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div style="color: grey; font-size:12px; text-align:center; margin-top:10px;">[Medly App Demonstration Video]</div>
-        </div>
-        
-    </div>
-</section>
 
 <section class="problems-section">
     <div class="container2">
@@ -124,95 +97,24 @@
 
       <div class="problem">
         <h3>Problem 1</h3>
-        <p>Processing data from multiple sources with different PDF formats (ranging from 50 to 280 pages) and refining it for chatbot integration. Understanding and organizing all the content manually is impractical, necessitating a structured format that computers can interpret.</p>
-        <p><span class="solution">💡 Solution:</span> Text was extracted from PDFs and vectorized through embedding, enabling the system to process language autonomously. Additionally, chunk sizes were optimized (1000 characters with 100-character overlap) to maintain context while ensuring the summarization was not overly condensed, improving chatbot performance.</p>
+        <p>Transaction data was highly skewed, causing unstable clustering results.</p>
+        <p><span class="solution">💡 Solution:</span> Applied logarithmic transformation and scaling to normalize the data distribution.</p>
     </div>
 
     <div class="problem">
         <h3>Problem 2</h3>
-        <p>Ensuring the reliability of medical chatbot responses while preventing hallucinations, and optimizing reference section readability for busy physicians.</p>
-        <p><span class="solution">💡 Solution:</span> The system provides reference areas with original data sources, enabling physicians to verify AI responses. The RAG model uses high strictness and a low temperature setting to prevent hallucinations. Chunking methods optimize reference text length, and preprocessing removes redundant headers and irrelevant characters for clarity.</p>
+        <p>Determining the optimal number of clusters was challenging.</p>
+        <p><span class="solution">💡 Solution:</span> Used both Elbow and Silhouette methods to find a well-balanced five-cluster solution.</p>
       </div>
 
 
       <div class="problem">
           <h3>Problem 3</h3>
-          <p>Searching across multiple diseases sometimes retrieves reference data from unrelated medical documents.</p>
-          <p><span class="solution">💡 Solution:</span> Each extracted medical document is tagged with its source and associated disease name, stored as a structured JSON file. The system ensures that GPT responses only retrieve information matching the specific disease name.</p>
+          <p>Translating technical cluster outputs into business insights was difficult.</p>
+          <p><span class="solution">💡 Solution:</span> Created user personas and linked them to strategic recommendations, bridging analytics with business value.</p>
       </div>
     </div>
   </section>
-
-
-    <section class="performance-evaluation">
-        <div class="container">
-            <h2>Performance Evaluation</h2>
-    
-            <!-- Evaluation Procedure -->
-            <div class="evaluation-step">
-                <h3>1. Evaluation Procedure</h3>
-                <p>
-                    <strong>Process Overview:</strong>
-                    <br>               
-                <img src="./assets/medly/eval.png" alt="ui" style="width:100%;">
-                
-
-                <p>
-                    <strong>Reason for Not Using Existing Benchmark Datasets and Traditional Metrics (BLEU, ROUGE, etc.)</strong><br>
-                    - <strong>Benchmark datasets like PubMed QA and MedQA</strong> are based on general knowledge, while RAG models rely on retrieving specific external data. Evaluating with such datasets is ineffective since RAG should be evaluated on how well it retrieves and utilizes provided information.<br>
-                    - <strong>Traditional metrics like BLEU and ROUGE</strong> focus on text similarity, which does not fully capture the accuracy of RAG-generated responses. Instead, evaluation should measure context retrieval quality, response faithfulness, and alignment with the intended answer.<br>
-                    * All model configurations for evaluation were implemented manually to align with the specific requirements of my model.
-                </p><br>
-                                
-            </div>
-    
-            <!-- Evaluation Metrics -->
-            <div class="evaluation-step">
-                <h3>2. Evaluation Metrics</h3>
-                <p>
-                    <strong>Key Metrics:</strong>
-                    <br>
-                    - <strong>Answer Accuracy</strong>: Measures correctness of generated responses.
-                    <br>
-                    - <strong>Faithfulness</strong>:  Measures how factually consistent a response is with the retrieved context based on the RAGAS metric.
-                    <br>
-                    - <strong>Recall@5</strong>: Determines if the correct context is among the top 5 retrieved documents.           
-                </p><br>
-            </div>
-    
-            <!-- Evaluation Results -->
-            <div class="evaluation-step">
-                <h3>3. Evaluation Results</h3>  
-                <br>           
-                <img src="./assets/medly/eval_a.png" alt="ui" style="width:100%;">
-                <img src="./assets/medly/eval_t.png" alt="ui" style="width:100%;">
-
-                <p>
-                    <strong>Evaluation of Accuracy:</strong><br>                                
-                    - The RAG model demonstrated significantly superior performance over the base model in terms of answer accuracy.
-                    <br>
-                    - The best overall performance was observed when using 1000-character chunks with text-embedding-ada-002.
-                    <br>
-                    - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
-                    <br>
-                    - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to evaluate the generation of high-quality answers.
-                </p>
-                <p>
-                    <strong>Evaluation of Retrieval:</strong><br>
-                    - The performance of different embedding models and chunk sizes was evaluated based on retrieval accuracy.
-                    <br>
-                    - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
-                    <br>
-                    - The combination of 1000-character chunks and text embedding-ADA-002 had the highest faithfulness and also scored well on Recall@5. 
-                </p>
-                
-                
-                <p><strong>Final Decision:</strong> Based on the evaluation, the combination of 1000-character chunks and text-embedding-ada-002 was selected for optimal performance.</p>
-                    
-            </div>
-        </div>
-    </section>
-    
 
   <section class="process">
     
