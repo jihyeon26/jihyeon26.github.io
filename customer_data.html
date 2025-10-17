@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/medly.css">
+</head>
+<body>
+    <div class="topnav">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <a href="index.html">Home</a>
+        <a href="index.html#works">Works</a>
+        <a href="https://github.com/jihyeon26">Github</a>
+        <a href="about.html">About</a>
+        <!-- <a href="artworks.html">Artworks</a> -->
+        </div>
+  <header>
+    <div class="container">
+        <p class="project-tag">Medly</p>
+        <h1>Comprehensive Pre-Surgery Support Platform</h1>
+    </div>
+  </header>
+
+  <div class="image-link">
+    <div class="image-container">
+      <div class="gradient-circle" style="background-color: rgb(186, 186, 247);"></div>
+      <img class="cover" src="./assets/medly/medly_ui.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Medly">                  
+    </div>
+  </div>
+
+  <section class="overview">
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            Medly is a platform designed to support both physicians and patients throughout the pre-surgery process. It provides structured assistance by recording and summarizing consent forms for patients while helping them understand medical terminology. For physicians, it offers a chatbot that enables efficient searching of essential pre-surgery information, including medical research papers and various surgical guidelines.
+            <br>
+            The project <strong>won second place in the Microsoft AI School's</strong> third round of projects.
+        </p>
+        <p>
+            <strong>Core Features:</strong>
+        </p>
+        <ul>
+            <li>Consent form explanation with STT and summarization</li>
+            <li>Surgical guideline search chatbot</li>
+            <li>Medical knowledge chatbot for physicians</li>
+            <li>General medical knowledge chatbot for patient inquiries</li>
+        </ul>
+        <a class="github-link" href="https://github.com/orgs/team-medly/repositories" target="_blank">
+            <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+            GitHub
+        </a>
+        <br>
+        <img src="./assets/medly/ui.png" alt="ui" style="width:100%; margin-top:20px;">
+        <div style="color: grey; font-size:12px; text-align:center">[Medly App UI]</div>
+    </div>
+</section>
+
+<section class="role">
+    <div class="container">
+        <h2>My role</h2>
+        <p>I led the development of the surgical guideline chatbot for physicians, focusing on machine learning implementation and UX design, while collaborating closely with other team members on various aspects of the project:</p>
+        <ul>
+          <li><strong>Me</strong> : ML Engineer-<strong>MedSurgGPT</strong>(Surgical Guideline Chatbot), <strong>UX Design</strong></li>
+          <li>Seon-woo Jinseong : Frontend Developer</li>
+          <li>An Eui-jin : Backend Developer</li>
+          <li>Lee Jin-hyung : Backend Developer</li>
+          <li>Lee Hyun-young : ML Engineer-STT, Summarization Model</li>
+          <li>Kim Sun-ok : ML Engineer-Medical Knowledge Chatbot</li>
+          <li>Kim Jae-bin : ML Engineer-Research Paper Search Chatbot</li>
+          <li>Kim Soo-min : ML Engineer-Patient Information Chatbot</li>
+        </ul>
+    </div>
+</section>
+
+<section class="details">
+    <div class="container-target">
+        <div class="detail-item">
+            <h3>Target users</h3>                              
+            <p>Physicians and patients preparing for surgery</p>              
+        </div>
+        <div class="detail-item">
+            <h3>Interface</h3>
+            <p>Mobile App</p>
+        </div>
+        <div class="detail-item">
+            <h3>Timeline</h3>
+            <p>5 weeks</p>
+        </div>
+    </div>
+</section>
+
+<section class="business-opportunity">
+    <div class="container">
+        <h2>What is the social impact?</h2>
+        <ul>
+          <li>Physicians can quickly access surgical guidelines and essential medical literature at critical moments.</li>
+          <li>Patients can look up and understand complex medical terms they may have struggled with when signing urgent surgical consent forms.</li>
+          <li>Improves communication between doctors and patients by providing AI-powered summarization and explanation of surgical consent forms.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="process">          
+    <div class="container">
+        <h1>MedSurgGPT </h1>
+        <h3>: surgical guideline RAG chatbot</h3>
+        <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;">
+        <div style="color: grey; font-size:12px; text-align:right">[Examples of questions and generated answers ]</div>
+        
+        <br>
+        <p>
+            The chatbot is designed to help physicians easily inquire about surgical guidelines. It stores up to five previous conversation records, allowing for context-aware interactions. By tapping on a generated response, users can view the original text used to generate the answer, enhancing the reliability of the response.
+        </p>
+        <img src="./assets/medly/chat_citation.png" alt="ui" style="width:100%;">
+        <div style="color: grey; font-size:12px; text-align:right">[Chatbot Interface and Activated Reference Area]</div>
+        
+        <div style="margin-top:30px;">
+            <video controls style="width: 100%; max-width:360px; display: inline-block; border: 1px solid #ccc; border-radius: 5px; box-shadow: none; display: block; margin: auto;">
+                <source src="./assets/medly/medly.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div style="color: grey; font-size:12px; text-align:center; margin-top:10px;">[Medly App Demonstration Video]</div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="problems-section">
+    <div class="container2">
+      <h2>Problems Solving</h2> 
+
+      <div class="problem">
+        <h3>Problem 1</h3>
+        <p>Processing data from multiple sources with different PDF formats (ranging from 50 to 280 pages) and refining it for chatbot integration. Understanding and organizing all the content manually is impractical, necessitating a structured format that computers can interpret.</p>
+        <p><span class="solution">💡 Solution:</span> Text was extracted from PDFs and vectorized through embedding, enabling the system to process language autonomously. Additionally, chunk sizes were optimized (1000 characters with 100-character overlap) to maintain context while ensuring the summarization was not overly condensed, improving chatbot performance.</p>
+    </div>
+
+    <div class="problem">
+        <h3>Problem 2</h3>
+        <p>Ensuring the reliability of medical chatbot responses while preventing hallucinations, and optimizing reference section readability for busy physicians.</p>
+        <p><span class="solution">💡 Solution:</span> The system provides reference areas with original data sources, enabling physicians to verify AI responses. The RAG model uses high strictness and a low temperature setting to prevent hallucinations. Chunking methods optimize reference text length, and preprocessing removes redundant headers and irrelevant characters for clarity.</p>
+      </div>
+
+
+      <div class="problem">
+          <h3>Problem 3</h3>
+          <p>Searching across multiple diseases sometimes retrieves reference data from unrelated medical documents.</p>
+          <p><span class="solution">💡 Solution:</span> Each extracted medical document is tagged with its source and associated disease name, stored as a structured JSON file. The system ensures that GPT responses only retrieve information matching the specific disease name.</p>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="performance-evaluation">
+        <div class="container">
+            <h2>Performance Evaluation</h2>
+    
+            <!-- Evaluation Procedure -->
+            <div class="evaluation-step">
+                <h3>1. Evaluation Procedure</h3>
+                <p>
+                    <strong>Process Overview:</strong>
+                    <br>               
+                <img src="./assets/medly/eval.png" alt="ui" style="width:100%;">
+                
+
+                <p>
+                    <strong>Reason for Not Using Existing Benchmark Datasets and Traditional Metrics (BLEU, ROUGE, etc.)</strong><br>
+                    - <strong>Benchmark datasets like PubMed QA and MedQA</strong> are based on general knowledge, while RAG models rely on retrieving specific external data. Evaluating with such datasets is ineffective since RAG should be evaluated on how well it retrieves and utilizes provided information.<br>
+                    - <strong>Traditional metrics like BLEU and ROUGE</strong> focus on text similarity, which does not fully capture the accuracy of RAG-generated responses. Instead, evaluation should measure context retrieval quality, response faithfulness, and alignment with the intended answer.<br>
+                    * All model configurations for evaluation were implemented manually to align with the specific requirements of my model.
+                </p><br>
+                                
+            </div>
+    
+            <!-- Evaluation Metrics -->
+            <div class="evaluation-step">
+                <h3>2. Evaluation Metrics</h3>
+                <p>
+                    <strong>Key Metrics:</strong>
+                    <br>
+                    - <strong>Answer Accuracy</strong>: Measures correctness of generated responses.
+                    <br>
+                    - <strong>Faithfulness</strong>:  Measures how factually consistent a response is with the retrieved context based on the RAGAS metric.
+                    <br>
+                    - <strong>Recall@5</strong>: Determines if the correct context is among the top 5 retrieved documents.           
+                </p><br>
+            </div>
+    
+            <!-- Evaluation Results -->
+            <div class="evaluation-step">
+                <h3>3. Evaluation Results</h3>  
+                <br>           
+                <img src="./assets/medly/eval_a.png" alt="ui" style="width:100%;">
+                <img src="./assets/medly/eval_t.png" alt="ui" style="width:100%;">
+
+                <p>
+                    <strong>Evaluation of Accuracy:</strong><br>                                
+                    - The RAG model demonstrated significantly superior performance over the base model in terms of answer accuracy.
+                    <br>
+                    - The best overall performance was observed when using 1000-character chunks with text-embedding-ada-002.
+                    <br>
+                    - Since the accuracy of answered responses is more critical, the average score of answered responses was prioritized as a key metric, excluding unanswered responses.
+                    <br>
+                    - The number of responses that received a perfect score (5/5) and those scoring below 3 were analyzed to evaluate the generation of high-quality answers.
+                </p>
+                <p>
+                    <strong>Evaluation of Retrieval:</strong><br>
+                    - The performance of different embedding models and chunk sizes was evaluated based on retrieval accuracy.
+                    <br>
+                    - Recall@5 was used to measure how often the correct context appeared in the top 5 retrieved results.
+                    <br>
+                    - The combination of 1000-character chunks and text embedding-ADA-002 had the highest faithfulness and also scored well on Recall@5. 
+                </p>
+                
+                
+                <p><strong>Final Decision:</strong> Based on the evaluation, the combination of 1000-character chunks and text-embedding-ada-002 was selected for optimal performance.</p>
+                    
+            </div>
+        </div>
+    </section>
+    
+
+  <section class="process">
+    
+    <div class="container">
+        <h2>Development Process</h2>
+
+        <div class="process-step">
+            <h3>1. Data Collection & Preprocessing</h3>
+            <p>
+                <strong>Reliable Data Sources:</strong> Surgical guideline PDFs were collected from authoritative sources such as NCCN, NCI, and PubMed Central (PMC), covering a total of 64 diseases.    
+                <br>       
+                <strong>Data Preprocessing:</strong> Only text within the main content area was extracted, excluding headers and footers. Unnecessary text and repeated characters were removed, and any remaining noise was eliminated using regular expressions.
+                <br>
+                <strong>Chunk Generation:</strong> To enhance search performance and maintain context, text was divided into chunks of 1,000 characters with a 100-character overlap.
+                <br>
+                <strong>JSON File Storage:</strong> Data was stored in JSON format, including disease names, chunk IDs, and data sources to ensure reliability.
+            </p>
+            
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/data1.png">
+                <img src="./assets/medly/data2.png">
+            </div>
+            <div class="annotation">[Data storage and the form of data cources]</div>
+        </div>
+
+        <div class="process-step">
+            <h3>2. Vectorization & Indexing</h3>
+            <p>
+                <strong>Data vectorizing:</strong>
+                Data is vectorized using text-embedding-ada-002 model, followed by the creation of indexes and indexers.
+                <br>
+                <strong>Disease-Based Search:</strong>
+                A disease field was added to the index to enable disease-specific searches.
+                <br>
+                <strong>Enhanced Search Performance:</strong>
+                Semantic search was integrated to improve retrieval accuracy and relevance.
+            </p>
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/index.png">
+                <img src="./assets/medly/semantic.png">
+            </div>
+            <div class="annotation">[Configuring indexes and semantic search]</div>
+        </div>
+
+        <div class="process-step">
+            <h3>3. Chatbot Configuration & Improvements</h3>
+            <p>                  
+                <strong>Reference Area Display:</strong> Implemented to enhance response credibility by showing relevant source information. Only 'chunk', 'disease', and 'source fields' are extracted for improved data reliability and faster verification. <br>  
+                <strong>Parameter Settings:</strong> Configured with strict=5 and temperature=0.1 to ensure accurate and reliable responses. <br>
+                <strong>Context Retention:</strong> Stores up to five previous responses to allow for follow-up questions and context-aware interactions. <br>  
+                <strong>Multilingual Support:</strong> Translates user queries into English before sending a request to the GPT model, improving search performance. Detects the language of the original question and returns the response in the same language for seamless multilingual support.
+
+            </p>
+            <img src="./assets/medly/citation.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <div class="annotation">[Test screen using Gradio: Enhances data reliability through reference areas.]</div>    
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/citation_code.png">
+                <img src="./assets/medly/language_code.png">
+            </div>
+            <div class="annotation">[Citation output settings and language detection functions]</div>            
+        </div>
+
+        <div class="process-step">
+            <h3>4. Response Performance & Reference Area Matching Test</h3>
+            <p>                  
+                - Responses are reviewed by practicing physicians and validated through Human Evaluation. <br>
+                - Received direct feedback from physicians expressing interest in using the chatbot in real-world medical settings. <br>
+                - Conducted over 100 tests to verify the alignment between generated responses and reference areas, ensuring accurate outputs.
+            </p>
+            <img src="./assets/medly/box.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <div class="annotation">[Using gradio to validate citation area during development]</div>            
+        </div>
+
+        <div class="process-step">
+            <h3>5. Flask Server Deployment & CI/CD Configuration</h3>
+            <p>
+                <strong>Deployed Flask app to Azure App Service</strong> and configured environment variables.<br>
+                <strong>Set up GitHub Actions CI/CD</strong> for automatic deployment on main branch updates, handling Python setup, dependencies, build, and deployment via .yml file.<br>
+            </p>
+            <div class="image-row" style="width:100%;">
+                <img src="./assets/medly/webapp.png">
+                <img src="./assets/medly/git_action.png">
+            </div>
+            <div class="annotation">[App deployment and GitHub actions integration]</div>            
+        </div>
+
+  </section>
+<section class="tools">
+    <div class="container">
+        <h2>Tools Used</h2>
+        <br>
+        <img src="./assets/medly/tools.png" alt="ui" style="width:100%;">
+
+        
+    </div>
+</section>
+
+<div id="footer" class="section">
+    <div class="container">
+      <p>          
+        Copyright 2024. Jihyeon Choung All rights reserved.
+      </p>
+    </div>
+</div>
+
+<script src="./javascript/medly.js"></script>
+</body>
+</html>
