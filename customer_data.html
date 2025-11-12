@@ -122,15 +122,13 @@
         <h2>Development Process</h2>
 
         <div class="process-step">
-            <h3>1. Data Collection & Preprocessing</h3>
+            <h3>Overview</h3>
             <p>
-                <strong>Reliable Data Sources:</strong> Surgical guideline PDFs were collected from authoritative sources such as NCCN, NCI, and PubMed Central (PMC), covering a total of 64 diseases.    
-                <br>       
-                <strong>Data Preprocessing:</strong> Only text within the main content area was extracted, excluding headers and footers. Unnecessary text and repeated characters were removed, and any remaining noise was eliminated using regular expressions.
-                <br>
-                <strong>Chunk Generation:</strong> To enhance search performance and maintain context, text was divided into chunks of 1,000 characters with a 100-character overlap.
-                <br>
-                <strong>JSON File Storage:</strong> Data was stored in JSON format, including disease names, chunk IDs, and data sources to ensure reliability.
+                Goal: Identify customer segments based on transaction behavior<br>
+                Dataset: 3 years of Yapeal transaction data<br>
+                Methods: Feature engineering, PCA, K-means clustering<br>
+                Outcome: 5 distinct customer segments with business insights
+
             </p>
             
             <div class="image-row" style="width:100%;">
