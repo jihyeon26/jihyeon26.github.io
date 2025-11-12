@@ -138,14 +138,16 @@
         <div class="process-step">
             <h3>2. Data preperation & preprocessing</h3>
             <p>
-                <strong>Data vectorizing:</strong>
-                Data is vectorized using text-embedding-ada-002 model, followed by the creation of indexes and indexers.
+                <strong>Original dataset:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart
                 <br>
-                <strong>Disease-Based Search:</strong>
-                A disease field was added to the index to enable disease-specific searches.
+                <strong>Method:</strong> Aggregated transactions at the customer level and created derived features
                 <br>
-                <strong>Enhanced Search Performance:</strong>
-                Semantic search was integrated to improve retrieval accuracy and relevance.
+                <strong>Result:</strong> Added indicators for 
+                <li>Activity span and frequency</li>
+                <li>Spending level and variability</li>
+                <li>Merchant and category diversity</li>
+                <li>Recency–Frequency–Monetary (RFM) metrics</li>
+
             </p>
             <div class="image-row" style="width:100%;">
                 <img src="./assets/medly/index.png">
