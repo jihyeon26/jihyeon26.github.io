@@ -124,6 +124,13 @@ p  {
     margin-top: 30px;
     padding: 20px;
 }
+.container .annotation {
+    color: grey; 
+    font-size:12px; 
+    text-align:right; 
+    margin-bottom:30px;
+}
+
 .container2 {
     max-width: 960px;
     width : 90%;
