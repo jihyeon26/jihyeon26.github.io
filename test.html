@@ -1,0 +1,569 @@
+<section class="overview">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      I built a customer segmentation framework from <strong>3 years of transaction data</strong> for a digital banking app (Yapeal).
+      The goal was to turn raw transaction logs into <strong>actionable customer segments</strong> that product and marketing teams can use for personalization and CLV growth.
+      The pipeline: <strong>feature engineering → preprocessing → PCA → K-means++ → evaluation → interpretation</strong>.
+    </p>
+
+    <div class="overview-highlights">
+      <p><strong>What I delivered:</strong></p>
+      <ul>
+        <li><strong>5 behavioral segments</strong> based on customer-level RFM+ features</li>
+        <li><strong>Stakeholder-ready segment definitions</strong> (plain-language summaries + visuals)</li>
+        <li><strong>Action guidance</strong> (what to do with each segment: retention / upsell / reactivation)</li>
+      </ul>
+    </div>
+
+    <a class="github-link" href="https://github.com/orgs/team-medly/repositories" target="_blank" rel="noopener">
+      <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+      GitHub
+    </a>
+  </div>
+</section>
+
+
+<section class="role">
+  <div class="container">
+    <h2>My role</h2>
+
+    <p class="role-summary">
+      <strong>I owned the analytical core</strong> of this project—from feature design and clustering decisions to segment interpretation—ensuring the output was both statistically sound and usable for business teams.
+    </p>
+
+    <div class="role-grid">
+      <div class="role-card">
+        <h3>What I did</h3>
+        <ul>
+          <li><strong>Feature engineering:</strong> designed customer-level aggregation and RFM+ behavior features (frequency, spend scale, variability, recency)</li>
+          <li><strong>Preprocessing:</strong> stabilized skewed transaction variables via log transforms + scaling for distance-based clustering</li>
+          <li><strong>PCA:</strong> reduced redundancy/multicollinearity to improve cluster separability and interpretability</li>
+          <li><strong>Clustering:</strong> implemented K-means++ and selected K using Elbow + Silhouette trade-offs</li>
+          <li><strong>Interpretation:</strong> created segment definitions and analytical visuals to support stakeholder understanding</li>
+        </ul>
+      </div>
+
+      <div class="role-card">
+        <h3>How I worked with the team</h3>
+        <ul>
+          <li>Aligned segment definitions with persona and recommendation workstreams</li>
+          <li>Shared intermediate results early to iterate quickly (features, K selection, naming)</li>
+          <li>Supported final storyline with visuals that explain “so what?” clearly</li>
+        </ul>
+        <details class="team-details">
+          <summary>Team contributions (optional)</summary>
+          <ul>
+            <li><strong>Me:</strong> analytics pipeline, modeling, evaluation, interpretation, visualization</li>
+            <li><strong>Teammates:</strong> persona creation, visual design, business recommendations, coordination & data prep</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="details">
+  <div class="container-target">
+    <div class="detail-item">
+      <h3>Target users</h3>
+      <p>Product, marketing, and growth teams at a digital banking app</p>
+    </div>
+
+    <div class="detail-item">
+      <h3>Timeline</h3>
+      <p>5 weeks</p>
+    </div>
+
+    <div class="detail-item">
+      <h3>Methods</h3>
+      <p>RFM+ feature engineering, PCA, K-means++, Elbow & Silhouette</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="business-opportunity">
+  <div class="container">
+    <h2>Business impact</h2>
+    <ul>
+      <li><strong>Personalization foundation:</strong> replaced “average user” assumptions with segment-level behavior patterns</li>
+      <li><strong>Growth levers:</strong> clarified which users to retain, which to upsell, and which to reactivate</li>
+      <li><strong>Operational usability:</strong> delivered interpretable segments and visuals that non-technical teams can act on</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="problems-section">
+  <div class="container2">
+    <h2>Problems & Solutions</h2>
+
+    <div class="problem">
+      <h3>Problem 1 — Customers were treated as one “average user”</h3>
+      <p>
+        User behavior differed significantly across customers, but strategy lacked a clear segmentation model.
+        This limited targeted engagement and CLV growth.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        I engineered customer-level RFM+ behavioral features and segmented users with PCA + K-means++ into five distinct clusters.
+      </p>
+      <p class="why-matters">
+        <strong>Why this matters:</strong> product and marketing can focus efforts where the expected CLV lift is highest (retain / upsell / reactivate).
+      </p>
+    </div>
+
+    <div class="problem">
+      <h3>Problem 2 — Statistically valid clusters were hard to interpret</h3>
+      <p>
+        Clusters can be mathematically “good” but still fail if stakeholders cannot understand what each segment represents.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        I characterized clusters using spending scale, frequency, recency, and category patterns, then created clear segment summaries and visuals to make them decision-ready.
+      </p>
+      <p class="why-matters">
+        <strong>Why this matters:</strong> interpretable segments reduce adoption friction and speed up experimentation and rollout.
+      </p>
+    </div>
+
+    <div class="problem">
+      <h3>Problem 3 — Insights didn’t translate into clear actions</h3>
+      <p>
+        Even strong segmentation is wasted unless it informs concrete engagement strategies and prioritization.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        I supported an action mapping for each segment (retention / upsell / reactivation) so the segmentation can be operationalized in campaigns and product decisions.
+      </p>
+      <p class="why-matters">
+        <strong>Why this matters:</strong> connects analytics to measurable outcomes (activation, retention, and ultimately CLV).
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="process">
+  <div class="container">
+    <h2>Development Process</h2>
+
+    <div class="process-step">
+      <h3>1. Framing & success criteria</h3>
+      <p>
+        <strong>Goal:</strong> identify distinct customer behavior groups to enable targeted engagement and CLV growth.<br>
+        <strong>Definition of success:</strong> segments that are (1) stable statistically, (2) interpretable, and (3) actionable for business teams.
+      </p>
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/cluster_result.png" alt="Clustering result in PCA space">
+      </div>
+    </div>
+
+    <div class="process-step">
+      <h3>2. Data preparation & feature engineering</h3>
+      <p>
+        I transformed raw transactions into customer-level behavioral signals, focusing on RFM+ dimensions:
+        frequency, spending scale, variability, and recency.
+      </p>
+
+      <p>
+        <strong>Original fields:</strong> customer_id, trx_date, amount_chf, orig_currency, category, mcc, counterpart<br>
+        <strong>Output:</strong> aggregated customer table with engineered features
+      </p>
+
+      <ul>
+        <li><strong>Frequency:</strong> n_tx, median_tx_per_month</li>
+        <li><strong>Scale:</strong> total_spend, spend_per_month, median_amount</li>
+        <li><strong>Variability:</strong> std_dev_amount, pct_high_value_tx</li>
+        <li><strong>Recency:</strong> recency_days</li>
+      </ul>
+
+      <img src="./assets/customer_data/new_variables.png" alt="Engineered variables" style="width:100%;">
+      <div class="annotation">[Customer-level feature set derived from transaction data]</div>
+    </div>
+
+    <div class="process-step">
+      <h3>3. Preprocessing (stability first)</h3>
+      <p>
+        Transaction distributions were skewed and heavy-tailed, which can distort distance-based clustering.
+        I applied transformations to stabilize the feature space.
+      </p>
+      <ul>
+        <li><strong>Log transform:</strong> reduces skew and sensitivity to extreme values</li>
+        <li><strong>Scaling:</strong> aligns feature ranges to avoid dominance by high-magnitude variables</li>
+      </ul>
+
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/log_transform.png" alt="Log transformation illustration" style="width:100%;">
+      </div>
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/minmax_boxplot.png" alt="Boxplot after scaling" style="width:100%;">
+      </div>
+      <div class="annotation">[Transformations applied to stabilize clustering]</div>
+    </div>
+
+    <div class="process-step">
+      <h3>4. Dimensionality reduction (PCA)</h3>
+      <p>
+        Many engineered features were correlated. I used PCA to reduce multicollinearity and noise while preserving the behavioral signal.
+      </p>
+      <ul>
+        <li><strong>Why PCA:</strong> improves separability and robustness for distance-based clustering</li>
+        <li><strong>Result:</strong> retained <strong>5 components</strong> (~95% variance) for clustering</li>
+      </ul>
+
+      <img src="./assets/customer_data/pca_variance.png" alt="PCA explained variance" style="width:100%;">
+      <div class="annotation">[PCA components retained for clustering]</div>
+    </div>
+
+    <div class="process-step">
+      <h3>5. Clustering & selecting K</h3>
+      <p>
+        I applied K-means++ and selected the number of clusters by balancing quantitative metrics with business interpretability.
+      </p>
+      <ul>
+        <li><strong>Algorithm:</strong> K-means++</li>
+        <li><strong>Model selection:</strong> Elbow method + Silhouette score</li>
+        <li><strong>Why K=5:</strong> best trade-off between separation and stakeholder-usable segment granularity</li>
+      </ul>
+
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/elbow.png" alt="Elbow method plot" style="width:100%;">
+      </div>
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/silhouette.png" alt="Silhouette score plot" style="width:100%;">
+      </div>
+      <div class="annotation">[Elbow & Silhouette used to select K]</div>
+    </div>
+
+    <div class="process-step">
+      <h3>6. Interpretation (make it usable)</h3>
+      <p>
+        I translated clusters into decision-ready segment definitions using category mix, activity levels, and behavioral summaries.
+      </p>
+      <ul>
+        <li>Named and summarized each cluster in plain language</li>
+        <li>Created visuals that compare segments across key features</li>
+        <li>Aligned segment definitions with persona and recommendation work</li>
+      </ul>
+
+      <img src="./assets/customer_data/cluster_summary.png" alt="Cluster summary" style="width:100%;">
+      <div class="annotation">[Segment definitions for stakeholder communication]</div>
+    </div>
+
+    <div class="process-step">
+      <h3>7. Next steps (how this becomes real)</h3>
+      <p>
+        This work is designed to be operationalized—not just presented. A practical rollout would include:
+      </p>
+      <ul>
+        <li><strong>Segment refresh:</strong> run the pipeline on a schedule (e.g., monthly) and monitor drift</li>
+        <li><strong>Experimentation:</strong> A/B test segment-targeted messaging and offers and track CLV lift</li>
+        <li><strong>Iteration:</strong> expand features with non-transaction signals (app usage, support events) if available</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<p>
+    -========================================
+</p>
+
+
+
+
+<section class="overview">
+  <div class="container">
+    <h2>Overview</h2>
+    <p>
+      Using three years of transaction data from a digital banking app (Yapeal),
+      we built a customer segmentation framework to enable targeted engagement and CLV growth.
+      We engineered customer-level behavioral features, reduced redundancy via PCA,
+      and applied K-means++ clustering to reveal <strong>five actionable customer segments</strong>.
+    </p>
+
+    <p><strong>What we delivered:</strong></p>
+    <ul>
+      <li><strong>Behavioral segmentation:</strong> 5 customer clusters derived from RFM+ features</li>
+      <li><strong>Stakeholder-ready interpretation:</strong> cluster narratives & persona summaries</li>
+      <li><strong>Business actions:</strong> recommendations mapped to loyalty, pricing tiers, and feature bundles</li>
+    </ul>
+
+    <a class="github-link" href="https://github.com/orgs/team-medly/repositories" target="_blank" rel="noopener">
+      <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+      GitHub
+    </a>
+  </div>
+</section>
+
+
+<section class="role">
+  <div class="container">
+    <h2>My role</h2>
+
+    <p>
+      I owned the analytical pipeline end-to-end: <strong>feature engineering → preprocessing → PCA → clustering → evaluation → interpretation</strong>.
+      I also produced the key visuals that helped the team explain clusters to non-technical stakeholders.
+    </p>
+
+    <div class="role-grid">
+      <div class="role-card">
+        <h3>What I did (hands-on)</h3>
+        <ul>
+          <li>Designed <strong>customer-level aggregation</strong> and engineered RFM+ features (frequency, spend scale, variability, recency)</li>
+          <li>Handled <strong>skewed distributions</strong> using log transforms and scaling for stable clustering</li>
+          <li>Performed <strong>PCA</strong> to reduce redundancy/noise and retain interpretable variance</li>
+          <li>Built <strong>K-means++</strong> clustering pipeline and tuned K using Elbow + Silhouette evaluation</li>
+          <li>Created analytical visuals: cluster scatter (PCA space), feature summaries, and segment comparison charts</li>
+          <li>Translated cluster characteristics into <strong>plain-language segment definitions</strong> to support persona & strategy work</li>
+        </ul>
+      </div>
+
+      <div class="role-card">
+        <h3>Team collaboration</h3>
+        <ul>
+          <li><strong>Me:</strong> Data Scientist – pipeline, modeling, evaluation, interpretation, visualization</li>
+          <li><strong>Florian, Valentino:</strong> Persona creation and visual design</li>
+          <li><strong>Raphael, Michael:</strong> Business recommendations and insights</li>
+          <li><strong>Yannik:</strong> Coordination & dataset preparation</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="role-note">
+      <strong>Key ownership:</strong> The clustering quality, feature decisions, and segment definitions were primarily my responsibility.
+    </p>
+  </div>
+</section>
+
+
+<section class="details">
+  <div class="container-target">
+    <div class="detail-item">
+      <h3>Target users</h3>
+      <p>Product, marketing, and growth teams at a digital banking app</p>
+    </div>
+
+    <div class="detail-item">
+      <h3>Timeline</h3>
+      <p>5 weeks</p>
+    </div>
+
+    <div class="detail-item">
+      <h3>Tools</h3>
+      <p>Python / Power BI, PCA, K-means++, Elbow & Silhouette</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="business-opportunity">
+  <div class="container">
+    <h2>Business impact</h2>
+    <ul>
+      <li><strong>Segmentation foundation:</strong> enabled data-driven personalization instead of one-size-fits-all engagement</li>
+      <li><strong>Retention & reactivation:</strong> identified dormant/churned users vs. loyal frequent spenders</li>
+      <li><strong>CLV opportunities:</strong> surfaced upsell/cross-sell candidates and segment-specific pricing & feature bundles</li>
+    </ul>
+  </div>
+</section>
+
+
+<section class="problems-section">
+  <div class="container2">
+    <h2>Problems & Solutions</h2>
+
+    <div class="problem">
+      <h3>Problem 1 — Customers were treated as one “average user”</h3>
+      <p>
+        Transaction behavior varied widely across users, but product strategy lacked segment-level understanding.
+        This limited personalization and CLV growth.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        Aggregated transactions at the customer level and engineered RFM+ features to uncover behavioral patterns,
+        then segmented customers using PCA + K-means++ into five actionable clusters.
+      </p>
+    </div>
+
+    <div class="problem">
+      <h3>Problem 2 — Clusters are hard to interpret for stakeholders</h3>
+      <p>
+        Even when clusters are statistically valid, they often fail to drive action because stakeholders can’t “see”
+        what a cluster actually represents.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        Built stakeholder-ready interpretations using category spending, activity status, and transaction timing,
+        and summarized each cluster into clear segment definitions to support persona creation and alignment.
+      </p>
+    </div>
+
+    <div class="problem">
+      <h3>Problem 3 — Insights don’t turn into product actions</h3>
+      <p>
+        Segments only increase CLV when they connect to concrete offers, pricing, and feature decisions.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        Mapped each persona/segment to targeted strategies (loyalty, tier upgrades, reactivation nudges),
+        translating analytics into a prioritized action plan.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="process">
+  <div class="container">
+    <h2>Development Process</h2>
+
+    <!-- 1 -->
+    <div class="process-step">
+      <h3>1. Project framing</h3>
+
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/cluster_result.png" alt="Clustering result in PCA space">
+      </div>
+
+      <p>
+        <strong>Goal:</strong> identify customer segments based on transaction behavior to enable CLV-focused personalization<br>
+        <strong>Data:</strong> 3 years of transaction data (customer_id, trx_date, amount, currency, category, mcc, counterpart)<br>
+        <strong>Approach:</strong> feature engineering → preprocessing → PCA → K-means++ → evaluation → interpretation<br>
+        <strong>Output:</strong> 5 behavioral segments + business recommendations
+      </p>
+    </div>
+
+    <!-- 2 -->
+    <div class="process-step">
+      <h3>2. Data preparation & feature engineering</h3>
+      <p>
+        We transformed raw transactions into customer-level features to capture behavior rather than single purchases.
+      </p>
+
+      <p>
+        <strong>Original fields:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart<br>
+        <strong>Aggregation:</strong> customer-level summarization across time<br>
+        <strong>Derived feature groups:</strong>
+      </p>
+
+      <ul>
+        <li><strong>Activity span & frequency:</strong> n_tx, median_tx_per_month</li>
+        <li><strong>Spending scale:</strong> total_spend, spend_per_month, median_amount</li>
+        <li><strong>Spending variability:</strong> std_dev_amount, pct_high_value_tx</li>
+        <li><strong>Recency:</strong> recency_days</li>
+      </ul>
+
+      <img src="./assets/customer_data/new_variables.png" alt="New engineered variables" style="width:100%;">
+      <div class="annotation">[Customer-level feature set created from transaction data]</div>
+    </div>
+
+    <!-- 3 -->
+    <div class="process-step">
+      <h3>3. Preprocessing for stable clustering</h3>
+      <p>
+        Transaction features were heavily skewed (e.g., spending scale).
+        To avoid unstable distance-based clustering, we applied transformations and normalization.
+      </p>
+
+      <ul>
+        <li><strong>Log transform:</strong> reduced skew on heavy-tailed variables</li>
+        <li><strong>Scaling:</strong> Min–Max scaling to align feature ranges for K-means distance calculations</li>
+        <li><strong>Quality checks:</strong> distribution review and outlier sanity checks</li>
+      </ul>
+
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/log_transform.png" alt="Log transformation illustration" style="width:100%;">
+      </div>
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/minmax_boxplot.png" alt="Boxplot after scaling" style="width:100%;">
+      </div>
+      <div class="annotation">[Log transform and scaling to stabilize clustering]</div>
+    </div>
+
+    <!-- 4 -->
+    <div class="process-step">
+      <h3>4. Dimensionality reduction (PCA)</h3>
+      <p>
+        Many engineered features were correlated.
+        PCA helped remove redundancy and noise while keeping most of the behavioral signal.
+      </p>
+
+      <ul>
+        <li><strong>Why PCA:</strong> reduce multicollinearity and improve cluster separability</li>
+        <li><strong>Result:</strong> retained <strong>5 principal components</strong> explaining ~95% of variance</li>
+      </ul>
+
+      <img src="./assets/customer_data/pca_variance.png" alt="PCA explained variance" style="width:100%;">
+      <div class="annotation">[PCA components retained for clustering]</div>
+    </div>
+
+    <!-- 5 -->
+    <div class="process-step">
+      <h3>5. Clustering (K-means++) & model selection</h3>
+      <p>
+        We applied K-means++ and chose the number of clusters with a balance between statistical quality and business interpretability.
+      </p>
+
+      <ul>
+        <li><strong>Algorithm:</strong> K-means++</li>
+        <li><strong>Selection:</strong> Elbow method + Silhouette score</li>
+        <li><strong>Decision:</strong> <strong>K = 5</strong> as the best trade-off between separation and interpretability</li>
+      </ul>
+
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/elbow.png" alt="Elbow method plot" style="width:100%;">
+      </div>
+      <div class="image-row" style="width:100%;">
+        <img src="./assets/customer_data/silhouette.png" alt="Silhouette score plot" style="width:100%;">
+      </div>
+      <div class="annotation">[Elbow & Silhouette used to select K]</div>
+    </div>
+
+    <!-- 6 -->
+    <div class="process-step">
+      <h3>6. Segment interpretation & persona handoff</h3>
+      <p>
+        After clustering, we characterized each segment using spending categories, activity status, and transaction patterns.
+        This made the output usable for product and marketing teams.
+      </p>
+
+      <ul>
+        <li>Summarized cluster behaviors (e.g., frequent small spenders, occasional high spenders, dormant users)</li>
+        <li>Produced visuals to compare segments (category mix, frequency, trend over time)</li>
+        <li>Translated patterns into persona-friendly descriptions for stakeholder alignment</li>
+      </ul>
+
+      <img src="./assets/customer_data/cluster_summary.png" alt="Cluster summary table" style="width:100%;">
+      <div class="annotation">[Cluster behavior summaries for stakeholder communication]</div>
+    </div>
+
+    <!-- 7 -->
+    <div class="process-step">
+      <h3>7. Recommendations & next steps</h3>
+      <p>
+        We connected segments to concrete CLV strategies and defined how the bank could operationalize them.
+      </p>
+
+      <ul>
+        <li><strong>Retention:</strong> reward loyal frequent users with loyalty points/cashback optimizations</li>
+        <li><strong>Upsell:</strong> convert light but active users via tier upgrades and feature bundles</li>
+        <li><strong>Reactivation:</strong> win back dormant users with nudges and contextual incentives</li>
+      </ul>
+
+      <p><strong>Implementation plan (next steps):</strong></p>
+      <ul>
+        <li>Deploy segmentation as a scheduled pipeline (monthly refresh) and monitor drift</li>
+        <li>A/B test segment-targeted offers and track CLV lift</li>
+        <li>Iterate on features by adding non-transaction signals (app activity, support events) if available</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
