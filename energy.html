@@ -20,15 +20,15 @@
         </div>
   <header>
     <div class="container">
-        <p class="project-tag">Customer data analysis</p>
-        <h1>From Transactions to Actionable Customer Segments</h1>
+        <p class="project-tag">Forecasting demand and critical-load risk</p>
+        <h1>Temperature-Driven Electricity Demand Analysis</h1>
     </div>
   </header>
 
   <div class="image-link">
     <div class="image-container">
       <div class="gradient-circle"></div>
-      <img class="cover" src="./assets/customer_data/customer_door.png" style="width: 100%; height: auto;display: block; margin:0 auto;" >                  
+      <img class="cover" src="./assets/energy/energy_door.png" style="width: 100%; height: auto;display: block; margin:0 auto;" >                  
     </div>
   </div>
 
@@ -95,7 +95,7 @@
 
 <section class="business-opportunity">
     <div class="container">
-        <h2>What is the business impact?</h2>
+        <h2>Insights for planning and risk management</h2>
         <ul>
             <li><strong>Operational planning:</strong> anticipate demand spikes during cold snaps</li>
             <li><strong>Risk communication:</strong> translate model output into probability of critical load</li>
@@ -108,37 +108,47 @@
 <section class="problems-section">
     <div class="container2">
       <h2>Solution</h2> 
-        <div class="problem">
-      <h3>Problem 1 : Customers were treated as one “average user”</h3>
-      <p>
-        User behavior differed significantly across customers, but strategy lacked a clear segmentation model.
-        This limited targeted engagement and CLV growth.
-      </p>
-      <p>
-        <span class="solution">💡 Solution:</span>
-        I engineered customer-level RFM+ behavioral features and segmented users with PCA + K-means++ into five distinct clusters.
-      </p>
-    </div>
-
-    <div class="problem">
-        <h3>Problem 2 : Statistically valid clusters were hard to interpret</h3>
+      <div class="problem">
+        <h3>Problem 1 : Demand changes non-linearly with temperature</h3>
         <p>
-            Clusters can be mathematically “good” but still fail if stakeholders cannot understand what each segment represents.
+            Electricity demand does not respond to temperature in a simple linear way, especially under extreme cold conditions.
+            This makes planning difficult using averages alone.
         </p>
         <p>
             <span class="solution">💡 Solution:</span>
-            I characterized clusters using spending scale, frequency, recency, and category patterns, then created clear segment summaries and visuals to make them decision-ready.
+            I modeled demand as a function of temperature with approaches that capture non-linear behavior
+            and validated fit using out-of-sample checks.
+        </p>
+        <p class="why-matters">
+            <strong>Why this matters:</strong> improves forecast reliability when conditions deviate from “normal” weather.
         </p>
         </div>
 
         <div class="problem">
-        <h3>Problem 3 : Insights didn’t translate into clear actions</h3>
+        <h3>Problem 2 : Stakeholders need risk, not just point forecasts</h3>
         <p>
-            Even strong segmentation is wasted unless it informs concrete engagement strategies and prioritization.
+            A single predicted demand value is hard to operationalize without understanding the likelihood of crossing critical thresholds.
         </p>
         <p>
             <span class="solution">💡 Solution:</span>
-            I supported an action mapping for each segment (retention / upsell / reactivation) so the segmentation can be operationalized in campaigns and product decisions.
+            I estimated the probability of entering a critical-load regime and visualized risk across temperature scenarios.
+        </p>
+        <p class="why-matters">
+            <strong>Why this matters:</strong> supports early actions when risk is high even before demand peaks.
+        </p>
+        </div>
+
+        <div class="problem">
+        <h3>Problem 3 : Cold-weather stress needs scenario-based interpretation</h3>
+        <p>
+            Extreme events are rare but costly; teams need simple scenario narratives to understand what the models imply operationally.
+        </p>
+        <p>
+            <span class="solution">💡 Solution:</span>
+            I ran cold-weather scenarios (e.g., very low mean temperature) and translated results into operational implications and decision thresholds.
+        </p>
+        <p class="why-matters">
+            <strong>Why this matters:</strong> makes the analysis actionable for planning and communication.
         </p>
         </div>
     </div>
