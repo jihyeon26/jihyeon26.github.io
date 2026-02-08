@@ -158,7 +158,7 @@
             </div>
             <p>
                 <strong>Goal</strong>: Identify customer segments based on transaction behavior<br>
-                <strong>Dataset:</strong> 3 years of Yapeal transaction data<br>
+                <strong>Dataset:</strong> 3 years of Y banking transaction data<br>
                 <strong>Methods:</strong> Feature engineering, PCA, K-means clustering<br>
                 <strong>Outcome:</strong> 5 distinct customer segments with business insights
             </p>
@@ -168,15 +168,15 @@
         <div class="process-step">
             <h3>2. Data preperation & preprocessing</h3>
             <p>
-                <strong>Original dataset:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart
+                <strong>Original fields:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart
                 <br>
-                <strong>Method:</strong> Aggregated transactions at the customer level and created derived features
-                <br>
-                <strong>Result:</strong> Added indicators for 
-                <li>Activity span and frequency</li>
-                <li>Spending level and variability</li>
-                <li>Merchant and category diversity</li>
-                <li>Recency–Frequency–Monetary (RFM) metrics</li>
+                <strong>Output:</strong> aggregated customer table with engineered features
+                <ul>
+                    <li><strong>Frequency:</strong> n_tx, median_tx_per_month</li>
+                    <li><strong>Scale:</strong> total_spend, spend_per_month, median_amount</li>
+                    <li><strong>Variability:</strong> std_dev_amount, pct_high_value_tx</li>
+                    <li><strong>Recency:</strong> recency_days</li>
+                </ul>
 
             </p>
             <img src="./assets/customer_data/new_variables.png" alt="columns" style="width:100%;">
@@ -185,14 +185,17 @@
         </div>
 
         <div class="process-step">
-            <h3>3. Chatbot Configuration & Improvements</h3>
-            <p>                  
-                <strong>Reference Area Display:</strong> Implemented to enhance response credibility by showing relevant source information. Only 'chunk', 'disease', and 'source fields' are extracted for improved data reliability and faster verification. <br>  
-                <strong>Parameter Settings:</strong> Configured with strict=5 and temperature=0.1 to ensure accurate and reliable responses. <br>
-                <strong>Context Retention:</strong> Stores up to five previous responses to allow for follow-up questions and context-aware interactions. <br>  
-                <strong>Multilingual Support:</strong> Translates user queries into English before sending a request to the GPT model, improving search performance. Detects the language of the original question and returns the response in the same language for seamless multilingual support.
-
+            <h3>3. Preprocessing</h3>
+            <p>
+                Transaction distributions were skewed and heavy-tailed, which can distort distance-based clustering.
+                I applied transformations to stabilize the feature space.
             </p>
+            <ul>
+                <li><strong>Log transform:</strong> reduces skew and sensitivity to extreme values</li>
+                <li><strong>Scaling:</strong> aligns feature ranges to avoid dominance by high-magnitude variables</li>
+            </ul>
+
+
             <img src="./assets/medly/citation.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
             <div class="annotation">[Test screen using Gradio: Enhances data reliability through reference areas.]</div>    
             <div class="image-row" style="width:100%;">
