@@ -200,44 +200,40 @@
         </div>
 
         <div class="process-step">
-            <h3>4. Response Performance & Reference Area Matching Test</h3>
-            <p>                  
-                - Responses are reviewed by practicing physicians and validated through Human Evaluation. <br>
-                - Received direct feedback from physicians expressing interest in using the chatbot in real-world medical settings. <br>
-                - Conducted over 100 tests to verify the alignment between generated responses and reference areas, ensuring accurate outputs.
+            <h3>4. Dimensionality reduction (PCA)</h3>
+            <p>
+                Many engineered features were correlated. I used PCA to reduce multicollinearity and noise while preserving the behavioral signal.
             </p>
-            <img src="./assets/medly/box.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
-            <div class="annotation">[Using gradio to validate citation area during development]</div>            
+            <ul>
+                <li><strong>Why PCA:</strong> improves separability and robustness for distance-based clustering</li>
+                <li><strong>Result:</strong> retained <strong>5 components</strong> (~95% variance) for clustering</li>
+            </ul>
+                
         </div>
 
         <div class="process-step">
-            <h3>5. Flask Server Deployment & CI/CD Configuration</h3>
+            <h3>5. Clustering & selecting K</h3>
             <p>
-                <strong>Deployed Flask app to Azure App Service</strong> and configured environment variables.<br>
-                <strong>Set up GitHub Actions CI/CD</strong> for automatic deployment on main branch updates, handling Python setup, dependencies, build, and deployment via .yml file.<br>
+                I applied K-means++ and selected the number of clusters by balancing quantitative metrics with business interpretability.
+            <ul>
+                <li><strong>Algorithm:</strong> K-means++</li>
+                <li><strong>Model selection:</strong> Elbow method + Silhouette score</li>
+                <li><strong>Why K=5:</strong> best trade-off between separation and stakeholder-usable segment granularity</li>
+            </ul>  
             </p>
-            <div class="image-row" style="width:100%;">
-                <img src="./assets/medly/webapp.png">
-                <img src="./assets/medly/git_action.png">
-            </div>
-            <div class="annotation">[App deployment and GitHub actions integration]</div>            
+              
+            <img src="./assets/customer_data/optimal_k.png" alt="finding optimal k" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <div class="annotation">[Elbow & Silhouette used to select K]</div>    
+
         </div>
 
   </section>
-<section class="tools">
-    <div class="container">
-        <h2>Tools Used</h2>
-        <br>
-        <img src="./assets/medly/tools.png" alt="ui" style="width:100%;">
 
-        
-    </div>
-</section>
 
 <div id="footer" class="section">
     <div class="container">
       <p>          
-        Copyright 2024. Jihyeon Choung All rights reserved.
+        Copyright 2026. Jihyeon Choung All rights reserved.
       </p>
     </div>
 </div>
