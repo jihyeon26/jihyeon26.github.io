@@ -187,7 +187,21 @@
     </p>
 
     <img src="./assets/customer_data/cluster_table.png" alt="Cluster comparison table" style="width:100%">
+    <p><details class="persona-details">
+        <summary>From clusters to personas</summary>
+        <h3>Cluster 0: Martina, 38, part-time Marketing Manager</h3>
+        <img src="./assets/customer_data/persona0.png" alt="persona for cluster0" style="width:100%">
+        <p>
+            This persona represents highly active users who make frequent, low-value transactions for everyday expenses.They rely on the app as a daily payment tool, indicating strong engagement but limited value per transaction.
+        </p>
 
+        <h3>Cluster 4: Sophia, 32, software engineer</h3>
+        <img src="./assets/customer_data/persona4.png" alt="persona for cluster0" style="width:100%">
+        <p>
+            This persona represents users who make infrequent but high-value transactions, primarily for savings and cash-related purposes. They engage with the app selectively rather than daily, indicating trust in the platform for larger financial movements.
+
+        </p>
+        </details></p>
 
 </section>
 
@@ -233,8 +247,10 @@
             <p>
                 Transaction distributions were skewed and heavy-tailed, which can distort distance-based clustering.
                 I applied transformations to stabilize the feature space.
+                <ul>
                 <li><strong>Log transform:</strong> reduces skew and sensitivity to extreme values</li>
                 <li><strong>Scaling:</strong> aligns feature ranges to avoid dominance by high-magnitude variables</li>
+                </ul>
             </p>
             
             <img src="./assets/customer_data/log_trans.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;">
