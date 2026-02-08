@@ -32,6 +32,7 @@
     </div>
   </div>
 
+  <section class="overview">
     <div class="container">
         <h2>Overview</h2>
         <p>
@@ -54,17 +55,29 @@
             GitHub
         </a></p>
     </div>
+</section>
 
 <section class="role">
     <div class="container">
         <h2>My role</h2>
-        <p>I led the data preprocessing, PCA, clustering, and cluster interpretation, and created analytical visualizations.</p>
+        <p>
+            <strong>I owned the analytical core</strong> of this project : from feature design and clustering decisions to segment interpretation, ensuring the output was both statistically sound and usable for business teams.
+        </p>
         <ul>
-            <li><strong>Me:</strong> Data Scientist – Data preprocessing, PCA, clustering, interpretation, and visualization</li>
-            <li><strong>Florian, Valentino:</strong> Persona creation and visual design</li>
-            <li><strong>Raphael, Michael:</strong> Business recommendations and insights</li>
-            <li><strong>Yannik:</strong> Leader, Dataset preparation</li>
+          <li><strong>Feature engineering:</strong> designed customer-level aggregation</li>
+          <li><strong>Preprocessing:</strong> stabilized skewed transaction variables via log transforms + scaling for distance-based clustering</li>
+          <li><strong>PCA:</strong> reduced redundancy/multicollinearity to improve cluster separability and interpretability</li>
+          <li><strong>Clustering:</strong> implemented K-means++ and selected K using Elbow + Silhouette trade-offs</li>
+          <li><strong>Interpretation:</strong> created segment definitions and analytical visuals to support stakeholder understanding</li>
         </ul>
+
+        <p><details class="team-details">
+          <summary>Team contributions</summary>
+          <ul>
+            <li><strong>Me:</strong> analytics pipeline, modeling, evaluation, interpretation, visualization</li>
+            <li><strong>Teammates:</strong> persona creation, visual design, business recommendations, coordination</li>
+          </ul>
+        </details></p>
     </div>
 </section>
 
@@ -72,7 +85,7 @@
     <div class="container-target">
         <div class="detail-item">
             <h3>Target users</h3>                              
-            <p>Product and marketing teams of the digital banking app</p>              
+            <p>Product, marketing, and growth teams at a digital banking app</p>              
         </div>
 
         <div class="detail-item">
