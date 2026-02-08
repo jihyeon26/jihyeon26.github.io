@@ -154,163 +154,35 @@
     </div>
   </section>
 
-<section class="cluster-results">
+<section class="results">
   <div class="container">
-    <h2>Clustering Results</h2>
-    <p>
-    <div class="image-row" style="width:80%;">
-        <img src="./assets/customer_data/cluster_result.png">
-    </div>
-    </p>
+    <h2>Key results</h2>
+
     <p class="section-intro">
-      The clustering analysis revealed <strong>five distinct behavioral segments</strong>.
-      To make the results usable for non-technical teams, each cluster was interpreted
-      in terms of spending behavior, activity level, and real-world usage patterns.
-    </p>
-    <img src="./assets/customer_data/cluster_plots.png" alt="Cluster comparison charts" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
-    <div class="annotation">[Cluster comparison charts]</div>
-
-    <p class="chart-insight">
-    The charts highlight clear differences in how each segment uses the product.
-    Cluster 0 shows <strong>high transaction frequency with low average amounts</strong>,
-    indicating frequent everyday usage.
-    In contrast, Cluster 2 and Cluster 4 are characterized by
-    <strong>lower frequency but significantly higher transaction values</strong>,
-    reflecting more deliberate, goal-driven usage such as savings or occasional large payments.
+      The analysis shows a clear temperature–demand relationship and highlights how risk increases rapidly under extreme cold.
+      Below are selected visuals; the full methodology and appendix are available in the R Markdown report.
     </p>
 
-    <p class="chart-insight">
-    Activity patterns further separate the segments.
-    Cluster 3 stands out with <strong>long recency and minimal activity</strong>,
-    signaling dormant or churned users, while Cluster 0 and Cluster 1 remain
-    consistently active with shorter time since last use.
-    These differences suggest distinct engagement and churn risk profiles across segments.
-    </p>
+    <div class="results-grid">
+      <figure class="result-card">
+        <img src="./assets/energy/relationship_curve.png" alt="Demand vs temperature relationship plot">
+        <figcaption><strong>Demand vs Temperature:</strong> relationship curve and confidence band.</figcaption>
+      </figure>
 
-    <p class="chart-insight">
-    Taken together, the visualizations show that customer value is driven by
-    <strong>different behavioral mechanisms</strong>—frequency for some segments and
-    transaction size for others—underscoring the need for segment-specific engagement
-    strategies rather than a one-size-fits-all approach.
-    </p>
-    
-    <img src="./assets/customer_data/cluster_table.png" alt="Cluster comparison table" style="width:100%">
-    <p>
-    <h3>Action guidance by segment</h3>
-    <ul>
-        <li><strong>Frequent small spenders:</strong> focus on retention through convenience and reliability</li>
-        <li><strong>Light but active users:</strong> encourage upsell by highlighting additional features and value</li>
-        <li><strong>Occasional high spenders:</strong> support high-value moments with tailored offers</li>
-        <li><strong>Dormant users:</strong> prioritize reactivation with targeted reminders and incentives</li>
-        <li><strong>Savings-focused users:</strong> reinforce trust and simplify large-value transactions</li>
-    </ul>
-    </p>
+      <figure class="result-card">
+        <img src="./assets/energy/forecast_example.png" alt="Forecast plot for a cold period">
+        <figcaption><strong>Forecast example:</strong> predicted demand during a cold period.</figcaption>
+      </figure>
 
-    <p><details class="persona-details">
-        <summary>From clusters to personas</summary>
-        <h3>Cluster 0: Martina, 38, part-time Marketing Manager</h3>
-        <img src="./assets/customer_data/persona0.png" alt="persona for cluster0" style="width:100%">
-        <p>
-            This persona represents highly active users who make frequent, low-value transactions for everyday expenses.They rely on the app as a daily payment tool, indicating strong engagement but limited value per transaction.
-        </p>
-
-        <h3>Cluster 4: Sophia, 32, software engineer</h3>
-        <img src="./assets/customer_data/persona4.png" alt="persona for cluster0" style="width:100%">
-        <p>
-            This persona represents users who make infrequent but high-value transactions, primarily for savings and cash-related purposes. They engage with the app selectively rather than daily, indicating trust in the platform for larger financial movements.
-
-        </p>
-    </details></p>
+      <figure class="result-card">
+        <img src="./assets/energy/risk_curve.png" alt="Probability of critical load vs temperature">
+        <figcaption><strong>Risk curve:</strong> probability of critical load as temperature decreases.</figcaption>
+      </figure>
     </div>
-    <div class="action-guidance">
-    
-
-
+  </div>
 </section>
 
 
-  <section class="process">
-    
-    <div class="container">
-        <h2>Clustering Process</h2>
-
-        <div class="process-step">
-            <h3>1. Overview</h3>
-            
-            <p>
-                <strong>Goal</strong>: Identify customer segments based on transaction behavior<br>
-                <strong>Dataset:</strong> 3 years of Y banking transaction data<br>
-                <strong>Methods:</strong> Feature engineering, PCA, K-means clustering<br>
-                <strong>Outcome:</strong> 5 distinct customer segments with business insights
-            </p>
-
-        </div>
-
-        <div class="process-step">
-            <h3>2. Data preperation & preprocessing</h3>
-            <p>
-                <strong>Original fields:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart
-                <br>
-                <strong>Output:</strong> aggregated customer table with engineered features
-                <ul>
-                    <li><strong>Frequency:</strong> n_tx, median_tx_per_month</li>
-                    <li><strong>Scale:</strong> total_spend, spend_per_month, median_amount</li>
-                    <li><strong>Variability:</strong> std_dev_amount, pct_high_value_tx</li>
-                    <li><strong>Recency:</strong> recency_days</li>
-                </ul>
-
-            </p>
-            <img src="./assets/customer_data/new_variables.png" alt="columns" style="width:100%;">
-
-            <div class="annotation">[The original dataset and new variables]</div>
-        </div>
-
-        <div class="process-step">
-            <h3>3. Preprocessing</h3>
-            <p>
-                Transaction distributions were skewed and heavy-tailed, which can distort distance-based clustering.
-                I applied transformations to stabilize the feature space.
-                <ul>
-                <li><strong>Log transform:</strong> reduces skew and sensitivity to extreme values</li>
-                <li><strong>Scaling:</strong> aligns feature ranges to avoid dominance by high-magnitude variables</li>
-                </ul>
-            </p>
-            
-            <img src="./assets/customer_data/log_trans.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;">
-            <img src="./assets/customer_data/trans_out.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;">
-            <div class="annotation">[Transformations applied to stabilize clustering]</div>    
-                   
-        </div>
-
-        <div class="process-step">
-            <h3>4. Dimensionality reduction (PCA)</h3>
-            <p>
-                Many engineered features were correlated. I used PCA to reduce multicollinearity and noise while preserving the behavioral signal.
-            </p>
-            <ul>
-                <li><strong>Why PCA:</strong> improves separability and robustness for distance-based clustering</li>
-                <li><strong>Result:</strong> retained <strong>5 components</strong> (~95% variance) for clustering</li>
-            </ul>
-                
-        </div>
-
-        <div class="process-step">
-            <h3>5. Clustering & selecting K</h3>
-            <p>
-                I applied K-means++ and selected the number of clusters by balancing quantitative metrics with business interpretability.
-            <ul>
-                <li><strong>Algorithm:</strong> K-means++</li>
-                <li><strong>Model selection:</strong> Elbow method + Silhouette score</li>
-                <li><strong>Why K=5:</strong> best trade-off between separation and stakeholder-usable segment granularity</li>
-            </ul>  
-            </p>
-              
-            <img src="./assets/customer_data/optimal_k.png" alt="finding optimal k" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
-            <div class="annotation">[Elbow & Silhouette used to select K]</div>    
-
-        </div>
-
-  </section>
 
 
 <div id="footer" class="section">
