@@ -110,25 +110,39 @@
 <section class="problems-section">
     <div class="container2">
       <h2>Solution</h2> 
-
-      <div class="problem">
-        <h3>Problem 1</h3>
-        <p>Transaction data was highly skewed, causing unstable clustering results.</p>
-        <p><span class="solution">💡 Solution:</span> Applied logarithmic transformation and scaling to normalize the data distribution.</p>
+        <div class="problem">
+      <h3>Problem 1 : Customers were treated as one “average user”</h3>
+      <p>
+        User behavior differed significantly across customers, but strategy lacked a clear segmentation model.
+        This limited targeted engagement and CLV growth.
+      </p>
+      <p>
+        <span class="solution">💡 Solution:</span>
+        I engineered customer-level RFM+ behavioral features and segmented users with PCA + K-means++ into five distinct clusters.
+      </p>
     </div>
 
     <div class="problem">
-        <h3>Problem 2</h3>
-        <p>Determining the optimal number of clusters was challenging.</p>
-        <p><span class="solution">💡 Solution:</span> Used both Elbow and Silhouette methods to find a well-balanced five-cluster solution.</p>
-      </div>
+        <h3>Problem 2 : Statistically valid clusters were hard to interpret</h3>
+        <p>
+            Clusters can be mathematically “good” but still fail if stakeholders cannot understand what each segment represents.
+        </p>
+        <p>
+            <span class="solution">💡 Solution:</span>
+            I characterized clusters using spending scale, frequency, recency, and category patterns, then created clear segment summaries and visuals to make them decision-ready.
+        </p>
+        </div>
 
-
-      <div class="problem">
-          <h3>Problem 3</h3>
-          <p>Translating technical cluster outputs into business insights was difficult.</p>
-          <p><span class="solution">💡 Solution:</span> Created user personas and linked them to strategic recommendations, bridging analytics with business value.</p>
-      </div>
+        <div class="problem">
+        <h3>Problem 3 : Insights didn’t translate into clear actions</h3>
+        <p>
+            Even strong segmentation is wasted unless it informs concrete engagement strategies and prioritization.
+        </p>
+        <p>
+            <span class="solution">💡 Solution:</span>
+            I supported an action mapping for each segment (retention / upsell / reactivation) so the segmentation can be operationalized in campaigns and product decisions.
+        </p>
+        </div>
     </div>
   </section>
 
