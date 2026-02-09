@@ -89,7 +89,7 @@
   
 .header-description {
   color: #414141;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
   line-height: 150%;
   margin: 30px 0;
@@ -100,7 +100,7 @@
   
 .header-content {
   margin: 0 auto;
-  padding: 80px 0 80px;
+  padding: 80px 0 0px;
   max-width: 960px;
   width: 70%;
   text-align: center;
