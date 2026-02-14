@@ -39,19 +39,19 @@
             Weather is one of the strongest external drivers of electricity demand. This project presents an end-to-end analysis—from data preparation and modeling to scenario-based interpretation—designed to support operational planning under cold-weather stress conditions.
             <br>
             The full analysis was developed as a reproducible R Markdown report and exported as an interactive HTML document.
-        <p>
+        </p>
         <a class="btn primary" href="./energy_report.html" target="_blank" rel="noopener">
             View full technical report
         </a>  
         <h3>Key outputs</h3>
         <ul>
-            <li><strong>Demand–temperature relationship</strong> quantified with interpretable models</li>
-            <li><strong>Critical load risk</strong> estimation for extreme cold scenarios</li>
-            <li><strong>Decision-ready visuals</strong> and thresholds for planning and communication</li>
+            <li><strong>Temperature-demand sensitivity</strong> quantified with interpretable models</li>
+            <li><strong>Critical-load risk</strong> estimated as a probability across cold scenarios</li>
+            <li><strong>Operational thresholds</strong> highlighted to support readiness decisions</li>
         </ul>
     
     
-        <p></p><a class="github-link" href="https://github.com/jihyeon26/temperature-grid-risk-modeling" target="_blank">
+        <p><a class="github-link" href="https://github.com/jihyeon26/temperature-grid-risk-modeling" target="_blank">
             <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
             GitHub
         </a></p>
@@ -68,81 +68,22 @@
         <div class="role-grid">
             <h3>What I did</h3>
             <ul>
-                <li>Prepared and aligned time-series datasets (demand + temperature) and ensured correct time/date handling</li>
-                <li>Explored seasonality, trends, and outliers; validated assumptions and data quality</li>
-                <li>Built predictive models for demand and a risk model for critical-load probability</li>
-                <li>Designed scenario analysis for extreme cold events and interpreted operational implications</li>
+                <li>Prepared and aligned daily time-series datasets (demand + temperature) with consistent date handling</li>
+                <li>Checked seasonality and data quality (weekday effects, outliers, and missingness)</li>
+                <li>Built demand models and a logistic risk model for critical-load probability</li>
+                <li>Designed an extreme-cold scenario (−7°C) and translated results into operational implications</li>
             </ul>
         </div>
     </div>
 </section>
-
-<section class="details">
-    <div class="container-target">
-        <div class="detail-item">
-            <h3>Target users</h3>                              
-            <p>Operations and planning stakeholders (energy system / grid context)</p>              
-        </div>
-        <div class="detail-item">
-            <h3>Interface</h3>
-            <p>R Markdown, Energy dashboard</p>
-        </div>
-
-        <div class="detail-item">
-            <h3>Timeline</h3>
-            <p>3 weeks</p>
-        </div>
-    </div>
-</section>
-
-<section class="business-opportunity">
-    <div class="container">
-        <h2>Insights for planning and risk management</h2>
-        <ul>
-            <li><strong>Operational planning:</strong> anticipate demand spikes during cold snaps</li>
-            <li><strong>Risk communication:</strong> translate model output into probability of critical load</li>
-            <li><strong>Decision support:</strong> define thresholds to trigger readiness actions</li>
-        </ul>
-    </div>
-</section>
-
-
-<section class="problems-section">
-    <div class="container2">
-      <h2>Solution</h2> 
-      <div class="problem">
-        <h3>Problem 1 : Demand changes non-linearly with temperature</h3>
-        <p>
-            Electricity demand does not respond to temperature in a simple linear way, especially under extreme cold conditions.
-            This makes planning difficult using averages alone.
-        </p>
-        <p>
-            <span class="solution">💡 Solution:</span>
-            I modeled demand as a function of temperature with approaches that capture non-linear behavior
-            and validated fit using out-of-sample checks.
-        </p>    
-        </div>
-
-        <div class="problem">
-        <h3>Problem 2 : Stakeholders need risk, not just point forecasts</h3>
-        <p>
-            A single predicted demand value is hard to operationalize without understanding the likelihood of crossing critical thresholds.
-        </p>
-        <p>
-            <span class="solution">💡 Solution:</span>
-            I estimated the probability of entering a critical-load regime and visualized risk across temperature scenarios.
-        </p>
-        </div>
-    </div>
-  </section>
 
 <section class="results">
   <div class="container">
     <h2>Key results</h2>
 
     <p class="section-intro">
-      The analysis shows a clear temperature–demand relationship and highlights how risk increases rapidly under extreme cold.
-      Below are selected visuals; the full methodology and appendix are available in the R Markdown report.
+      The analysis confirms a strong temperature-demand relationship and shows that risk increases sharply under extreme cold.
+      Selected visuals are shown below; full methodology and assumptions are documented in the report.
     </p>
 
     <div class="results-grid">
@@ -157,27 +98,6 @@
     <p>
         Predicted electricity demand (solid line) and probability of entering a critical load regime (dashed line) across cold temperatures. The vertical line marks the −7°C operational scenario.
     </p>
-    <p><details class="report-overview">
-        <summary>Report Overview</summary>
-        <p>
-            This project demonstrates how temperature-driven dynamics translate into electricity demand growth, rising stabilization costs, and systemic risk in the Swiss power system.
-            <br><br>
-            The results section highlights three key insights:
-            <br><br>
-            First, electricity demand exhibits a strong and nonlinear inverse relationship with temperature. As shown in the demand–temperature curve, colder conditions lead to a rapid increase in weekday-adjusted electricity demand, confirming temperature as a critical driver of short-term load dynamics.
-            <br><br>
-            Second, stabilization costs display a pronounced U-shaped pattern across temperature regimes. Costs remain relatively moderate under mild conditions but rise sharply during extreme cold periods, indicating increasing reliance on secondary control energy and higher balancing expenditures when system flexibility becomes constrained.
-            <br><br>
-            Finally, the risk curve illustrates how system vulnerability escalates under cold stress. While demand increases approximately linearly as temperatures fall, the probability of entering a critical load regime rises nonlinearly, approaching near certainty under extreme cold conditions. This divergence highlights that operational risk grows disproportionately faster than demand itself.
-            <br><br>
-            Together, these results show how extreme temperature events can simultaneously strain physical system capacity and amplify economic risk.
-            The full analysis—including data processing, model estimation, and operational scenario simulation—is documented in the accompanying R Markdown report.
-            <br>
-            <a class="btn primary" href="./energy_report.html" target="_blank" rel="noopener">
-            View full technical report
-        </a> 
-        </p>
-    </details></p>
     </div>
   </div>
 </section>
