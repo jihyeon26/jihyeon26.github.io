@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="An IBM Challenge agentic AI workflow that converts enterprise SOP documents into reviewed guardrails and learns from human feedback.">
-    <title>Guardrail Inspector Agent</title>
+    <meta name="description" content="An agentic system that transforms complex policy documents into auditable, enforceable guardrails through structured review and evaluation.">
+    <title>Agentic Policy-to-Guardrail System</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Poppins:wght@400;700&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
@@ -25,9 +25,9 @@
     <header>
       <div class="container">
         <p class="project-tag">IBM Challenge · Agentic AI · LLM Evaluation</p>
-        <h1>Guardrail Inspector Agent</h1>
+        <h1>Agentic Policy-to-Guardrail System</h1>
         <p class="project-lead">
-          An adaptive workflow that turns enterprise SOP documents into reviewed, evidence-grounded guardrails—and learns from every human decision.
+          Turning complex policy documents into auditable, enforceable guardrails.
         </p>
       </div>
     </header>
@@ -206,10 +206,10 @@
           <h2>Designing for quality before trusting generated rules</h2>
           <div class="challenge-grid">
             <article class="challenge-card">
-              <span>Challenge 01 · One-shot generation</span>
+              <span>Challenge 01 · Generation</span>
               <h3>A fluent guardrail can still be vague or unenforceable</h3>
               <p>
-                LLM output is not treated as final. Specialized stages, Pydantic schemas, item-level review, and a mandatory rejection reason turn generation into a controlled workflow.
+                Fluent LLM output can still be vague, inconsistent, or difficult to enforce without structured review.
               </p>
               <div class="solution-block">
                 <strong>Design response</strong>
@@ -218,22 +218,22 @@
             </article>
 
             <article class="challenge-card">
-              <span>Challenge 02 · Limited ground truth</span>
-              <h3>Quality had to be measured at both pipeline and final-output level</h3>
+              <span>Challenge 02 · Evaluation</span>
+              <h3>One score could not explain where the pipeline failed</h3>
               <p>
-                A single score could not show whether errors came from policy extraction, guardrail generation, or the final rule's relationship to its source SOP.
+                Extraction errors, missed guardrails, and unsupported outputs occur at different stages and require different quality signals.
               </p>
               <div class="solution-block">
                 <strong>Design response</strong>
-                <p>Build a separate evaluation pipeline: use SME-labelled precision and recall for Steps 2–3, then benchmark final outputs with two document-grounded LLM judges.</p>
+                <p>Build a standalone pipeline combining SME-labelled stage metrics with a dual-LLM, document-grounded benchmark.</p>
               </div>
             </article>
 
             <article class="challenge-card">
-              <span>Challenge 03 · Forgotten feedback</span>
+              <span>Challenge 03 · Feedback memory</span>
               <h3>Without memory, the same mistakes return in every run</h3>
               <p>
-                Reviewer and SME feedback must influence later actions rather than remain as passive audit text.
+                Reviewer and SME feedback can remain passive audit text, allowing the same mistakes to return in later runs.
               </p>
               <div class="solution-block">
                 <strong>Design response</strong>
@@ -323,10 +323,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td>ISDA SSI SOP</td><td>17</td><td>94.71%</td><td>11.76%</td><td>86.76%</td><td>17.65%</td></tr>
-                  <tr><td>SWIFT Payment Controls</td><td>7</td><td>87.14%</td><td>28.57%</td><td>75.00%</td><td>14.29%</td></tr>
-                  <tr><td>Accounts Payable SOP</td><td>4</td><td>92.50%</td><td>0.00%</td><td>93.75%</td><td>25.00%</td></tr>
-                  <tr><td>York University Payment Requisition SOP</td><td>10</td><td>85.00%</td><td>10.00%</td><td>75.00%</td><td>50.00%</td></tr>
+                  <tr><td>Source SOP A</td><td>17</td><td>94.71%</td><td>11.76%</td><td>86.76%</td><td>17.65%</td></tr>
+                  <tr><td>Source SOP B</td><td>7</td><td>87.14%</td><td>28.57%</td><td>75.00%</td><td>14.29%</td></tr>
+                  <tr><td>Source SOP C</td><td>4</td><td>92.50%</td><td>0.00%</td><td>93.75%</td><td>25.00%</td></tr>
+                  <tr><td>Source SOP D</td><td>10</td><td>85.00%</td><td>10.00%</td><td>75.00%</td><td>50.00%</td></tr>
                   <tr class="average-row"><td>Average</td><td>38 total</td><td>90.53%</td><td>13.16%</td><td>82.23%</td><td>26.32%</td></tr>
                 </tbody>
               </table>
@@ -337,8 +337,6 @@
               <p><strong>Unsupported / Overstated Content Rate</strong> counts guardrails containing at least one claim that is not supported by the source or overstates it.</p>
               <p><strong>Missing-Point Rate</strong> counts guardrails that omit a relevant detail, condition, or context from the source SOP.</p>
             </div>
-
-            <p class="metric-note">These metrics expose where expert review is most valuable; the LLM judges support rather than replace final SME validation.</p>
           </article>
         </div>
       </section>

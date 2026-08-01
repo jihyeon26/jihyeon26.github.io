@@ -487,6 +487,8 @@
 }
 
 .challenge-card {
+  display: flex;
+  flex-direction: column;
   padding: 28px;
   background: #fff;
   border: 1px solid var(--agent-line);
@@ -498,11 +500,17 @@
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 .challenge-card h3 {
+  min-height: 72px;
   margin: 14px 0;
   font-size: 20px;
+}
+
+.challenge-card > p {
+  flex: 1;
 }
 
 .solution-block {
@@ -762,16 +770,6 @@
   color: var(--agent-ink);
 }
 
-.metric-note {
-  margin-top: 26px;
-  padding: 18px 20px;
-  color: #415b75;
-  background: #fff;
-  border: 1px dashed #9cb2dd;
-  border-radius: 10px;
-  font-size: 14px;
-}
-
 .table-wrap {
   margin-top: 30px;
   overflow-x: auto;
@@ -929,6 +927,10 @@
 
   .challenge-grid {
     grid-template-columns: 1fr;
+  }
+
+  .challenge-card h3 {
+    min-height: 0;
   }
 
   .kpi-stage-grid,
