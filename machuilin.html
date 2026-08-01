@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/machuilin.css">
     
 </head>
-<body>
-  <div class="topnav">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<body class="project-page machuilin-page">
+  <nav class="topnav" aria-label="Primary navigation">
+    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <a href="index.html">Home</a>
     <a href="index.html#works">Works</a>
     <a href="https://github.com/jihyeon26">Github</a>
     <a href="about.html">About</a>
-    <!-- <a href="artworks.html">Artworks</a> -->
-  </div>
+  </nav>
   <header>
       <div class="container">
           <p class="project-tag">Machuilin</p>
@@ -29,7 +30,7 @@
   <div class="image-link">
     <div class="image-container">
       <div class="gradient-circle" style="background-color: rgb(205, 150, 95);"></div>
-      <img class="cover" src="./assets/machuilin/ui1.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Machuilin Project">                  
+      <img class="cover" src="./assets/machuilin/ui1.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Machuilin Project" decoding="async">
     </div>
   </div>
 
@@ -41,7 +42,7 @@
         </p>
         <p><strong>'machuilin'</strong> is a title that is similar in pronunciation to the Korean word for 'drink'. The title is meant to evoke the idea of drinking and Michelin.</p>
         
-        <img src="./assets/machuilin/machuilin1.png" style="width: 70%; margin:0 auto; margin-top: 40px;display: block;">
+        <img src="./assets/machuilin/machuilin1.png" style="width: 70%; margin:0 auto; margin-top: 40px;display: block;" decoding="async" loading="lazy">
     </div>
   </section>
 
@@ -115,7 +116,7 @@
   <section class="data-process">
     <div class="container">
         <h2>Architecture & Data Collection</h2>
-        <img src="./assets/machuilin/machuilin_db.png" style="width: 80%;">
+        <img src="./assets/machuilin/machuilin_db.png" style="width: 80%;" decoding="async" loading="lazy">
         <h3>Data Collection</h3>
         <p>
             We gathered data from two major beer community websites, including details such as beer style, brewery, country, ABV (Alcohol By Volume), and user reviews. The collected data was cleaned and structured for analysis by converting ABV values to numerical format, removing missing values, and parsing reviews into distinct features like aroma, appearance, flavor, mouthfeel, overall rating, and user rating.
@@ -129,9 +130,9 @@
             Improve the performance of recommendation models by weighting key flavor attributes (e.g., sweet, bitter) with user preference analysis based on frequency of mention in review data.
         </p>
         <div class="image-container2">     
-            <img src="./assets/machuilin/feature1.png" alt="Image 1">
+            <img src="./assets/machuilin/feature1.png" alt="Image 1" decoding="async" loading="lazy">
             
-            <img src="./assets/machuilin/feature2.png" alt="Image 2">
+            <img src="./assets/machuilin/feature2.png" alt="Image 2" decoding="async" loading="lazy">
         </div>
 
     </div>
@@ -141,9 +142,9 @@
     <div class="container">
         <h2>Custom Vision(Microsoft Azure)</h2><br>
         <div class="image-container2">     
-            <img src="./assets/machuilin/custom1.png" alt="Image 1">
+            <img src="./assets/machuilin/custom1.webp" alt="Custom Vision training example" loading="lazy" decoding="async">
             <div class="arrow">➔</div>
-            <img src="./assets/machuilin/custom2.png" alt="Image 2">
+            <img src="./assets/machuilin/custom2.webp" alt="Custom Vision prediction result" loading="lazy" decoding="async">
           </div>
         <p>
             Using Azure Custom Vision, we developed a system to train beer images, enabling users to easily recognize and search for beers, even if they are unfamiliar with their long or complex names. This approach simplifies the process of identifying beers and accessing relevant information, making it more user-friendly for a broader audience.
@@ -161,15 +162,15 @@
             To provide accurate beer recommendations, I utilized K-means clustering. The data was preprocessed by selecting important features, such as bitterness, sweetness, and ABV (Alcohol By Volume). PCA (Principal Component Analysis) was applied to reduce dimensions, ensuring faster and more efficient clustering. Weighting was added to attributes identified as significant from user reviews to improve cluster accuracy.
         </p>
         <div class="image-container2" style="margin-bottom: 50px;">     
-            <img src="./assets/machuilin/code.png" class="responsive-image">
-            <img src="./assets/machuilin/output.png" class="responsive-image">
+            <img src="./assets/machuilin/code.png" class="responsive-image" decoding="async" loading="lazy">
+            <img src="./assets/machuilin/output.png" class="responsive-image" decoding="async" loading="lazy">
         </div>  
 
         <h3>Web app deployment</h3>
         <p>
             A web application was developed to enhance the beer recommendation experience. When a user takes a photo of a beer, the app uses Custom Vision to identify the beer and display detailed information about it. Based on the identified beer, the app calculates the distances to other beers within the same cluster and recommends three similar beers.
         </p>      
-        <video controls style="max-width:350px; width: 100%; display: inline-block; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
+        <video controls playsinline preload="metadata" poster="./assets/machuilin/machuilin_video_poster.webp" style="max-width:350px; width: 100%; display: inline-block; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
             <source src="./assets/machuilin/machuilin_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>  
@@ -183,21 +184,21 @@
             I designed the app using our brand's signature colors, creating a cohesive and visually appealing experience. With an intuitive photo upload UI and a recommendation process that’s easy to follow at a glance, our service ensures seamless usability.
         </p>
         <div class="image-container3">     
-            <img src="./assets/machuilin/ui_d.png" alt="ui 1" class="responsive-image">
-            <img src="./assets/machuilin/ui2.png" alt="ui 2" class="responsive-image">
+            <img src="./assets/machuilin/ui_d.png" alt="ui 1" class="responsive-image" decoding="async" loading="lazy">
+            <img src="./assets/machuilin/ui2.png" alt="ui 2" class="responsive-image" decoding="async" loading="lazy">
         </div>     
     </div>
 </section> -->
 
-<div id="footer" class="section">
+<footer id="footer" class="section">
     <div class="container">
       <p>          
-        Copyright 2024. Jihyeon Choung All rights reserved.
+        Copyright 2026. Jihyeon Choung All rights reserved.
       </p>
     </div>
-</div>
+</footer>
         
-<script src="./javascript/machuilin.js"></script>
+<script src="./javascript/common.js"></script>
 </body>
 
 </html>

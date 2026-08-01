@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/customer_data.css">
 </head>
-<body>
-    <div class="topnav">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+<body class="project-page customer-data-page">
+    <nav class="topnav" aria-label="Primary navigation">
+        <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <a href="index.html">Home</a>
         <a href="index.html#works">Works</a>
         <a href="https://github.com/jihyeon26">Github</a>
         <a href="about.html">About</a>
-        <!-- <a href="artworks.html">Artworks</a> -->
-        </div>
+    </nav>
   <header>
     <div class="container">
         <p class="project-tag">Customer data analysis</p>
@@ -28,7 +29,7 @@
   <div class="image-link">
     <div class="image-container">
       <div class="gradient-circle"></div>
-      <img class="cover" src="./assets/customer_data/customer_door.png" style="width: 100%; height: auto;display: block; margin:0 auto;" >                  
+      <img class="cover" src="./assets/customer_data/customer_door.webp" style="width: 100%; height: auto; display: block; margin: 0 auto;" alt="Customer segmentation project overview" decoding="async">
     </div>
   </div>
 
@@ -146,7 +147,7 @@
     <h2>Clustering Results</h2>
     <p>
     <div class="image-row" style="width:80%;">
-        <img src="./assets/customer_data/cluster_result.png">
+        <img src="./assets/customer_data/cluster_result.png" decoding="async" loading="lazy">
     </div>
     </p>
     <p class="section-intro">
@@ -154,7 +155,7 @@
       To make the results usable for non-technical teams, each cluster was interpreted
       in terms of spending behavior, activity level, and real-world usage patterns.
     </p>
-    <img src="./assets/customer_data/cluster_plots.png" alt="Cluster comparison charts" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+    <img src="./assets/customer_data/cluster_plots.png" alt="Cluster comparison charts" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
     <div class="annotation">[Cluster comparison charts]</div>
 
     <p class="chart-insight">
@@ -181,7 +182,7 @@
     strategies rather than a one-size-fits-all approach.
     </p>
     
-    <img src="./assets/customer_data/cluster_table.png" alt="Cluster comparison table" style="width:100%">
+    <img src="./assets/customer_data/cluster_table.png" alt="Cluster comparison table" style="width:100%" decoding="async" loading="lazy">
     <p>
     <h3>Action guidance by segment</h3>
     <ul>
@@ -196,13 +197,13 @@
     <p><details class="persona-details">
         <summary>From clusters to personas</summary>
         <h3>Cluster 0: Martina, 38, part-time Marketing Manager</h3>
-        <img src="./assets/customer_data/persona0.png" alt="persona for cluster0" style="width:100%">
+        <img src="./assets/customer_data/persona0.webp" alt="persona for cluster0" style="width:100%" loading="lazy" decoding="async">
         <p>
             This persona represents highly active users who make frequent, low-value transactions for everyday expenses.They rely on the app as a daily payment tool, indicating strong engagement but limited value per transaction.
         </p>
 
         <h3>Cluster 4: Sophia, 32, software engineer</h3>
-        <img src="./assets/customer_data/persona4.png" alt="persona for cluster0" style="width:100%">
+        <img src="./assets/customer_data/persona4.webp" alt="persona for cluster4" style="width:100%" loading="lazy" decoding="async">
         <p>
             This persona represents users who make infrequent but high-value transactions, primarily for savings and cash-related purposes. They engage with the app selectively rather than daily, indicating trust in the platform for larger financial movements.
 
@@ -247,7 +248,7 @@
                 </ul>
 
             </p>
-            <img src="./assets/customer_data/new_variables.png" alt="columns" style="width:100%;">
+            <img src="./assets/customer_data/new_variables.webp" alt="Engineered customer data columns" style="width:100%;" loading="lazy" decoding="async">
 
             <div class="annotation">[The original dataset and new variables]</div>
         </div>
@@ -263,8 +264,8 @@
                 </ul>
             </p>
             
-            <img src="./assets/customer_data/log_trans.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;">
-            <img src="./assets/customer_data/trans_out.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <img src="./assets/customer_data/log_trans.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
+            <img src="./assets/customer_data/trans_out.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
             <div class="annotation">[Transformations applied to stabilize clustering]</div>    
                    
         </div>
@@ -292,7 +293,7 @@
             </ul>  
             </p>
               
-            <img src="./assets/customer_data/optimal_k.png" alt="finding optimal k" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <img src="./assets/customer_data/optimal_k.png" alt="finding optimal k" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
             <div class="annotation">[Elbow & Silhouette used to select K]</div>    
 
         </div>
@@ -300,14 +301,14 @@
   </section>
 
 
-<div id="footer" class="section">
+<footer id="footer" class="section">
     <div class="container">
       <p>          
         Copyright 2026. Jihyeon Choung All rights reserved.
       </p>
     </div>
-</div>
+</footer>
 
-<script src="./javascript/customer_data.js"></script>
+<script src="./javascript/common.js"></script>
 </body>
 </html>

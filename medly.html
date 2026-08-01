@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,17 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/medly.css">
 </head>
-<body>
-    <div class="topnav">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
+<body class="project-page medly-page">
+    <nav class="topnav" aria-label="Primary navigation">
+        <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <a href="index.html">Home</a>
         <a href="index.html#works">Works</a>
         <a href="https://github.com/jihyeon26">Github</a>
         <a href="about.html">About</a>
-        <!-- <a href="artworks.html">Artworks</a> -->
-        </div>
+    </nav>
   <header>
     <div class="container">
         <p class="project-tag">Medly</p>
@@ -28,7 +29,7 @@
   <div class="image-link">
     <div class="image-container">
       <div class="gradient-circle" style="background-color: rgb(186, 186, 247);"></div>
-      <img class="cover" src="./assets/medly/medly_ui.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Medly">                  
+      <img class="cover" src="./assets/medly/medly_ui.webp" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Medly" decoding="async">
     </div>
   </div>
 
@@ -49,12 +50,12 @@
             <li>Medical knowledge chatbot for physicians</li>
             <li>General medical knowledge chatbot for patient inquiries</li>
         </ul>
-        <a class="github-link" href="https://github.com/orgs/team-medly/repositories" target="_blank">
-            <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        <a class="github-link" href="https://github.com/orgs/team-medly/repositories" target="_blank" rel="noopener noreferrer">
+            <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" decoding="async" loading="lazy">
             GitHub
         </a>
         <br>
-        <img src="./assets/medly/ui.png" alt="ui" style="width:100%; margin-top:20px;">
+        <img src="./assets/medly/ui.png" alt="ui" style="width:100%; margin-top:20px;" decoding="async" loading="lazy">
         <div style="color: grey; font-size:12px; text-align:center">[Medly App UI]</div>
     </div>
 </section>
@@ -108,18 +109,18 @@
     <div class="container">
         <h1>MedSurgGPT </h1>
         <h3>: surgical guideline RAG chatbot</h3>
-        <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;">
+        <img src="./assets/medly/chat_ui.png" alt="ui" style="width:100%; margin-top:20px;" decoding="async" loading="lazy">
         <div style="color: grey; font-size:12px; text-align:right">[Examples of questions and generated answers ]</div>
         
         <br>
         <p>
             The chatbot is designed to help physicians easily inquire about surgical guidelines. It stores up to five previous conversation records, allowing for context-aware interactions. By tapping on a generated response, users can view the original text used to generate the answer, enhancing the reliability of the response.
         </p>
-        <img src="./assets/medly/chat_citation.png" alt="ui" style="width:100%;">
+        <img src="./assets/medly/chat_citation.png" alt="ui" style="width:100%;" decoding="async" loading="lazy">
         <div style="color: grey; font-size:12px; text-align:right">[Chatbot Interface and Activated Reference Area]</div>
         
         <div style="margin-top:30px;">
-            <video controls style="width: 100%; max-width:360px; display: inline-block; border: 1px solid #ccc; border-radius: 5px; box-shadow: none; display: block; margin: auto;">
+            <video controls playsinline preload="metadata" poster="./assets/medly/medly_poster.webp" style="width: 100%; max-width:360px; display: block; border: 1px solid #ccc; border-radius: 5px; box-shadow: none; margin: auto;">
                 <source src="./assets/medly/medly.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -165,7 +166,7 @@
                 <p>
                     <strong>Process Overview:</strong>
                     <br>               
-                <img src="./assets/medly/eval.png" alt="ui" style="width:100%;">
+                <img src="./assets/medly/eval.png" alt="ui" style="width:100%;" decoding="async" loading="lazy">
                 
 
                 <p>
@@ -195,8 +196,8 @@
             <div class="evaluation-step">
                 <h3>3. Evaluation Results</h3>  
                 <br>           
-                <img src="./assets/medly/eval_a.png" alt="ui" style="width:100%;">
-                <img src="./assets/medly/eval_t.png" alt="ui" style="width:100%;">
+                <img src="./assets/medly/eval_a.png" alt="ui" style="width:100%;" decoding="async" loading="lazy">
+                <img src="./assets/medly/eval_t.png" alt="ui" style="width:100%;" decoding="async" loading="lazy">
 
                 <p>
                     <strong>Evaluation of Accuracy:</strong><br>                                
@@ -243,8 +244,8 @@
             </p>
             
             <div class="image-row" style="width:100%;">
-                <img src="./assets/medly/data1.png">
-                <img src="./assets/medly/data2.png">
+                <img src="./assets/medly/data1.png" decoding="async" loading="lazy">
+                <img src="./assets/medly/data2.png" decoding="async" loading="lazy">
             </div>
             <div class="annotation">[Data storage and the form of data cources]</div>
         </div>
@@ -262,8 +263,8 @@
                 Semantic search was integrated to improve retrieval accuracy and relevance.
             </p>
             <div class="image-row" style="width:100%;">
-                <img src="./assets/medly/index.png">
-                <img src="./assets/medly/semantic.png">
+                <img src="./assets/medly/index.png" decoding="async" loading="lazy">
+                <img src="./assets/medly/semantic.png" decoding="async" loading="lazy">
             </div>
             <div class="annotation">[Configuring indexes and semantic search]</div>
         </div>
@@ -277,11 +278,11 @@
                 <strong>Multilingual Support:</strong> Translates user queries into English before sending a request to the GPT model, improving search performance. Detects the language of the original question and returns the response in the same language for seamless multilingual support.
 
             </p>
-            <img src="./assets/medly/citation.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <img src="./assets/medly/citation.webp" alt="Citation matching result" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;" loading="lazy" decoding="async">
             <div class="annotation">[Test screen using Gradio: Enhances data reliability through reference areas.]</div>    
             <div class="image-row" style="width:100%;">
-                <img src="./assets/medly/citation_code.png">
-                <img src="./assets/medly/language_code.png">
+                <img src="./assets/medly/citation_code.png" decoding="async" loading="lazy">
+                <img src="./assets/medly/language_code.png" decoding="async" loading="lazy">
             </div>
             <div class="annotation">[Citation output settings and language detection functions]</div>            
         </div>
@@ -293,7 +294,7 @@
                 - Received direct feedback from physicians expressing interest in using the chatbot in real-world medical settings. <br>
                 - Conducted over 100 tests to verify the alignment between generated responses and reference areas, ensuring accurate outputs.
             </p>
-            <img src="./assets/medly/box.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;">
+            <img src="./assets/medly/box.png" alt="ui" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
             <div class="annotation">[Using gradio to validate citation area during development]</div>            
         </div>
 
@@ -304,8 +305,8 @@
                 <strong>Set up GitHub Actions CI/CD</strong> for automatic deployment on main branch updates, handling Python setup, dependencies, build, and deployment via .yml file.<br>
             </p>
             <div class="image-row" style="width:100%;">
-                <img src="./assets/medly/webapp.png">
-                <img src="./assets/medly/git_action.png">
+                <img src="./assets/medly/webapp.png" decoding="async" loading="lazy">
+                <img src="./assets/medly/git_action.png" decoding="async" loading="lazy">
             </div>
             <div class="annotation">[App deployment and GitHub actions integration]</div>            
         </div>
@@ -315,20 +316,20 @@
     <div class="container">
         <h2>Tools Used</h2>
         <br>
-        <img src="./assets/medly/tools.png" alt="ui" style="width:100%;">
+        <img src="./assets/medly/tools.png" alt="ui" style="width:100%;" decoding="async" loading="lazy">
 
         
     </div>
 </section>
 
-<div id="footer" class="section">
+<footer id="footer" class="section">
     <div class="container">
       <p>          
-        Copyright 2024. Jihyeon Choung All rights reserved.
+        Copyright 2026. Jihyeon Choung All rights reserved.
       </p>
     </div>
-</div>
+</footer>
 
-<script src="./javascript/medly.js"></script>
+<script src="./javascript/common.js"></script>
 </body>
 </html>

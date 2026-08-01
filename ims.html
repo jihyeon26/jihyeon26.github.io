@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/ims.css">
     
 </head>
-<body>
-  <div class="topnav">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+<body class="project-page ims-page">
+  <nav class="topnav" aria-label="Primary navigation">
+    <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <a href="index.html">Home</a>
     <a href="index.html#works">Works</a>
     <a href="https://github.com/jihyeon26">Github</a>
     <a href="about.html">About</a>
-    <!-- <a href="artworks.html">Artworks</a> -->
-  </div>
+  </nav>
   <header>
       <div class="container">
           <p class="project-tag">IMS</p>
@@ -29,7 +30,7 @@
   <div class="image-link">
     <div class="image-container">
       <div class="gradient-circle" style="background-color: rgb(227, 181, 177);"></div>
-      <img class="cover" src="./assets/ims/ims_door.png" style="width: 80%; height: auto;display: block; margin:0 auto;" alt="IMS Project">                  
+      <img class="cover" src="./assets/ims/ims_door.webp" style="width: 80%; height: auto;display: block; margin:0 auto;" alt="IMS Project" decoding="async">
     </div>
   </div>
 
@@ -40,10 +41,12 @@
           IMS (Image to Story) is an AI-powered platform designed to turn the travel photos into compelling narratives. By analyzing metadata like location, time, and additional user-provided inputs, IMS generates personalized and emotional travel stories, providing a unique way to preserve and share the memories.
           <br>This project was awarded <strong>1st place</strong> among the 10 teams in the second project phase of <strong>Microsoft AI School.</strong>
         </p>
-        <img src="./assets/ims/ims_gif0.gif" style="width: 70%; border: 1px solid #d4d4d4; border-radius: 10px; margin:0 auto; margin-top: 40px;display: block;">
+        <video autoplay muted loop playsinline preload="metadata" poster="./assets/ims/ims_gif0_poster.webp" aria-label="IMS prototype demonstration" style="width: 70%; border: 1px solid #d4d4d4; border-radius: 10px; margin: 40px auto 0; display: block;">
+          <source src="./assets/ims/ims_gif0.mp4" type="video/mp4">
+        </video>
         <br>
         <div style="text-align: center;">
-          <video controls style="width:70%; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
+          <video controls playsinline preload="metadata" poster="./assets/ims/ims_service_poster.webp" style="width:70%; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
               <source src="./assets/ims/ims_service.mp4" type="video/mp4">
               Your browser does not support the video tag.
           </video>
@@ -127,10 +130,10 @@
         
         <h2>Prototype</h2>
         
-        <img src="./assets/ims/prototype.png" style="width: 100%; margin: 40px 0px;">
-        <img src="./assets/ims/prototype_code.png" style="width: 80%; max-width:600px; display: block; margin: auto;">
-        <a class="github-link" href="https://github.com/jihyeon26/Image_to_story" target="_blank">
-          <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        <img src="./assets/ims/prototype.png" style="width: 100%; margin: 40px 0px;" decoding="async" loading="lazy">
+        <img src="./assets/ims/prototype_code.webp" alt="IMS prototype code" style="width: 80%; max-width:600px; display: block; margin: auto;" loading="lazy" decoding="async">
+        <a class="github-link" href="https://github.com/jihyeon26/Image_to_story" target="_blank" rel="noopener noreferrer">
+          <img class="github-icon" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" decoding="async" loading="lazy">
           GitHub
         </a>
         <p>The initial prototype used the PIL and Geopy libraries to convert GPS data into readable addresses. For 
@@ -142,7 +145,7 @@
 
         <h2>Improvements</h2>
         <p>
-          <img src="./assets/ims/model.png" style="width: 100%; margin: 40px 0px;">
+          <img src="./assets/ims/model.webp" alt="IMS model architecture" style="width: 100%; margin: 40px 0px;" loading="lazy" decoding="async">
         </p>
         
 
@@ -154,11 +157,11 @@
             <br><br>
             Step 3 - Google Cloud Vision: Attempt landmark detection. This tool recognizes a wide range of landmarks but sometimes provides overly detailed or inaccurate results.
         </p>
-        <img src="./assets/ims/maps.png" style="width: 100%; margin-bottom:60px">
+        <img src="./assets/ims/maps.webp" alt="Location extraction with map services" style="width: 100%; margin-bottom:60px" loading="lazy" decoding="async">
         <p>
           Azure Computer Vision demonstrated lower recognition rates, but when it did identify landmarks, the accuracy was significantly higher. On the other hand, Google Cloud Vision showed higher recognition rates but often lacked precision, occasionally providing overly detailed or irrelevant locations. Therefore, we decided to prioritize recognition using Azure Computer Vision first, and if it fails, supplement the results with Google Cloud Vision for better coverage.
         </p>
-        <img src="./assets/ims/maps2.png" style="width: 100%; margin-bottom:60px">
+        <img src="./assets/ims/maps2.webp" alt="Location extraction comparison" style="width: 100%; margin-bottom:60px" loading="lazy" decoding="async">
       
         
 
@@ -167,18 +170,18 @@
         <p>Images are uploaded and analyzed using the Azure Computer Vision API via Azure Portal. The API generates dense captions along with confidence scores for each caption.
         Images are resized to a maximum of 1290x1080 for efficient processing, and dense captions with confidence scores above 0.5 are filtered. The processing time is calculated, and data is organized.
         </p>
-        <img src="./assets/ims/caption.png" style="width: 100%; margin-bottom:30px">
+        <img src="./assets/ims/caption.webp" alt="Computer vision caption generation results" style="width: 100%; margin-bottom:30px" loading="lazy" decoding="async">
         <p>
           We explored various methods to detect landmarks in photos using computer vision. As a result, we discovered that extracting a combination of Description, Categories, and Tags enables the recognition of iconic landmarks like the Eiffel Tower, unlike when extracting only the Description.
         </p>
         
-        <img src="./assets/ims/vision.png" style="width: 50%; margin-bottom:60px">
+        <img src="./assets/ims/vision.png" style="width: 50%; margin-bottom:60px" decoding="async" loading="lazy">
 
         <h3>3. Generate Story (Azure OpenAI)</h3>
         <p>
           Captions and location data are processed by Azure OpenAI to generate travel stories, enhanced by user-provided parameters to improve model performance and ensure personalized, contextually relevant narratives.
         </p>
-        <img src="./assets/ims/parameter.png" style="width: 100%;">
+        <img src="./assets/ims/parameter.webp" alt="Story generation parameters" style="width: 100%;" loading="lazy" decoding="async">
 
           <p>
           For the gender parameter, we initially considered using Azure Face for facial detection, but after receiving confirmation that it was not available for use(Face service is only available to Microsoft managed customers and partners), we added this parameter as an alternative to address the limitation.
@@ -188,7 +191,7 @@
             Companions add shared experiences to the story. For instance, "Two women admire a distant mountain range" transforms into "My sister and I stood atop the rocky hill, marveling at the distant peaks."
             
         </p>
-        <img src="./assets/ims/parameter2.png" style="width: 100%;">
+        <img src="./assets/ims/parameter2.webp" alt="Story generation parameter comparison" style="width: 100%;" loading="lazy" decoding="async">
 
 
     </div>
@@ -202,7 +205,7 @@
         The Service UI is designed with a focus on making it easy for users to use. 
         During the development process, the pages and interaction flow were structured with consideration for the backend functionality. Some design elements were adjusted during the frontend implementation. 
       </p>
-      <img src="./assets/ims/ims_ui.png" style="width: 100%; border-radius: 5px; margin:0 auto; margin-top: 40px;display: block;">
+      <img src="./assets/ims/ims_ui.png" style="width: 100%; border-radius: 5px; margin:0 auto; margin-top: 40px;display: block;" decoding="async" loading="lazy">
       <video controls style="width:60%; display: inline-block; margin-top:20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: none;">
         <source src="./assets/ims/ui_fin.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -246,15 +249,15 @@
 
 
 
-<div id="footer" class="section">
+<footer id="footer" class="section">
     <div class="container">
       <p>          
-        Copyright 2024. Jihyeon Choung All rights reserved.
+        Copyright 2026. Jihyeon Choung All rights reserved.
       </p>
     </div>
-</div>
+</footer>
         
-<script src="./javascript/ims.js"></script>
+<script src="./javascript/common.js"></script>
 </body>
 
 </html>

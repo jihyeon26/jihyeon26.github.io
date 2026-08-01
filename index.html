@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,199 +7,91 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/main.css">
-    
-</head>
-  <body>
-    <div class="topnav">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </head>
+  <body class="home-page">
+    <nav class="topnav" aria-label="Primary navigation">
+      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
       <a href="index.html">Home</a>
       <a href="#works">Works</a>
       <a href="https://github.com/jihyeon26">Github</a>
       <a href="about.html">About</a>
-      <!-- <a href="artworks.html">Artworks</a> -->
-    </div>
-    <div class="header">
+    </nav>
 
+    <header class="header">
       <div class="header-content">
-        <h2 class="header-tagline">Hi, I'm Jihyeon</h2>
+        <h1 class="header-tagline">Hi, I'm Jihyeon</h1>
         <p class="header-description">
           I’m a data science professional focused on building reliable analyses and data pipelines that support real-world decision-making.
         </p>
-        <p>
-          Analytics · Data pipelines · Decision support
-        </p>
       </div>
-    </div>
+    </header>
 
-    <!--Medly-->
-    <div class="section">
-      <div id="works" class="container">
-        <a href="medly.html" class="content-container">
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(186, 186, 247);"></div>
-              <img class="cover" src="./assets/medly/medly_ui.png" alt="Medly Project" style="width: 40%; height: auto;  display: block; margin: 0 auto; position: relative; top: 15px;">              
+    <main id="works">
+      <section class="section">
+        <div class="container">
+          <a href="medly.html" class="content-container">
+            <div class="image-link">
+              <div class="image-container">
+                <div class="gradient-circle" style="background-color: rgb(186, 186, 247);"></div>
+                <img class="cover" src="./assets/medly/medly_ui.webp" alt="Medly project interface" style="width: 40%; height: auto; display: block; margin: 0 auto; position: relative; top: 15px;" loading="lazy" decoding="async">
+              </div>
             </div>
-          </div>
-          <div class="text-content">
-            <h3 style="color:rgb(170, 170, 254);">Medly</h3>
-            <p>Comprehensive Pre-Surgery Support Platform</p>
-            <p class="project-description">RAG • Development • MS AI school runner-up</p>
-            <div class="arrow">➔</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!--customer data analysis-->
-    <div class="section">
-      <div id="works" class="container">
-        <a href="customer_data.html" class="content-container">
-          <div class="text-content">
-            <h3 style="color:rgb(170, 170, 254)">Customer Data Analysis</h3>
-            <p>From Transactions to Actionable Customer Segments</p>
-            <p class="project-description">Behavioral Segmentation • Data-to-Decision • Customer Analytics</p>
-            <div class="arrow">➔</div>  
-          </div>
-          <div class="image-link">
-            <div class="image-container">
-              <img class="cover" src="./assets/customer_data/customer_door.png" style="width: 80%; height: auto; display: block; margin: 0 auto; margin-top: 80px;">                  
+            <div class="text-content">
+              <h2 style="color: rgb(170, 170, 254);">Medly</h2>
+              <p>Comprehensive Pre-Surgery Support Platform</p>
+              <p class="project-description">RAG • Development • MS AI school runner-up</p>
+              <div class="arrow" aria-hidden="true">➔</div>
             </div>
-          </div>
-        </a>
-      </div>
-    </div>
+          </a>
+        </div>
+      </section>
 
-    <!--Medly-->
-    <div class="section">
-      <div id="works" class="container">
-        <a href="energy.html" class="content-container">
-          <div class="image-link">
-            <div class="image-container">
-              <img class="cover" src="./assets/energy/energy_door.png" alt="energy Project" style="width: 80%; height: auto; display: block; margin: 0 auto; margin-top: 80px;">              
+      <section class="section">
+        <div class="container">
+          <a href="customer_data.html" class="content-container">
+            <div class="text-content">
+              <h2 style="color: rgb(170, 170, 254);">Customer Data Analysis</h2>
+              <p>From Transactions to Actionable Customer Segments</p>
+              <p class="project-description">Behavioral Segmentation • Data-to-Decision • Customer Analytics</p>
+              <div class="arrow" aria-hidden="true">➔</div>
             </div>
-          </div>
-          <div class="text-content">
-            <h3 style="color:rgb(136, 197, 154);">Energy demand analysis</h3>
-            <p>Temperature-Driven Electricity Demand Analysis</p>
-            <p class="project-description">Time-series analysis • Forecasting • Risk</p>
-            <div class="arrow">➔</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <!--ims-->
-    <div class="section">
-      <div id="works" class="container">
-        <a href="ims.html" class="content-container">
-          <div class="text-content">
-            <h3 style="color:rgb(180, 70, 99)">IMS</h3>
-            <p>Weaving Your Travel Moments into Stories</p>
-            <p class="project-description">Multimodal AI • UI/UX Design • MS AI school winner</p>
-            <div class="arrow">➔</div>  
-          </div>
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(227, 181, 177);"></div>
-              <img class="cover" src="./assets/ims/ims_door.png" style="width: 80%; height: auto; display: block; margin: 0 auto;">                  
+            <div class="image-link">
+              <div class="image-container">
+                <img class="cover" src="./assets/customer_data/customer_door.webp" alt="Customer segmentation project" style="width: 80%; height: auto; display: block; margin: 80px auto 0;" loading="lazy" decoding="async">
+              </div>
             </div>
-          </div>
-        </a>
-      </div>
-    </div>
+          </a>
+        </div>
+      </section>
 
-    <!--lawbot-->
-    <div class="section">
-      <div id="works" class="container">
-        <a href="lawbot.html" class="content-container">
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(152, 190, 251);"></div>
-              <img class="cover" src="./assets/lawbot/laptop.png" alt="Labor LawBot Project" style="width: 80%; height: auto; display: block; margin: 0 auto;">              
+      <section class="section">
+        <div class="container">
+          <a href="ims.html" class="content-container">
+            <div class="image-link">
+              <div class="image-container">
+                <div class="gradient-circle" style="background-color: rgb(227, 181, 177);"></div>
+                <img class="cover" src="./assets/ims/ims_door.webp" alt="IMS travel storytelling project" style="width: 80%; height: auto; display: block; margin: 0 auto;" loading="lazy" decoding="async">
+              </div>
             </div>
-          </div>
-          <div class="text-content">
-            <h3 style="color:rgb(101, 134, 235);">Labor LawBot</h3>
-            <p>Labor Law AI-Assistant</p>
-            <p class="project-description">RAG • AI Service • Development</p>
-            <div class="arrow">➔</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-
- 
-<!-- 여운
-    <div class="section">
-      <div id="works" class="container">
-        <a href="yeoun.html" class="content-container">
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(255, 178, 165);"></div>
-              <img class="cover" src="./assets/yeoun/yeoun_door2.png" alt="Yeo-un Project">              
+            <div class="text-content">
+              <h2 style="color: rgb(180, 70, 99);">IMS</h2>
+              <p>Weaving Your Travel Moments into Stories</p>
+              <p class="project-description">Multimodal AI • UI/UX Design • MS AI school winner</p>
+              <div class="arrow" aria-hidden="true">➔</div>
             </div>
-          </div>
-          <div class="text-content">
-            <h3 style="color:rgb(249, 114, 114)">Yeo-un</h3>
-            <p>Interactive product to reduce loneliness.</p>
-            <p class="project-description">UX Design • Product Design • Interactive Design</p>
-            <div class="arrow">➔</div>
-          </div>
-        </a>
-      </div>
-    </div>
+          </a>
+        </div>
+      </section>
+    </main>
 
-    퍼시스
-    <div class="section">
-      <div id="works" class="container">
-        <a href="flexi.html" class="content-container">
-          <div class="text-content">
-            <h3 style="color:rgb(162, 116, 38)">Flexi-Modular Shelf</h3>
-            <p>Balancing privacy and communication</p>
-            <p class="project-description">UX Design • Product Design • Internship</p>
-            <div class="arrow">➔</div> 
-          </div>
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(180, 144, 108);"></div>
-              <img class="cover" src="./assets/flexi/shelf_index2.png" alt="Flexi-Modular Shelf Project">                   
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    마쉴랭
-    <div class="section">
-      <div id="works" class="container">
-        <a href="machuilin.html" class="content-container">
-          <div class="text-content">
-            <h3 style="color:rgb(206, 125, 39)">Machuilin</h3>
-            <p>Machine learning-based beer recommendation system</p>
-            <p class="project-description">UX Design • Machine learning • Microsoft AI school</p>
-            <div class="arrow">➔</div>  
-          </div>
-          <div class="image-link">
-            <div class="image-container">
-              <div class="gradient-circle" style="background-color: rgb(205, 150, 95);"></div>
-              <img class="cover" src="./assets/machuilin/ui1.png" style="width: 40%; height: auto;display: block; margin:0 auto;" alt="Machuilin Project">                  
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  -->
-    
-    <div id="footer" class="section">
+    <footer id="footer" class="section">
       <div class="container">
-        <p>          
-          Copyright 2026. Jihyeon Choung All rights reserved.
-        </p>
+        <p>Copyright 2026. Jihyeon Choung All rights reserved.</p>
       </div>
-    </div>
-    <script src="./javascript/main.js"></script>
+    </footer>
+
+    <script src="./javascript/common.js"></script>
   </body>
 </html>

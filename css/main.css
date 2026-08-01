@@ -1,382 +1,187 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-  }
-
-
-.topnav {
-  font-family: Manrope;
-  font-size: 15px;
-  background-color: #ffffff;
-  overflow: hidden;
-  margin: 30px auto; /* 위쪽 간격과 가로 중앙 정렬 */
-  padding: 1px 20px;
-  border: 2px solid #e0e0e0;
-  border-radius: 30px;
-  width: fit-content; /* 내용에 맞춘 너비 설정 */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-  
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #1f1c1c;
+.home-page .header-content {
+  width: min(70%, var(--content-max));
+  margin: 0 auto;
+  padding: 80px 0 0;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  transition: transform 0.3s ease; 
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  transform: rotate(5deg);
-  font-weight: bold;
-  color: #1f1c1c;
-}
-.hamburger {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #1f1c1c;
-}
-
-.header {
-  color: #ffffff;
-}
-
-.head-img{
-  float: right;
-  
-}
-
-.header-title {
-  font-family: Manrope;
-  font-size: 20px;
-  line-height: 30px;
-  padding: 12px 40px;
-}
-
-.header-title-accent {
-  font-weight: 700;
-}
-
-.header-tagline-small {
-  color: #8287a4;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 29px;
-  margin: 12px 0;
-}
-  
-.header-tagline {
-  font-family: Manrope;
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 74px;
+.home-page .header-tagline {
   margin: 0;
-  background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
-  background-size: 70%;
+  background: linear-gradient(120deg, #ff47a3 0%, #ff7373 40%, #c159de 80%);
   background-position: center;
+  background-size: 70%;
+  font-size: clamp(42px, 6vw, 56px);
+  font-weight: 800;
+  line-height: 1.3;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-  
-.header-description {
-  color: #414141;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 150%;
+
+.home-page .header-description {
   margin: 30px 0;
-  font-family: Manrope;
-  letter-spacing: 0.5px; /* 자간 설정*/
+  color: #414141;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
   line-height: 1.5;
 }
-  
-.header-content {
-  margin: 0 auto;
-  padding: 80px 0 0px;
-  max-width: 960px;
-  width: 70%;
-  text-align: center;
-}
 
-
-.section {
+.home-page .section {
+  margin: 170px 0;
   padding: 32px 0;
-  margin:200px 70px;
 }
-    
+
+.home-page .container {
+  width: min(70%, var(--content-max));
+  margin: 0 auto;
+}
+
 .content-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
   margin: 20px auto;
-  gap: 50px; /*그림과 글 사이 간격*/
+  color: inherit;
   text-decoration: none;
 }
+
 .image-link {
   position: relative;
   display: flex;
   align-items: center;
   text-decoration: none;
-  
 }
-  .container {
-    margin: 0 auto;
-    width: 70%;
-    max-width: 960px;
-  }
-  .cover {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1; 
+
+.image-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin: auto;
 }
-.content-container:hover{
-  cursor: pointer;
+
+.cover {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gradient-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 250px;
+  height: 250px;
+  background-color: rgb(220, 189, 158);
+  border-radius: 50%;
+  filter: blur(88px);
+  transform: translate(-50%, -50%);
 }
 
 .content-container:hover .cover {
-  transform: rotate(-10deg); 
+  transform: rotate(-10deg);
 }
 
-.content-container:hover .arrow {
-  transform: translateX(20px); 
-}
 .arrow {
   font-size: 24px;
   transition: transform 0.3s ease;
 }
 
+.content-container:hover .arrow {
+  transform: translateX(20px);
+}
 
+.text-content h2,
 .text-content h3 {
-  color: #6b47e3; /* 보라색 */
   margin: 0;
 }
+
 .text-content p {
   margin: 5px 0;
   color: #333;
-  font-family: Manrope;
   font-size: 29px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
-  .title {
-    color: #161346;
-    font-family: Poppins;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 700;
-    line-height: 54px;
-    margin-bottom: 42px;
-    margin-top: 42px;
+.text-content .project-description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .home-page .container {
+    width: 80%;
   }
-  
 
-  .text-content .project-description {
-    font-size: 18px;
-    font-weight: 500;
-}
   .image-container {
-    position: relative;
-    width: 350px; 
-    height: 350px;
-    margin:auto;
-}
-
-  .gradient-circle {
-    background-color: rgb(220, 189, 158); 
-    filter: blur(88px);
-    border-radius: 50%; 
-    transform: none;
-    transform-origin: 50% 50%;
-    position: absolute;
     width: 250px;
     height: 250px;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 0; 
   }
 
-  #career.section {
-    background-color: #161346;
-    color: #ffffff;
+  .gradient-circle {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-page .header-content {
+    width: calc(100% - 40px);
+    padding: 110px 0 20px;
+  }
+
+  .home-page .header-tagline {
+    background-size: 100%;
+  }
+
+  .home-page .header-description {
+    font-size: 17px;
+  }
+
+  .home-page .section {
+    margin: 80px 0;
+    padding: 20px 0;
+  }
+
+  .home-page .container {
+    width: calc(100% - 40px);
+  }
+
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
   }
-  
-  #footer.section {
-    color: #929292;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 0px;
-  }
-  
-  #career .title {
-    color: #ffffff;
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 48px;
-    margin: 8px 0;
-  }
-  
-  #career .description {
-    color: #8287a4;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23px;
-    margin: 8px 0;
-  }
-  
-  .button-container {
-    text-align: center;
-  }
-  
-  a.button {
-    background: #413c91;
-    border-radius: 8px;
-    color: #ffffff;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 23px;
-    margin: 32px 0;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  a.button:hover {
-    background-color: #504ba8;
-  }
-  
-  a.button.round {
-    border-radius: 9999px;
-  }
 
-  .artworks {
-    margin: 0 -5px;
-    overflow: scroll;
-    white-space:nowrap;
-  }
-
-  .artwork {
-    height: 194px;
-    margin-right: 8px;
-  }
-
-  a.button:hover{
-    background: #524cad ;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    .container {
-      margin: 0 auto;
-      width: 80%;
-      max-width: 960px;
-    }
-    .image-container {
-      position: relative;
-      width: 250px; 
-      height: 250px;
-  }
-  
-    .gradient-circle {
-      width: 200px;
-      height: 200px;
-      z-index: 0; 
-    }
-  }
-  @media screen and (max-width: 767px) {
-    .topnav {
-      flex-direction: column; /* 모바일에서는 세로 정렬 */
-      padding: 10px;
-      width: 100%;
-      border:none;
-      margin:5px auto;
-    }
-    
-  
-    .hamburger {
-      display: block; /* 햄버거 메뉴 활성화 */
-      align-self: flex-end; /* 오른쪽 상단에 위치 */
-    }
-  
-    .topnav a {
-      display: none; /* 기본적으로 숨김 */
-      width: 100%; /* 링크를 가로 전체 차지 */
-      text-align: left;
-    }
-  
-    .topnav.show a {
-      display: block; /* 햄버거 메뉴 클릭 시 보임 */
-      padding: 10px 20px;
-      border-bottom: 1px solid #e0e0e0;
-    }
-  
-    .topnav a:hover {
-      transform: none; /* 모바일에서는 회전 효과 비활성화 */
-    }
-    .header-content {
-      padding: 40px 0;
-    }
-    
-    .header-tagline {
-      background-size: 100%;
-
-    }
-    .header-description {
-      font-size: 15px;
-    }
-    .content-container {
-      flex-direction: column; /* 세로 배치 */
-      text-align: center; /* 텍스트 중앙 정렬 */
-      gap:20px;
+  .image-link {
+    order: 1;
   }
 
   .text-content {
-      order: 2; /* 글 상자를 아래로 배치 */
-      margin-top: 20px;
+    order: 2;
+    margin-top: 20px;
   }
 
-  .container {
-    margin: 0 auto;
-    width: 80%;
-  }
   .image-container {
-    order: 1;
-    position: relative;
-    width: 200px; 
-    height: 200px;
-
-}
+    width: 220px;
+    height: 220px;
+  }
 
   .gradient-circle {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
   }
 
   .text-content p {
     font-size: 20px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
   }
+
   .text-content .project-description {
     font-size: 15px;
-    font-weight: 500;
-}
-.section {
-  margin:90px 70px;
-}
   }
+}

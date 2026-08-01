@@ -1,142 +1,63 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    
-  }
-
-.topnav {
-    font-family: Manrope;
-    font-size: 15px;
-    background-color: #ffffff;
-    overflow: hidden;
-    margin: 30px auto;
-    padding: 1px 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 30px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed; /* Make it fixed to enable scroll effects */
-    top: 30px; /* Initial position (aligns with margin) */
-    left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
-    z-index: 1000;
-    transition: top 0.3s ease; /* Smooth transition */
+.about-page .header-content {
+  width: min(70%, var(--content-max));
+  margin: 0 auto;
+  padding: 180px 0 0;
+  text-align: center;
 }
 
-.topnav.hidden {
-    top: -100px; /* Adjust this value to completely hide the navigation bar */
+.about-page .header-tagline {
+  margin: 0;
+  background: linear-gradient(120deg, #ff47a3 0%, #ff7373 40%, #c159de 80%);
+  background-position: center;
+  background-size: 100%;
+  font-size: clamp(38px, 6vw, 56px);
+  font-weight: 800;
+  line-height: 1.3;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.topnav a {
-    float: left;
-    color: #1f1c1c;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: transform 0.3s ease;
+.about-page .header-description {
+  margin-top: 80px;
+  color: #414141;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
 }
 
-.topnav a:hover {
-    transform: rotate(5deg);
-    font-weight: bold;
-    color: #1f1c1c;
+.about-page .container {
+  display: flex;
+  justify-content: center;
+  width: min(70%, var(--content-max));
+  margin: 50px auto;
+  padding: 20px;
 }
 
-.hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #1f1c1c;
-}
-.header {
-    color: #ffffff;
-    margin: 100px;
-  }
-.header-title {
-    font-family: Manrope;
-    font-size: 20px;
-    line-height: 30px;
-    padding: 12px 40px;
-  }
-  
-  .header-title-accent {
-    font-weight: 700;
-  }
-  
-  .header-tagline-small {
-    color: #8287a4;
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 29px;
-    margin: 12px 0;
-  }
-.header-tagline {
-    font-family: Manrope;
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 74px;
-    margin: 0;
-    background: linear-gradient(120deg, #FF47A3 0%, #FF7373 40%, #C159DE 80%);
-    background-size: 100%;
-    background-position: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-    
-  .header-description {
-    color: #414141;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 150%;
-    margin-top: 80px;
-    font-family: Manrope;
-    letter-spacing: 0.5px; /* 자간 설정*/
-    line-height: 1.5;
-  }
-    
-  .header-content {
-    margin: 0 auto;
-    padding: 80px 0 0px;
-    max-width: 960px;
-    width: 70%;
-    text-align: center;
-  }
-
-.container {
-    max-width: 960px;
-    width : 70%;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    padding: 20px;
-    display: flex;
-    justify-content: center; /* 수평 가운데 정렬 */
-
+.about-page #career,
+.about-page .section {
+  text-align: center;
 }
 
-#career {
-    text-align: center;
-  }
-.section {
-    text-align: center;
-    margin: 20px;
+.about-page .artworks img {
+  max-width: 100%;
+  height: auto;
 }
-.artworks img {
-    max-width: 100%; /* 이미지가 부모 컨테이너를 넘지 않도록 */
-    height: auto;    /* 비율 유지 */
+
+@media screen and (max-width: 767px) {
+  .about-page .header-content {
+    width: calc(100% - 40px);
+    padding-top: 120px;
   }
 
-#footer.section {
-    color: #929292;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    text-align: center;
-    margin-top: 150px;
-    margin-bottom: 0px;
+  .about-page .header-description {
+    margin-top: 40px;
+    font-size: 17px;
   }
+
+  .about-page .container {
+    width: calc(100% - 32px);
+    margin: 24px auto;
+    padding: 0;
+  }
+}
