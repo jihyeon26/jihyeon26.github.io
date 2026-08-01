@@ -339,6 +339,131 @@
   letter-spacing: 0.04em;
 }
 
+.customer-cover {
+  position: relative;
+  z-index: 1;
+  width: 232px;
+  margin: 101px auto 0;
+  transition: transform 0.3s ease;
+}
+
+.customer-chart {
+  position: relative;
+  overflow: hidden;
+  height: 144px;
+  background-color: rgb(255 255 255 / 94%);
+  background-image:
+    linear-gradient(#ebeaf5 1px, transparent 1px),
+    linear-gradient(90deg, #ebeaf5 1px, transparent 1px);
+  background-size: 28px 28px;
+  border: 2px solid #bebbf1;
+  border-radius: 14px;
+  box-shadow: 0 16px 34px rgb(80 74 150 / 15%);
+}
+
+.customer-chart::before,
+.customer-chart::after {
+  position: absolute;
+  background: #d8d7eb;
+  content: "";
+}
+
+.customer-chart::before {
+  top: 30px;
+  bottom: 13px;
+  left: 15px;
+  width: 2px;
+}
+
+.customer-chart::after {
+  right: 10px;
+  bottom: 13px;
+  left: 15px;
+  height: 2px;
+}
+
+.customer-chart small {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  color: #7772bb;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.customer-cluster {
+  position: absolute;
+  z-index: 1;
+  width: 38px;
+  height: 34px;
+  background-image:
+    radial-gradient(circle at 12% 52%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 32% 22%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 38% 72%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 58% 46%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 72% 15%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 83% 71%, currentcolor 0 3px, transparent 3.5px),
+    radial-gradient(circle at 98% 39%, currentcolor 0 3px, transparent 3.5px);
+  filter: drop-shadow(0 2px 2px rgb(46 46 88 / 10%));
+}
+
+.customer-cluster-one {
+  top: 67px;
+  left: 28px;
+  color: #6d31a5;
+}
+
+.customer-cluster-two {
+  top: 41px;
+  left: 67px;
+  color: #294d94;
+}
+
+.customer-cluster-three {
+  top: 91px;
+  left: 91px;
+  color: #d84388;
+}
+
+.customer-cluster-four {
+  top: 55px;
+  left: 130px;
+  color: #e48625;
+}
+
+.customer-cluster-five {
+  top: 75px;
+  left: 170px;
+  color: #52a7e8;
+}
+
+.customer-insight {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 3;
+  width: 27px;
+  height: 27px;
+  background: rgb(255 255 255 / 72%);
+  border: 3px solid #625dab;
+  border-radius: 50%;
+  box-shadow: 0 5px 12px rgb(80 74 150 / 18%);
+}
+
+.customer-insight::after {
+  position: absolute;
+  right: -8px;
+  bottom: -6px;
+  width: 11px;
+  height: 3px;
+  background: #625dab;
+  border-radius: 3px;
+  content: "";
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
 .gradient-circle {
   position: absolute;
   top: 50%;
@@ -361,6 +486,10 @@
 }
 
 .content-container:hover .database-cover {
+  transform: translateY(-8px);
+}
+
+.content-container:hover .customer-cover {
   transform: translateY(-8px);
 }
 
@@ -464,6 +593,15 @@
     grid-template-columns: 68px 46px 102px;
     width: 216px;
     margin-top: 52px;
+  }
+
+  .customer-cover {
+    width: 210px;
+    margin-top: 42px;
+  }
+
+  .customer-cluster-five {
+    left: 158px;
   }
 
   .text-content p {
