@@ -353,18 +353,18 @@
   height: 144px;
   background-color: rgb(255 255 255 / 94%);
   background-image:
-    linear-gradient(#ebeaf5 1px, transparent 1px),
-    linear-gradient(90deg, #ebeaf5 1px, transparent 1px);
+    linear-gradient(#f2ebe4 1px, transparent 1px),
+    linear-gradient(90deg, #f2ebe4 1px, transparent 1px);
   background-size: 28px 28px;
-  border: 2px solid #bebbf1;
+  border: 2px solid #dcc3aa;
   border-radius: 14px;
-  box-shadow: 0 16px 34px rgb(80 74 150 / 15%);
+  box-shadow: 0 16px 34px rgb(111 75 43 / 11%);
 }
 
 .customer-chart::before,
 .customer-chart::after {
   position: absolute;
-  background: #d8d7eb;
+  background: #e7d9cc;
   content: "";
 }
 
@@ -386,7 +386,7 @@
   position: absolute;
   top: 12px;
   left: 20px;
-  color: #7772bb;
+  color: #a17653;
   font-size: 8px;
   font-weight: 900;
   letter-spacing: 0.08em;
@@ -446,9 +446,9 @@
   width: 27px;
   height: 27px;
   background: rgb(255 255 255 / 72%);
-  border: 3px solid #625dab;
+  border: 3px solid #aa7d58;
   border-radius: 50%;
-  box-shadow: 0 5px 12px rgb(80 74 150 / 18%);
+  box-shadow: 0 5px 12px rgb(111 75 43 / 14%);
 }
 
 .customer-insight::after {
@@ -457,7 +457,7 @@
   bottom: -6px;
   width: 11px;
   height: 3px;
-  background: #625dab;
+  background: #aa7d58;
   border-radius: 3px;
   content: "";
   transform: rotate(45deg);
