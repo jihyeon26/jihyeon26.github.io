@@ -105,9 +105,94 @@
 }
 
 .agentic-cover span {
+  position: relative;
   color: #31506f;
   background: #fff;
   border: 2px solid #d3dcf2;
+}
+
+.agentic-cover .agentic-documents {
+  display: block;
+  background: transparent;
+  border: 0;
+}
+
+.agentic-documents i {
+  position: absolute;
+  width: 32px;
+  height: 42px;
+  background: repeating-linear-gradient(to bottom, #fff 0 5px, #8a9bb3 6px 7px);
+  border: 1px solid #aab7ca;
+  border-radius: 3px;
+  box-shadow: 0 3px 8px rgb(55 74 104 / 14%);
+}
+
+.agentic-documents i:nth-child(1) {
+  top: 7px;
+  left: 2px;
+  transform: rotate(-14deg);
+}
+
+.agentic-documents i:nth-child(2) {
+  top: 3px;
+  right: 1px;
+  transform: rotate(12deg);
+}
+
+.agentic-documents i:nth-child(3) {
+  top: 13px;
+  left: 20px;
+  transform: rotate(-5deg);
+}
+
+.agentic-documents i:nth-child(4) {
+  top: 8px;
+  left: 10px;
+  transform: rotate(5deg);
+}
+
+.agentic-cover .agentic-checklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 10px;
+  background: #f2faf6;
+  border-color: #b9dfd0;
+}
+
+.agentic-checklist i {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 9px;
+}
+
+.agentic-checklist i::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 8px;
+  height: 8px;
+  color: #237a5b;
+  border: 1px solid #5aa486;
+  border-radius: 2px;
+  content: "✓";
+  font-size: 7px;
+  line-height: 1;
+}
+
+.agentic-checklist i::after {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  left: 14px;
+  height: 2px;
+  background: #82ad9c;
+  border-radius: 2px;
+  content: "";
 }
 
 .agentic-cover b {
