@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An IBM Challenge agentic AI workflow that converts enterprise SOP documents into reviewed guardrails and learns from human feedback.">
+    <title>Guardrail Inspector Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Poppins:wght@400;700&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/jh_logo.png" type="image/png">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/project.css">
+    <link rel="stylesheet" href="./css/guardrail_agent.css">
+  </head>
+  <body class="project-page guardrail-agent-page">
+    <nav class="topnav" aria-label="Primary navigation">
+      <button class="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <a href="index.html">Home</a>
+      <a href="index.html#works">Works</a>
+      <a href="https://github.com/jihyeon26">Github</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <header>
+      <div class="container">
+        <p class="project-tag">IBM Challenge · Agentic AI · LLM Evaluation</p>
+        <h1>Guardrail Inspector Agent</h1>
+        <p class="project-lead">
+          An adaptive workflow that turns enterprise SOP documents into reviewed, evidence-grounded guardrails—and learns from every human decision.
+        </p>
+      </div>
+    </header>
+
+    <section class="agentic-hero" aria-label="Agentic guardrail workflow overview">
+      <div class="hero-node source-node">
+        <small>INPUT</small>
+        <strong>SOP</strong>
+        <span>PDF · DOCX · HTML</span>
+      </div>
+      <div class="hero-arrow" aria-hidden="true">→</div>
+      <div class="hero-agent-stack">
+        <span>PARSE</span>
+        <span>EXTRACT</span>
+        <span>GENERATE</span>
+      </div>
+      <div class="hero-arrow" aria-hidden="true">→</div>
+      <div class="hero-node gate-node">
+        <small>QUALITY GATES</small>
+        <strong>HUMAN + LLM</strong>
+        <span>Review · Judge · SME</span>
+      </div>
+      <div class="hero-arrow" aria-hidden="true">→</div>
+      <div class="hero-node memory-node">
+        <small>FEEDBACK MEMORY</small>
+        <strong>VECTOR KB</strong>
+        <span>Reuse decisions</span>
+      </div>
+      <div class="feedback-arc" aria-hidden="true">FEEDBACK → NEXT RUN</div>
+    </section>
+
+    <main>
+      <section class="overview">
+        <div class="container">
+          <p class="eyebrow">PROJECT OVERVIEW</p>
+          <h2>Guardrail generation as a controlled decision system</h2>
+          <p class="section-lead">
+            The system parses regulated-enterprise SOP documents, extracts structured policies, converts them into enforceable guardrails, and routes every result through early human review, an in-workflow LLM evaluation gate, and final SME approval. Previous decisions are retrieved in later runs so generation and evaluation improve instead of starting from zero.
+          </p>
+          <p class="agentic-note">
+            The workflow is agentic through role separation, tool use, feedback-conditioned regeneration, and memory retrieval. Its transitions are deliberately orchestrated by a deterministic Streamlit state machine so each decision remains auditable.
+          </p>
+
+          <figure class="demo-shot demo-feature">
+            <div class="demo-window">
+              <div class="demo-window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/guardrail_agent/demo.png" alt="Guardrail Inspector workflow showing SOP parsing and policy extraction progress" decoding="async">
+            </div>
+            <figcaption>End-to-end workflow navigation and policy extraction in the Streamlit application.</figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      <section class="details project-facts">
+        <div class="container-target">
+          <div class="detail-item">
+            <h3>My focus</h3>
+            <p>Standalone evaluation pipeline, SME validation, KPI design, and document-grounded dual-judge assessment</p>
+          </div>
+          <div class="detail-item">
+            <h3>Team outcome</h3>
+            <p>End-to-end SOP parsing, guardrail generation, review, evaluation, persistence, and monitoring</p>
+          </div>
+          <div class="detail-item">
+            <h3>Core stack</h3>
+            <p>Python · Streamlit · watsonx.ai · Docling · Astra DB</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="workflow-section">
+        <div class="container">
+          <p class="eyebrow">AGENTIC WORKFLOW</p>
+          <h2>Eight stages with distinct responsibilities</h2>
+          <div class="workflow-grid" aria-label="Eight-stage guardrail workflow">
+            <article>
+              <span class="step-number">00</span>
+              <h3>Upload</h3>
+              <p>Receive an SOP document and establish a traceable run context.</p>
+            </article>
+            <article>
+              <span class="step-number">01</span>
+              <h3>Parse</h3>
+              <p>Docling and semantic chunking preserve headings, paragraphs, tables, and source metadata.</p>
+            </article>
+            <article>
+              <span class="step-number">02</span>
+              <h3>Extract</h3>
+              <p>A generation model identifies compliance policies and validates them against a structured schema.</p>
+            </article>
+            <article>
+              <span class="step-number">03</span>
+              <h3>Format</h3>
+              <p>Policies become enforceable guardrails, informed by lessons from previous reviewer rejections.</p>
+            </article>
+            <article>
+              <span class="step-number">04</span>
+              <h3>Gate 1</h3>
+              <p>A reviewer accepts or rejects each draft. Every rejection requires a reason and can trigger regeneration.</p>
+            </article>
+            <article>
+              <span class="step-number">05</span>
+              <h3>Runtime Evaluate</h3>
+              <p>Within the application workflow, a judge scores accepted guardrails against retrieved knowledge-base context.</p>
+            </article>
+            <article>
+              <span class="step-number">06</span>
+              <h3>Gate 2</h3>
+              <p>An SME confirms, flags, rejects, corrects, or adds policy knowledge before publication.</p>
+            </article>
+            <article>
+              <span class="step-number">07–08</span>
+              <h3>Sync &amp; Monitor</h3>
+              <p>Approved outputs, feedback, scores, and audit records are persisted and exposed in a dashboard.</p>
+            </article>
+          </div>
+
+          <figure class="demo-shot section-demo">
+            <div class="demo-window">
+              <div class="demo-window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/guardrail_agent/extracted.png" alt="Extracted policy clauses displayed with source-grounding evidence and priority labels" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Step 02 · Extract — item-level clauses retain source evidence, operational labels, and priority.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="loops-section">
+        <div class="container">
+          <p class="eyebrow">CONTINUOUS IMPROVEMENT</p>
+          <h2>Human feedback changes what the system does next</h2>
+          <div class="loop-grid">
+            <article class="loop-card prompt-loop">
+              <span class="loop-tag">Loop 1 · Prompt feedback</span>
+              <h3>Reviewer rejection → better generation</h3>
+              <ol>
+                <li>Gate 1 captures the flaw type, rejected rule, reason, and suggested fix.</li>
+                <li>The structured record is deduplicated and stored in <code>prompts_library</code>.</li>
+                <li>The formatter retrieves it as a <strong>LESSONS LEARNED</strong> block.</li>
+                <li>If the rejection threshold is reached, the workflow offers a ReAct regeneration cycle.</li>
+              </ol>
+              <div class="mini-flow" aria-label="Prompt feedback loop">
+                <span>REJECT</span><b>→</b><span>LESSON</span><b>→</b><span>REGENERATE</span>
+              </div>
+            </article>
+
+            <article class="loop-card kb-loop">
+              <span class="loop-tag">Loop 2 · Vector knowledge</span>
+              <h3>SME decision → better future evaluation</h3>
+              <ol>
+                <li>Confirmed guardrails become positive standards.</li>
+                <li>Rejections, flagged corrections, new policies, and early feedback become learning signals.</li>
+                <li>Signals are embedded and stored in <code>rl_knowledge_base</code>.</li>
+                <li>The next judge retrieves similar SME-curated evidence before scoring a new guardrail.</li>
+              </ol>
+              <div class="mini-flow" aria-label="Knowledge base feedback loop">
+                <span>SME</span><b>→</b><span>VECTOR KB</span><b>→</b><span>JUDGE</span>
+              </div>
+            </article>
+          </div>
+
+          <figure class="demo-shot section-demo">
+            <div class="demo-window">
+              <div class="demo-window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/guardrail_agent/gate.png" alt="Human review gate for accepting or rejecting guardrails and recording structured feedback" loading="lazy" decoding="async">
+            </div>
+            <figcaption>Gate 1 captures an explicit decision, flaw category, reviewer note, and suggested fix before the workflow can continue.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="challenge-section">
+        <div class="container">
+          <p class="eyebrow">THREE CORE CHALLENGES</p>
+          <h2>Designing for quality before trusting generated rules</h2>
+          <div class="challenge-grid">
+            <article class="challenge-card">
+              <span>Challenge 01 · One-shot generation</span>
+              <h3>A fluent guardrail can still be vague or unenforceable</h3>
+              <p>
+                LLM output is not treated as final. Specialized stages, Pydantic schemas, item-level review, and a mandatory rejection reason turn generation into a controlled workflow.
+              </p>
+              <div class="solution-block">
+                <strong>Design response</strong>
+                <p>Separate extraction from formatting, insert Gate 1 before scoring, and use rejection patterns to guide regeneration.</p>
+              </div>
+            </article>
+
+            <article class="challenge-card">
+              <span>Challenge 02 · Limited ground truth</span>
+              <h3>Quality had to be measured at both pipeline and final-output level</h3>
+              <p>
+                A single score could not show whether errors came from policy extraction, guardrail generation, or the final rule's relationship to its source SOP.
+              </p>
+              <div class="solution-block">
+                <strong>Design response</strong>
+                <p>Build a separate evaluation pipeline: use SME-labelled precision and recall for Steps 2–3, then benchmark final outputs with two document-grounded LLM judges.</p>
+              </div>
+            </article>
+
+            <article class="challenge-card">
+              <span>Challenge 03 · Forgotten feedback</span>
+              <h3>Without memory, the same mistakes return in every run</h3>
+              <p>
+                Reviewer and SME feedback must influence later actions rather than remain as passive audit text.
+              </p>
+              <div class="solution-block">
+                <strong>Design response</strong>
+                <p>Store prompt lessons and vector knowledge separately, then retrieve the right feedback at generation and evaluation time.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="evaluation-section">
+        <div class="container">
+          <p class="eyebrow">STANDALONE EVALUATION PIPELINE</p>
+          <h2>Evaluating the agentic workflow from the outside</h2>
+          <p class="section-lead">
+            In parallel with the team's 00–08 application workflow, I designed and ran a separate evaluation pipeline. It consumed policies and guardrails produced by the application as evaluation inputs, then combined SME-labelled validation with a document-grounded dual-judge benchmark.
+          </p>
+
+          <div class="evaluation-boundary">
+            <strong>Separate from Step 05</strong>
+            <p>This offline evaluation pipeline was not the application's Runtime Evaluate stage and did not participate in its state transitions or feedback loops. Its purpose was to benchmark the 00–08 workflow's outputs and expose where the system performed well or needed improvement.</p>
+          </div>
+
+          <article class="evaluation-track">
+            <div class="track-heading">
+              <span>KPI 1 · SME VALIDATION</span>
+              <h3>Extraction recall and precision</h3>
+              <p>SME-labelled results identified how accurately each generation stage recovered valid items without introducing irrelevant candidates.</p>
+            </div>
+
+            <div class="kpi-stage-grid">
+              <section class="stage-result">
+                <div class="stage-title"><span>STEP 2</span><h4>Policy extraction</h4></div>
+                <div class="kpi-metrics">
+                  <div><strong>96.2%</strong><span>Precision</span></div>
+                  <div><strong>94.3%</strong><span>Recall</span></div>
+                  <div><strong>3.8%</strong><span>False positive rate</span></div>
+                </div>
+              </section>
+
+              <section class="stage-result">
+                <div class="stage-title"><span>STEP 3</span><h4>Guardrail generation</h4></div>
+                <div class="kpi-metrics">
+                  <div><strong>100%</strong><span>Precision</span></div>
+                  <div class="attention-metric"><strong>65.4%</strong><span>Recall</span></div>
+                  <div><strong>0%</strong><span>False positive rate</span></div>
+                </div>
+              </section>
+            </div>
+
+            <p class="evaluation-insight">
+              <strong>What the results showed:</strong> Step 2 achieved strong, balanced extraction quality. Step 3 prioritised precision over recall because each run was deliberately limited to 1–3 guardrails, reducing noisy variations and keeping the human-review workload manageable. The feedback loop provides a path to improve recall over time.
+            </p>
+          </article>
+
+          <article class="evaluation-track judge-track">
+            <div class="track-heading">
+              <span>KPI 2 · INDEPENDENT LLM-AS-A-JUDGE</span>
+              <h3>Document-grounded evaluation of final guardrails</h3>
+              <p>Two independent judges—Llama 4 Maverick and Mistral Medium—evaluated 38 final guardrails against four source SOPs.</p>
+            </div>
+
+            <div class="judge-kpi-grid">
+              <div><strong>90.5%</strong><span>SOP Alignment</span><p>Weighted support against the source SOP.</p></div>
+              <div><strong>13.2%</strong><span>Unsupported / Overstated Content</span><p>Guardrails containing at least one unsupported or overstated element.</p></div>
+              <div><strong>82.2%</strong><span>Evaluation Consistency</span><p>Agreement between the two independent judges.</p></div>
+            </div>
+
+            <div class="support-summary">
+              <div><strong>38</strong><span>guardrails evaluated</span></div>
+              <div><strong>68.42%</strong><span>fully supported</span></div>
+              <div><strong>31.58%</strong><span>partially supported</span></div>
+              <div><strong>0%</strong><span>unsupported</span></div>
+            </div>
+
+            <h4 class="detail-heading">Supporting results by source document</h4>
+            <div class="table-wrap evaluation-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Source SOP</th>
+                    <th scope="col">Guardrails</th>
+                    <th scope="col">SOP alignment</th>
+                    <th scope="col">Unsupported / overstated</th>
+                    <th scope="col">Judge consistency</th>
+                    <th scope="col">Missing-point rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>ISDA SSI SOP</td><td>17</td><td>94.71%</td><td>11.76%</td><td>86.76%</td><td>17.65%</td></tr>
+                  <tr><td>SWIFT Payment Controls</td><td>7</td><td>87.14%</td><td>28.57%</td><td>75.00%</td><td>14.29%</td></tr>
+                  <tr><td>Accounts Payable SOP</td><td>4</td><td>92.50%</td><td>0.00%</td><td>93.75%</td><td>25.00%</td></tr>
+                  <tr><td>York University Payment Requisition SOP</td><td>10</td><td>85.00%</td><td>10.00%</td><td>75.00%</td><td>50.00%</td></tr>
+                  <tr class="average-row"><td>Average</td><td>38 total</td><td>90.53%</td><td>13.16%</td><td>82.23%</td><td>26.32%</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="metric-definitions">
+              <p><strong>SOP Alignment</strong> weights fully supported items at 1.0, partially supported items at 0.7, and unsupported items at 0.</p>
+              <p><strong>Unsupported / Overstated Content Rate</strong> counts guardrails containing at least one claim that is not supported by the source or overstates it.</p>
+              <p><strong>Missing-Point Rate</strong> counts guardrails that omit a relevant detail, condition, or context from the source SOP.</p>
+            </div>
+
+            <p class="metric-note">These metrics expose where expert review is most valuable; the LLM judges support rather than replace final SME validation.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="stack-section">
+        <div class="container">
+          <p class="eyebrow">IMPLEMENTATION</p>
+          <h2>Specialized models and auditable infrastructure</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Responsibility</th>
+                  <th scope="col">Implementation</th>
+                  <th scope="col">Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Document parsing</td>
+                  <td>Docling + HybridChunker</td>
+                  <td>Preserves semantic sections, tables, and source metadata</td>
+                </tr>
+                <tr>
+                  <td>Policy &amp; guardrail generation</td>
+                  <td>Mistral via IBM watsonx.ai</td>
+                  <td>Produces structured drafts with separate extraction and formatting roles</td>
+                </tr>
+                <tr>
+                  <td>Standalone evaluation pipeline</td>
+                  <td>Llama 4 Maverick + Mistral Medium</td>
+                  <td>Benchmarks 00–08 workflow outputs outside the runtime application</td>
+                </tr>
+                <tr>
+                  <td>Semantic retrieval</td>
+                  <td>Slate embeddings · 768 dimensions</td>
+                  <td>Retrieves approved examples and SME feedback for context</td>
+                </tr>
+                <tr>
+                  <td>Vector memory &amp; audit</td>
+                  <td>Astra DB collections</td>
+                  <td>Stores prompt lessons, knowledge, decisions, scores, and lineage</td>
+                </tr>
+                <tr>
+                  <td>Application &amp; validation</td>
+                  <td>Streamlit · Pydantic · pytest</td>
+                  <td>Provides an interactive workflow with schema checks and focused tests</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="audit-section">
+        <div class="container">
+          <p class="eyebrow">AUDITABILITY</p>
+          <h2>Every stage leaves evidence</h2>
+          <div class="audit-grid">
+            <article><strong>Structured artifacts</strong><span>Policies, guardrails, scores, and decisions are schema-validated JSON records.</span></article>
+            <article><strong>Decision history</strong><span>Reviewer and SME actions retain comments, reasons, and correction signals.</span></article>
+            <article><strong>Model separation</strong><span>Generation, judging, and embedding use models selected for different responsibilities.</span></article>
+            <article><strong>Run lineage</strong><span>Intermediate and final outputs remain traceable from source document to library sync.</span></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="section">
+      <div class="container">
+        <p>Copyright 2026. Jihyeon Choung All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./javascript/common.js"></script>
+  </body>
+</html>
