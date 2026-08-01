@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Customer transaction analysis project covering feature engineering, PCA, clustering, and actionable customer segmentation.">
     <title>Customer Data Analysis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&amp;family=Poppins:wght@400;700&amp;family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/jh_logo.png" type="image/png">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/customer_data.css">
@@ -40,7 +42,7 @@
             I built a customer segmentation framework from <strong>3 years of transaction data</strong> for a digital banking app.
             The goal was to turn raw transaction logs into <strong>actionable customer segments</strong> that product and marketing teams can use for personalization and CLV growth.
             The pipeline: <strong>feature engineering → preprocessing → PCA → K-means++ → evaluation → interpretation</strong>.
-        <p>
+        </p>
 
     <div class="overview-highlights">
         <p><strong>What I delivered:</strong></p>
@@ -67,13 +69,13 @@
           <li><strong>Interpretation:</strong> created segment definitions and analytical visuals to support stakeholder understanding</li>
         </ul>
 
-        <p><details class="team-details">
+        <details class="team-details">
           <summary>Team contributions</summary>
           <ul>
             <li><strong>Me:</strong> analytics pipeline, modeling, evaluation, interpretation, visualization</li>
             <li><strong>Teammates:</strong> persona creation, visual design, business recommendations, coordination</li>
           </ul>
-        </details></p>
+        </details>
     </div>
 </section>
 
@@ -145,11 +147,9 @@
 <section class="cluster-results">
   <div class="container">
     <h2>Clustering Results</h2>
-    <p>
     <div class="image-row" style="width:80%;">
         <img src="./assets/customer_data/cluster_result.png" decoding="async" loading="lazy">
     </div>
-    </p>
     <p class="section-intro">
       The clustering analysis revealed <strong>five distinct behavioral segments</strong>.
       To make the results usable for non-technical teams, each cluster was interpreted
@@ -183,7 +183,6 @@
     </p>
     
     <img src="./assets/customer_data/cluster_table.png" alt="Cluster comparison table" style="width:100%" decoding="async" loading="lazy">
-    <p>
     <h3>Action guidance by segment</h3>
     <ul>
         <li><strong>Frequent small spenders:</strong> focus on retention through convenience and reliability</li>
@@ -192,9 +191,8 @@
         <li><strong>Dormant users:</strong> prioritize reactivation with targeted reminders and incentives</li>
         <li><strong>Savings-focused users:</strong> reinforce trust and simplify large-value transactions</li>
     </ul>
-    </p>
 
-    <p><details class="persona-details">
+    <details class="persona-details">
         <summary>From clusters to personas</summary>
         <h3>Cluster 0: Martina, 38, part-time Marketing Manager</h3>
         <img src="./assets/customer_data/persona0.webp" alt="persona for cluster0" style="width:100%" loading="lazy" decoding="async">
@@ -208,12 +206,8 @@
             This persona represents users who make infrequent but high-value transactions, primarily for savings and cash-related purposes. They engage with the app selectively rather than daily, indicating trust in the platform for larger financial movements.
 
         </p>
-    </details></p>
+    </details>
     </div>
-    <div class="action-guidance">
-    
-
-
 </section>
 
 
@@ -240,14 +234,13 @@
                 <strong>Original fields:</strong> customer_id, country, type, trx_date, amount_chf, orig_currency, category, mcc, counterpart
                 <br>
                 <strong>Output:</strong> aggregated customer table with engineered features
+            </p>
                 <ul>
                     <li><strong>Frequency:</strong> n_tx, median_tx_per_month</li>
                     <li><strong>Scale:</strong> total_spend, spend_per_month, median_amount</li>
                     <li><strong>Variability:</strong> std_dev_amount, pct_high_value_tx</li>
                     <li><strong>Recency:</strong> recency_days</li>
                 </ul>
-
-            </p>
             <img src="./assets/customer_data/new_variables.webp" alt="Engineered customer data columns" style="width:100%;" loading="lazy" decoding="async">
 
             <div class="annotation">[The original dataset and new variables]</div>
@@ -258,11 +251,11 @@
             <p>
                 Transaction distributions were skewed and heavy-tailed, which can distort distance-based clustering.
                 I applied transformations to stabilize the feature space.
+            </p>
                 <ul>
                 <li><strong>Log transform:</strong> reduces skew and sensitivity to extreme values</li>
                 <li><strong>Scaling:</strong> aligns feature ranges to avoid dominance by high-magnitude variables</li>
                 </ul>
-            </p>
             
             <img src="./assets/customer_data/log_trans.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
             <img src="./assets/customer_data/trans_out.png" alt="log transform" style="width:80%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
@@ -286,18 +279,19 @@
             <h3>5. Clustering & selecting K</h3>
             <p>
                 I applied K-means++ and selected the number of clusters by balancing quantitative metrics with business interpretability.
+            </p>
             <ul>
                 <li><strong>Algorithm:</strong> K-means++</li>
                 <li><strong>Model selection:</strong> Elbow method + Silhouette score</li>
                 <li><strong>Why K=5:</strong> best trade-off between separation and stakeholder-usable segment granularity</li>
             </ul>  
-            </p>
               
             <img src="./assets/customer_data/optimal_k.png" alt="finding optimal k" style="width:100%; border-radius: 5px; border: 1px solid #ebebeb;" decoding="async" loading="lazy">
             <div class="annotation">[Elbow & Silhouette used to select K]</div>    
 
         </div>
 
+    </div>
   </section>
 
 
