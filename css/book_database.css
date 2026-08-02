@@ -288,8 +288,7 @@
 }
 
 .architecture-flow p,
-.challenge-card p,
-.entity-grid span {
+.challenge-card p {
   margin: 0;
   color: #5d7387;
   font-size: 14px;
@@ -344,6 +343,33 @@
 .book-database-page .left-note {
   margin-top: 14px;
   text-align: left;
+}
+
+.data-profile-compact {
+  margin-top: 42px;
+  padding-top: 28px;
+  border-top: 1px solid var(--db-line);
+}
+
+.data-profile-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.data-profile-heading h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.data-profile-heading strong {
+  color: var(--db-accent-dark);
+  font-size: 14px;
+}
+
+.data-profile-compact .table-wrap {
+  margin-top: 18px;
 }
 
 .challenge-grid {
@@ -415,19 +441,6 @@
   line-height: 1.5;
 }
 
-.entity-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 36px;
-}
-
-.model-intro {
-  max-width: 820px;
-  color: #506a80;
-  line-height: 1.75;
-}
-
 .schema-visuals {
   display: grid;
   gap: 24px;
@@ -457,7 +470,7 @@
 }
 
 .schema-figure-conceptual img {
-  max-width: 940px;
+  max-width: 780px;
 }
 
 .schema-figure-conceptual a {
@@ -465,7 +478,11 @@
 }
 
 .schema-figure-physical img {
-  max-width: 680px;
+  max-width: 840px;
+}
+
+.schema-figure-physical a {
+  padding: 18px;
 }
 
 .schema-figure figcaption {
@@ -493,24 +510,6 @@
   border-left: 3px solid var(--db-accent);
   font-size: 13px;
   line-height: 1.65;
-}
-
-.entity-grid article {
-  padding: 22px;
-  background: #fff;
-  border: 1px solid var(--db-line);
-  border-radius: 12px;
-}
-
-.entity-grid strong,
-.entity-grid span {
-  display: block;
-}
-
-.entity-grid strong {
-  margin-bottom: 8px;
-  color: var(--db-accent-dark);
-  font-family: Consolas, "Courier New", monospace;
 }
 
 .evidence-layout {
@@ -808,8 +807,7 @@
     width: 130px;
   }
 
-  .metric-grid,
-  .entity-grid {
+  .metric-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -881,9 +879,17 @@
 
   .metric-grid,
   .architecture-flow,
-  .entity-grid,
   .evidence-layout {
     grid-template-columns: 1fr;
+  }
+
+  .data-profile-heading {
+    display: block;
+  }
+
+  .data-profile-heading strong {
+    display: block;
+    margin-top: 6px;
   }
 
   .metric-card {

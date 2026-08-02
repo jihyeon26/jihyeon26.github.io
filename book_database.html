@@ -140,47 +140,72 @@
         </div>
       </section>
 
-      <section class="data-section">
+      <section class="data-section model-section">
         <div class="container">
-          <p class="eyebrow">DATA PROFILE</p>
-          <h2>2.8 million source records loaded into staging</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Source</th>
-                  <th scope="col">Purpose</th>
-                  <th scope="col">Staging records</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Amazon ratings</td>
-                  <td>User–book interactions</td>
-                  <td>2,397,595</td>
-                </tr>
-                <tr>
-                  <td>Amazon books</td>
-                  <td>Title and product metadata</td>
-                  <td>171,126</td>
-                </tr>
-                <tr>
-                  <td>Book-Crossing</td>
-                  <td>Additional publication metadata</td>
-                  <td>270,170</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th scope="row" colspan="2">Total</th>
-                  <td>2,838,891</td>
-                </tr>
-              </tfoot>
-            </table>
+          <p class="eyebrow">RELATIONAL DESIGN</p>
+          <h2>Business entities become explicit keys, constraints, and junction tables</h2>
+
+          <div class="schema-visuals">
+            <figure class="schema-figure schema-figure-conceptual">
+              <a href="./assets/book_database/ER.png" target="_blank" rel="noopener noreferrer" aria-label="Open the conceptual entity-relationship model at full size">
+                <img src="./assets/book_database/ER.png" alt="Conceptual entity-relationship model connecting books, users, reviews, authors, publishers, and genres" loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                <strong>Conceptual relationship model</strong>
+                <span>Defines the business entities and one-to-many or many-to-many relationships.</span>
+              </figcaption>
+            </figure>
+
+            <figure class="schema-figure schema-figure-physical">
+              <a href="./assets/book_database/model.png" target="_blank" rel="noopener noreferrer" aria-label="Open the physical relational schema at full size">
+                <img src="./assets/book_database/model.png" alt="Physical relational schema showing primary keys, foreign keys, and junction tables" loading="lazy" decoding="async">
+              </a>
+              <figcaption>
+                <strong>Original physical schema reference</strong>
+                <span>Shows how primary keys, foreign keys, and junction tables implement those relationships.</span>
+              </figcaption>
+            </figure>
           </div>
-          <p class="annotation left-note">
-            Raw datasets are not included in the public repository because of size and redistribution considerations. The pipeline is documented through file contracts, loading SQL, validation rules, and execution instructions.
+
+          <p class="schema-note">
+            The public implementation clarifies <code>book_user</code> and <code>review</code> as <code>reader</code> and <code>rating</code>, retains ISBN-10 as a unique edition key, and adds staging, audit, rejection, and serving structures.
           </p>
+
+          <div class="data-profile-compact">
+            <div class="data-profile-heading">
+              <h3>Source data loaded into staging</h3>
+              <strong>2,838,891 raw rows</strong>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Source</th>
+                    <th scope="col">Purpose</th>
+                    <th scope="col">Rows</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Amazon ratings</td>
+                    <td>User–book interactions</td>
+                    <td>2,397,595</td>
+                  </tr>
+                  <tr>
+                    <td>Amazon books</td>
+                    <td>Title and product metadata</td>
+                    <td>171,126</td>
+                  </tr>
+                  <tr>
+                    <td>Book-Crossing</td>
+                    <td>Additional publication metadata</td>
+                    <td>270,170</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="annotation left-note">Raw files remain external; their contracts and loading steps are documented in the public repository.</p>
+          </div>
         </div>
       </section>
 
@@ -258,53 +283,6 @@
                 </ul>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="model-section">
-        <div class="container">
-          <p class="eyebrow">RELATIONAL CORE</p>
-          <h2>Entities reflect business meaning and relationship cardinality</h2>
-          <p class="model-intro">
-            The conceptual model establishes entity boundaries and cardinalities before they are translated into keys, constraints, and junction tables in MySQL.
-          </p>
-
-          <div class="schema-visuals">
-            <figure class="schema-figure schema-figure-conceptual">
-              <a href="./assets/book_database/ER.png" target="_blank" rel="noopener noreferrer" aria-label="Open the conceptual entity-relationship model at full size">
-                <img src="./assets/book_database/ER.png" alt="Conceptual entity-relationship model connecting books, users, reviews, authors, publishers, and genres" loading="lazy" decoding="async">
-              </a>
-              <figcaption>
-                <strong>Conceptual relationship model</strong>
-                <span>Defines the business entities and one-to-many or many-to-many relationships.</span>
-              </figcaption>
-            </figure>
-
-            <figure class="schema-figure schema-figure-physical">
-              <a href="./assets/book_database/model.png" target="_blank" rel="noopener noreferrer" aria-label="Open the physical relational schema at full size">
-                <img src="./assets/book_database/model.png" alt="Physical relational schema showing primary keys, foreign keys, and junction tables" loading="lazy" decoding="async">
-              </a>
-              <figcaption>
-                <strong>Original physical schema reference</strong>
-                <span>Shows how primary keys, foreign keys, and junction tables implement those relationships.</span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <p class="schema-note">
-            The diagrams document the original design. The public implementation clarifies <code>book_user</code> and <code>review</code> as <code>reader</code> and <code>rating</code>, introduces a surrogate <code>book_id</code> while retaining a unique ISBN-10 edition key, and extends the core with staging, audit, rejection, and serving structures.
-          </p>
-
-          <div class="entity-grid">
-            <article><strong>book</strong><span>One valid ISBN-10 edition</span></article>
-            <article><strong>reader</strong><span>One source user identifier</span></article>
-            <article><strong>rating</strong><span>One retained user–book score</span></article>
-            <article><strong>publisher</strong><span>One normalized publisher</span></article>
-            <article><strong>author</strong><span>One normalized author</span></article>
-            <article><strong>genre</strong><span>Source and standard genre values</span></article>
-            <article><strong>book_author</strong><span>Unique book–author relationship</span></article>
-            <article><strong>book_genre</strong><span>Unique book–genre relationship</span></article>
           </div>
         </div>
       </section>
