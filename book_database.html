@@ -51,7 +51,8 @@
       </div>
       <div class="flow-arrow" aria-hidden="true">→</div>
       <div class="database-shape" aria-hidden="true">
-        <span>MYSQL</span>
+        <span>MYSQL 8.4</span>
+        <small>✓ CI VERIFIED</small>
       </div>
     </section>
 
@@ -59,29 +60,10 @@
       <section class="overview">
         <div class="container">
           <p class="eyebrow">PROJECT OVERVIEW</p>
-          <h2>A data foundation built for trust and reuse</h2>
+          <h2>Project Scope</h2>
           <p class="section-lead">
-            I designed an ELT pipeline that integrates book ratings and metadata from three structurally different datasets into a normalized MySQL database. The resulting data foundation supports traceable transformation, relational integrity, and a parameterized collaborative-filtering workload served to BI.
+            I built a SQL-first ELT pipeline that integrates book ratings and metadata from three structurally different datasets. Ordered migrations, transactional transformation, explicit rejection policies, and automated database tests make the normalized MySQL core inspectable and repeatable.
           </p>
-
-          <div class="metric-grid">
-            <article class="metric-card">
-              <strong>2,838,891</strong>
-              <span>raw staging records</span>
-            </article>
-            <article class="metric-card">
-              <strong>3</strong>
-              <span>heterogeneous sources</span>
-            </article>
-            <article class="metric-card">
-              <strong>78%</strong>
-              <span>measured query runtime reduction</span>
-            </article>
-            <article class="metric-card">
-              <strong>MySQL</strong>
-              <span>SQL-first reproducible workflow</span>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -89,15 +71,15 @@
         <div class="container-target">
           <div class="detail-item">
             <h3>My contribution</h3>
-            <p>Data modeling, ingestion, validation, transformation, and query optimization</p>
+            <p>Relational modeling, migration design, transformation logic, database testing, and query optimization</p>
           </div>
           <div class="detail-item">
             <h3>Core stack</h3>
-            <p>MySQL · SQL · Relational modeling · Data quality</p>
+            <p>MySQL 8.4 · SQL · Docker Compose · GitHub Actions</p>
           </div>
           <div class="detail-item">
-            <h3>Downstream use</h3>
-            <p>Analytical queries, recommendation workloads, and BI tools</p>
+            <h3>Verification</h3>
+            <p>Fresh-database bootstrap · edge-case fixtures · CI on push and pull request</p>
           </div>
         </div>
       </section>
@@ -105,7 +87,7 @@
       <section class="architecture-section">
         <div class="container">
           <p class="eyebrow">ARCHITECTURE</p>
-          <h2>A layered ELT architecture</h2>
+          <h2>Data Flow</h2>
           <p>
             Raw values are preserved before any irreversible transformation. Each later layer has a narrow responsibility, making failures easier to diagnose and the complete pipeline easier to rerun.
           </p>
@@ -143,7 +125,7 @@
       <section class="data-section model-section">
         <div class="container">
           <p class="eyebrow">RELATIONAL DESIGN</p>
-          <h2>Business entities become explicit keys, constraints, and junction tables</h2>
+          <h2>Data Model</h2>
 
           <div class="schema-visuals">
             <figure class="schema-figure schema-figure-conceptual">
@@ -204,123 +186,106 @@
                 </tbody>
               </table>
             </div>
+            <div class="refresh-policy" aria-label="Data update method">
+              <span><strong>Source cadence</strong>Batch snapshots</span>
+              <span><strong>Staging</strong>One audited run per source file</span>
+              <span><strong>Core update</strong>Transactional rebuild from selected completed runs</span>
+            </div>
             <p class="annotation left-note">Raw files remain external; their contracts and loading steps are documented in the public repository.</p>
           </div>
         </div>
       </section>
 
-      <section class="challenge-section">
+      <section class="design-section">
         <div class="container">
-          <p class="eyebrow">THREE CORE CHALLENGES</p>
-          <h2>Turning inconsistent source data into explainable database decisions</h2>
+          <p class="eyebrow">DESIGN DECISIONS &amp; TRADE-OFFS</p>
+          <h2>Design Trade-offs</h2>
 
-          <div class="challenge-grid">
-            <article class="challenge-card">
-              <div class="challenge-heading">
-                <span class="challenge-label">Challenge 01 · Identity</span>
-                <h3>ISBN, ASIN, and title-based mappings could not be joined safely</h3>
+          <div class="decision-list">
+            <article>
+              <div class="decision-heading">
+                <span>IDENTITY SCOPE</span>
+                <h3>ISBN-10 edition as the core book grain</h3>
               </div>
-              <div class="challenge-detail">
-                <p>
-                  The ratings identifier column mixed ISBN-10 and Amazon ASIN values, while Amazon metadata lacked a reliable book identifier and depended on titles.
-                </p>
-                <div class="solution-block">
-                  <strong>Solution</strong>
-                  <p>
-                    I separated identifier schemes, validated ISBN-10 checksums, preserved unsupported ASIN records with a reason code, and accepted title mappings only when one title resolved to exactly one ISBN.
-                  </p>
-                </div>
-                <ul>
-                  <li>1,228,886 ASIN ratings retained in staging</li>
-                  <li>1,168,709 ISBN-10 ratings identified</li>
-                  <li>Ambiguous and unmatched titles recorded explicitly</li>
-                </ul>
+              <div class="decision-copy">
+                <strong>Decision</strong>
+                <p>Only checksum-valid ISBN-10 editions enter the core. ASIN and malformed identifiers remain traceable in staging with reason codes.</p>
+              </div>
+              <div class="decision-tradeoff">
+                <strong>Trade-off</strong>
+                <p>Stronger referential integrity and honest entity grain at the cost of excluding valid ASIN-only interactions from the current core.</p>
               </div>
             </article>
 
-            <article class="challenge-card">
-              <div class="challenge-heading">
-                <span class="challenge-label">Challenge 02 · Data quality</span>
-                <h3>Invalid rows needed to be traceable, not silently deleted</h3>
+            <article>
+              <div class="decision-heading">
+                <span>AMBIGUITY POLICY</span>
+                <h3>Deterministic matching and conflict resolution</h3>
               </div>
-              <div class="challenge-detail">
-                <p>
-                  Dates, scores, identifiers, helpfulness values, and duplicate user–book ratings required different validation and rejection policies.
-                </p>
-                <div class="solution-block">
-                  <strong>Solution</strong>
-                  <p>
-                    Raw values remain in staging. Required-field failures are routed to rejected records, optional invalid values become <code>NULL</code>, and every load records accepted, rejected, and reconciled counts.
-                  </p>
-                </div>
-                <ul>
-                  <li>Deterministic latest-rating deduplication</li>
-                  <li>Ingestion audit records and reason codes</li>
-                  <li>Row-count and orphan-key reconciliation checks</li>
-                </ul>
+              <div class="decision-copy">
+                <strong>Decision</strong>
+                <p>Title metadata is accepted only for a one-title-to-one-ISBN match. Repeated ratings keep the latest review date, then staging order; metadata uses explicit completeness and source precedence.</p>
+              </div>
+              <div class="decision-tradeoff">
+                <strong>Trade-off</strong>
+                <p>Prevents silent false joins and arbitrary selection, while deliberately leaving ambiguous or unmatched metadata unresolved.</p>
               </div>
             </article>
 
-            <article class="challenge-card">
-              <div class="challenge-heading">
-                <span class="challenge-label">Challenge 03 · Relational design</span>
-                <h3>Repeated and multi-value metadata did not belong in one book row</h3>
+            <article>
+              <div class="decision-heading">
+                <span>REFRESH STRATEGY</span>
+                <h3>Transactional full-core rebuild</h3>
               </div>
-              <div class="challenge-detail">
-                <p>
-                  Authors, publishers, and comma-separated genres introduced repeated values, inconsistent naming, and difficult filtering.
-                </p>
-                <div class="solution-block">
-                  <strong>Solution</strong>
-                  <p>
-                    I separated core entities and modeled many-to-many relationships through mapping tables, then applied primary keys, foreign keys, uniqueness rules, and domain constraints.
-                  </p>
-                </div>
-                <ul>
-                  <li>Book, Reader, Rating, Author, Publisher, and Genre</li>
-                  <li>Book–Author and Book–Genre mapping tables</li>
-                  <li>3NF-oriented production schema</li>
-                </ul>
+              <div class="decision-copy">
+                <strong>Decision</strong>
+                <p>The procedure rebuilds the normalized core from selected completed ingestion runs inside one transaction and records a failed transformation after rollback.</p>
+              </div>
+              <div class="decision-tradeoff">
+                <strong>Trade-off</strong>
+                <p>Simple replay, reconciliation, and failure recovery are prioritized over incremental or real-time updates.</p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="evidence-section">
+      <section class="verification-section">
         <div class="container">
-          <p class="eyebrow">ENGINEERING EVIDENCE</p>
-          <h2>Validation is part of the deliverable</h2>
-          <div class="evidence-layout">
-            <div>
-              <h3>Validation evidence</h3>
-              <ul class="check-list">
-                <li>Ordered migrations run from an empty MySQL database</li>
-                <li>All three source files load into staging</li>
-                <li>Staging counts match the source CSV row counts</li>
-                <li>ISBN-10 validation handles valid and invalid inputs</li>
-                <li>ISBN and ASIN distributions are profiled</li>
-                <li>CRLF-aware bulk loading is verified</li>
-              </ul>
-            </div>
-            <div class="profile-card">
-              <h3>Book-Crossing identifier check</h3>
-              <dl>
-                <div><dt>Valid ISBN-10</dt><dd>270,053</dd></div>
-                <div><dt>Invalid or unsupported</dt><dd>117</dd></div>
-                <div><dt>ISBN-13 within unsupported</dt><dd>3</dd></div>
-              </dl>
-            </div>
+          <p class="eyebrow">QUALITY, TESTS &amp; FAILURE HANDLING</p>
+          <h2>Verification</h2>
+
+          <div class="verification-list">
+            <article>
+              <span>01</span>
+              <h3>Clean bootstrap</h3>
+              <p>A fresh MySQL 8.4 database applies all four ordered migrations before any fixture is loaded.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Repeatable transformation</h3>
+              <p>The synthetic edge-case sample is transformed twice; counts and business-key CRC32 signatures must remain identical.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Expected constraint failures</h3>
+              <p>Twelve invalid writes verify the intended <code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>, and foreign-key errors inside a rolled-back transaction.</p>
+            </article>
+            <article>
+              <span>04</span>
+              <h3>Automated failure path</h3>
+              <p>GitHub Actions runs the full suite on pushes and pull requests, exposes MySQL logs on failure, and always removes temporary containers and volumes.</p>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="optimization-section">
         <div class="container">
-          <p class="eyebrow">QUERY OPTIMIZATION</p>
-          <h2>Eliminating repeated genre aggregation from the query path</h2>
+          <p class="eyebrow">FULL-DATA QUERY OPTIMIZATION</p>
+          <h2>Query Performance</h2>
           <p>
-            The representative workload finds books rated highly by readers who also liked a selected title. <code>EXPLAIN ANALYZE</code> showed that the dominant bottleneck was not the recommendation logic itself: the genre view was being materialized again for every request.
+            In the original full-data benchmark, the representative workload finds books positively rated by readers who also liked a selected title. <code>EXPLAIN ANALYZE</code> showed that the dominant bottleneck was repeated genre-view materialization—not the co-occurrence logic itself.
           </p>
 
           <p class="workload-path">
@@ -358,7 +323,7 @@
               <span class="optimization-step">02</span>
               <div>
                 <h3>Move repeated work out of runtime</h3>
-                <p>Because MySQL has no native materialized views, I stored the genre aggregation in the physical table <code>mv_canonical_book_genre</code> and indexed its <code>canonical_title</code> lookup.</p>
+                <p>Because MySQL has no native materialized views, the full-data implementation stored the genre aggregation in a refreshable physical table and indexed its canonical-title lookup.</p>
               </div>
             </article>
             <article>
@@ -369,90 +334,34 @@
               </div>
             </article>
           </div>
-
-          <h3 class="supporting-choices-title">Supporting choices in the final query</h3>
-          <div class="table-wrap optimization-table">
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Technique</th>
-                  <th scope="col">Implementation</th>
-                  <th scope="col">Purpose</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Two-way indexing</td>
-                  <td><code>(isbn, score, user_id)</code> and <code>(user_id, score, isbn)</code></td>
-                  <td>Support both seed-reader lookup and candidate-book expansion.</td>
-                </tr>
-                <tr>
-                  <td>Early filtering</td>
-                  <td>Apply <code>score &gt;= 4.0</code> when selecting readers and candidates.</td>
-                  <td>Reduce rows before the joins and aggregation stages.</td>
-                </tr>
-                <tr>
-                  <td>Edition consolidation</td>
-                  <td>Group cleaned titles by <code>canonical_title</code>.</td>
-                  <td>Return one recommendation when several ISBNs represent the same book.</td>
-                </tr>
-                <tr>
-                  <td>Correct counting</td>
-                  <td>Use <code>COUNT(DISTINCT user_id)</code>.</td>
-                  <td>Prevent multiple editions or metadata joins from inflating co-occurrence.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
           <p class="benchmark-note">
-            <strong>Benchmark scope:</strong> the before-and-after comparison changes only the genre aggregation layer. The pre-aggregated table must be refreshed when its underlying book or genre data changes—an explicit maintenance trade-off for removing repeated work from the interactive query path.
+            <strong>Benchmark scope:</strong> these measurements come from the original full-data environment, not the tiny CI fixture. The comparison changes only the genre aggregation layer; the pre-aggregated table adds refresh and write cost in exchange for removing repeated work from the interactive query path.
           </p>
         </div>
       </section>
 
-      <section id="repository" class="repository-section">
-        <div class="container repository-layout">
-          <div class="repository-copy">
-            <p class="eyebrow">SOURCE &amp; REPRODUCTION PATH</p>
-            <h2>Inspect the implementation, not just the outcome</h2>
-            <p>
-              The public repository exposes the ordered SQL path used to create the schema, stage local source files, refresh the normalized core in a transaction, and inspect data-quality results. This keeps the engineering decisions reviewable even though the full source snapshots cannot be redistributed.
-            </p>
-            <a class="repository-link" href="https://github.com/jihyeon26/book-ratings-database" target="_blank" rel="noopener noreferrer">
-              Open the GitHub repository <span aria-hidden="true">↗</span>
-            </a>
+      <section class="limitations-section">
+        <div class="container">
+          <p class="eyebrow">SCOPE &amp; LIMITATIONS</p>
+          <h2>Limitations</h2>
+          <div class="limitations-list">
+            <article>
+              <strong>Edition-level identity</strong>
+              <p>The core represents valid ISBN-10 editions. It does not claim perfect work-level identity across editions, and ASIN-only interactions remain outside the current core.</p>
+            </article>
+            <article>
+              <strong>Batch, not real time</strong>
+              <p>The pipeline processes static source snapshots through audited staging runs and a transactional rebuild; it is not a streaming or distributed system.</p>
+            </article>
+            <article>
+              <strong>Separate correctness and performance evidence</strong>
+              <p>The CI fixture proves migration, integrity, failure, and repeatability behavior. The 78% optimization result belongs to the original full-data benchmark.</p>
+            </article>
+            <article>
+              <strong>Next operational proof</strong>
+              <p>Least-privilege role tests and a backup-and-restore smoke test are the next extensions beyond the current case-study scope.</p>
+            </article>
           </div>
-
-          <ol class="reproduction-steps">
-            <li>
-              <span>01</span>
-              <div>
-                <strong>Build the database</strong>
-                <p>Apply versioned MySQL 8.4 migrations in filename order from an empty database.</p>
-              </div>
-            </li>
-            <li>
-              <span>02</span>
-              <div>
-                <strong>Stage source files</strong>
-                <p>Follow the documented CSV contracts and load raw values with source provenance.</p>
-              </div>
-            </li>
-            <li>
-              <span>03</span>
-              <div>
-                <strong>Refresh the core</strong>
-                <p>Run the transaction-based transformation that validates, classifies, deduplicates, and rebuilds the core tables.</p>
-              </div>
-            </li>
-            <li>
-              <span>04</span>
-              <div>
-                <strong>Verify the result</strong>
-                <p>Inspect orphan-key, domain, reconciliation, rejection-profile, and metadata-coverage checks before running the analytical workload.</p>
-              </div>
-            </li>
-          </ol>
         </div>
       </section>
     </main>
